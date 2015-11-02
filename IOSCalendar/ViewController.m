@@ -5,7 +5,7 @@
 //  Created by Omer Abufara on 11/1/15.
 //  Copyright © 2015 Omer Abufara. All rights reserved.
 //
-
+//edited for commit
 #import "ViewController.h"
 
 @interface ViewController ()
