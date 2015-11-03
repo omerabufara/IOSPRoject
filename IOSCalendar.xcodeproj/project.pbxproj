@@ -15,6 +15,7 @@
 		1A086DC21BE6D54F00980950 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A086DC01BE6D54F00980950 /* LaunchScreen.storyboard */; };
 		1A086DCD1BE6D54F00980950 /* IOSCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A086DCC1BE6D54F00980950 /* IOSCalendarTests.m */; };
 		1A086DD81BE6D54F00980950 /* IOSCalendarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A086DD71BE6D54F00980950 /* IOSCalendarUITests.m */; };
+		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		1A086DD31BE6D54F00980950 /* IOSCalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSCalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A086DD71BE6D54F00980950 /* IOSCalendarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOSCalendarUITests.m; sourceTree = "<group>"; };
 		1A086DD91BE6D54F00980950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				1A086DC01BE6D54F00980950 /* LaunchScreen.storyboard */,
 				1A086DC31BE6D54F00980950 /* Info.plist */,
 				1A086DB21BE6D54F00980950 /* Supporting Files */,
+				5B98BC081BE901DB004055C0 /* CalendarViewController.h */,
+				5B98BC091BE901DB004055C0 /* CalendarViewController.m */,
 			);
 			path = IOSCalendar;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */,
 				1A086DBA1BE6D54F00980950 /* ViewController.m in Sources */,
 				1A086DB71BE6D54F00980950 /* AppDelegate.m in Sources */,
 				1A086DB41BE6D54F00980950 /* main.m in Sources */,
