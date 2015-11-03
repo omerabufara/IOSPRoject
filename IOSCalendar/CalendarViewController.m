@@ -191,8 +191,12 @@ NSInteger thisday;
         [addProject setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         addProject.tag = startD;
         
-        
-        addProject.backgroundColor = [UIColor grayColor];
+        if(true/*currDate.month = monthly && currDate.year = year && currDate.day = today*/){
+            addProject.backgroundColor = [UIColor blueColor];
+        }
+        else{
+            addProject.backgroundColor = [UIColor grayColor];
+        }
         
         [addProject addTarget:self
                        action:@selector(showEvents:)
