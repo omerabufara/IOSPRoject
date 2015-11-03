@@ -198,8 +198,8 @@ NSInteger thisday;
     
 }
 
-//how to get this implemented?
 -(IBAction)showEvents:(id)sender{
+    //will have to adjust this to show different events by date when we get to it
     NSLog(@"Events shown");
     [self.eventsArray addObject:@"Event1"];
     [self.eventsArray addObject:@"Event2"];
