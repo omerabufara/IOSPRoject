@@ -31,6 +31,8 @@ NSInteger thisday;
     [super viewDidLoad];
     
     [self myCalView];
+    self.eventsArray = [[NSMutableArray alloc]init];
+    //self.eventsArray = [[NSMutableArray alloc]initWithObjects:@"Event1",@"Event2",@"Event3", nil];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -42,8 +44,6 @@ NSInteger thisday;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
-    self.eventsArray = [[NSArray alloc]initWithObjects:@"Event1",@"Event2",@"Event3", nil];
     return [self.eventsArray count];
 }
 
@@ -189,10 +189,24 @@ NSInteger thisday;
         
         addProject.backgroundColor = [UIColor grayColor];
         
+        [addProject addTarget:self
+                   action:@selector(showEvents:)
+         forControlEvents:UIControlEventTouchUpInside];
         
         [self.view addSubview:addProject];
     }
     
+}
+
+//how to get this implemented?
+-(IBAction)showEvents:(id)sender{
+    NSLog(@"Events shown");
+    [self.eventsArray addObject:@"Event1"];
+    [self.eventsArray addObject:@"Event2"];
+    [self.eventsArray addObject:@"Event3"];
+    [self.eventsArray addObject:@"Event4"];
+    NSLog(@"array count is : %lu", (unsigned long)[self.eventsArray count]);
+    [self.calendarTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
