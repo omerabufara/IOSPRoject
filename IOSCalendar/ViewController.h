@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 - (IBAction)nextAct:(id)sender;
 
@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *monthly;
 @property (weak, nonatomic) IBOutlet UILabel *year;
 @property (strong, nonatomic) NSDate *defaulComp;
+
+@property (strong, nonatomic) NSArray *eventsArray;
 
 
 @end

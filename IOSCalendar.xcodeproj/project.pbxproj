@@ -496,6 +496,7 @@
 				1A086DDE1BE6D54F00980950 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A086DDF1BE6D54F00980950 /* Build configuration list for PBXNativeTarget "IOSCalendarTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +505,7 @@
 				1A086DE11BE6D54F00980950 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A086DE21BE6D54F00980950 /* Build configuration list for PBXNativeTarget "IOSCalendarUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +514,7 @@
 				1A086DE41BE6D54F00980950 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

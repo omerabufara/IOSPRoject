@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
+
 @end
 
 NSUInteger numDays;
@@ -23,7 +25,7 @@ NSInteger thisday;
 @implementation ViewController
 @synthesize monthly;
 @synthesize year;
-
+@synthesize eventsArray = _eventsArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,6 +34,33 @@ NSInteger thisday;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    self.eventsArray = [[NSArray alloc]initWithObjects:@"Event1",@"Event2",@"Event3", nil];
+    return [self.eventsArray count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:CellIdentifier];
+    }
+    
+    NSString *cellValue = [self.eventsArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = cellValue;
+    
+    return cell;
+}
 
 - (IBAction)nextAct:(id)sender {
     thisMonth++;
