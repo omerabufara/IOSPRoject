@@ -17,23 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyL-Ae-HmV">
-                                <rect key="frame" x="60" y="215" width="205" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyL-Ae-HmV">
+                                <rect key="frame" x="198" y="390" width="205" height="30"/>
                                 <state key="normal" title="Calendar"/>
                                 <connections>
                                     <segue destination="NiC-uC-W4U" kind="show" id="PGm-Sm-1Xc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIC-mz-flI">
-                                <rect key="frame" x="60" y="159" width="205" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIC-mz-flI">
+                                <rect key="frame" x="198" y="285" width="205" height="30"/>
                                 <state key="normal" title="Log In"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJK-uG-mEf">
-                                <rect key="frame" x="60" y="91" width="205" height="30"/>
-                                <state key="normal" title="SIgn Up"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJK-uG-mEf">
+                                <rect key="frame" x="198" y="180" width="205" height="30"/>
+                                <state key="normal" title="Sign Up"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zyL-Ae-HmV" firstAttribute="centerX" secondItem="dLI-ee-BT8" secondAttribute="centerX" id="7HE-sl-KTo"/>
+                            <constraint firstItem="yIC-mz-flI" firstAttribute="top" secondItem="VJK-uG-mEf" secondAttribute="bottom" constant="75" id="Bj8-fl-uSl"/>
+                            <constraint firstItem="zyL-Ae-HmV" firstAttribute="top" secondItem="yIC-mz-flI" secondAttribute="bottom" constant="75" id="CBt-3D-vxi"/>
+                            <constraint firstItem="VJK-uG-mEf" firstAttribute="centerX" secondItem="dLI-ee-BT8" secondAttribute="centerX" id="VAf-yI-fXQ"/>
+                            <constraint firstItem="yIC-mz-flI" firstAttribute="centerX" secondItem="dLI-ee-BT8" secondAttribute="centerX" id="h2z-5F-TxF"/>
+                            <constraint firstItem="yIC-mz-flI" firstAttribute="centerY" secondItem="dLI-ee-BT8" secondAttribute="centerY" id="hAU-zZ-9vx"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kT6-HB-s0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -64,7 +72,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="b4x-kb-clA" kind="show" id="JOc-qe-DIl"/>
+                                            <segue destination="b4x-kb-clA" kind="show" identifier="goToEventDetails" id="JOc-qe-DIl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
