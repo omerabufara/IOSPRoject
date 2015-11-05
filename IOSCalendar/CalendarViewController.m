@@ -31,7 +31,7 @@ NSInteger thisday;
     [super viewDidLoad];
     
     [self myCalView];
-    self.eventsArray = [[NSMutableArray alloc]init];
+    self.eventsArray = [[NSMutableArray alloc]initWithObjects:@"Event 1", @"Event 2", @"Event 3", @"Event 4", nil];
     //self.eventsArray = [[NSMutableArray alloc]initWithObjects:@"Event1",@"Event2",@"Event3", nil];
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -213,10 +213,9 @@ NSInteger thisday;
 -(IBAction)showEvents:(id)sender{
     //will have to adjust this to show different events by date when we get to it
     NSLog(@"Events shown");
-    [self.eventsArray addObject:@"Event1"];
-    [self.eventsArray addObject:@"Event2"];
-    [self.eventsArray addObject:@"Event3"];
-    [self.eventsArray addObject:@"Event4"];
+    [self.eventsArray removeAllObjects];
+    [self.eventsArray addObject:@"Event5"];
+    [self.eventsArray addObject:@"Event6"];
     NSLog(@"array count is : %lu", (unsigned long)[self.eventsArray count]);
     [self.calendarTableView reloadData];
 }
