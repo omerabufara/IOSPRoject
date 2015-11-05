@@ -144,7 +144,7 @@ NSInteger thisday;
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [[NSDateComponents alloc] init];
-    [components setDay:thisday];
+    [components setDay:1];
     [components setMonth:thisMonth];
     [components setYear:thisYear];
     NSDate * newDate = [calendar dateFromComponents:components];
@@ -161,7 +161,7 @@ NSInteger thisday;
     // NSLog(@"Day week %d",newWeekDay);
     
     //coordinates for displaying the buttons
-    int yVal=175;
+    int yVal=250;
     int yCount=1;
     
     
@@ -202,6 +202,7 @@ NSInteger thisday;
         if(currMonth == thisMonth && currYear == thisYear && currDay == [[addProject.currentTitle stringByReplacingOccurrencesOfString:@" " withString:@""] intValue]){
             addProject.backgroundColor = [UIColor blueColor];
             //how to click current date button so events show up???????????
+            //when you do this, may be able to but blueColor in click event showEvents because will turn whichever is clicked to blue
             [addProject sendActionsForControlEvents:UIControlEventTouchUpInside];
         }
         else{
