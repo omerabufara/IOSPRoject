@@ -131,7 +131,10 @@ NSInteger thisday;
 }
 
 -(void)moreDateInfo{
-    
+    NSDateComponents *currentDate = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
+    NSInteger currDay = [currentDate day];
+    NSInteger currMonth = [currentDate month];
+    NSInteger currYear = [currentDate year];
     
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
@@ -191,7 +194,7 @@ NSInteger thisday;
         [addProject setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         addProject.tag = startD;
         
-        if(true/*currDate.month = monthly && currDate.year = year && currDate.day = today*/){
+        if(currMonth == thisMonth && currYear == thisYear && currDay == [[addProject.currentTitle stringByReplacingOccurrencesOfString:@" " withString:@""] intValue]){
             addProject.backgroundColor = [UIColor blueColor];
         }
         else{
