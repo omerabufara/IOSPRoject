@@ -8,15 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-- (IBAction)nextAct:(id)sender;
-
-- (IBAction)prevAct:(id)sender;
-
-@property (weak, nonatomic) IBOutlet UILabel *monthly;
-@property (weak, nonatomic) IBOutlet UILabel *year;
-@property (strong, nonatomic) NSDate *defaulComp;
+@interface ViewController : UIViewController 
 
 
 @end
