@@ -161,7 +161,7 @@ NSInteger thisday;
     // NSLog(@"Day week %d",newWeekDay);
     
     //coordinates for displaying the buttons
-    int yVal=250;
+    int yVal=220;
     int yCount=1;
     
     
