@@ -15,6 +15,11 @@
 		1A086DC21BE6D54F00980950 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A086DC01BE6D54F00980950 /* LaunchScreen.storyboard */; };
 		1A086DCD1BE6D54F00980950 /* IOSCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A086DCC1BE6D54F00980950 /* IOSCalendarTests.m */; };
 		1A086DD81BE6D54F00980950 /* IOSCalendarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A086DD71BE6D54F00980950 /* IOSCalendarUITests.m */; };
+		1A0BEA5F1BED12080091A91A /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA5E1BED12080091A91A /* LogInViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1A0BEA621BED12560091A91A /* signUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA611BED12560091A91A /* signUpViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1A0BEA651BED53610091A91A /* ManageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA641BED53610091A91A /* ManageTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1A0BEA681BED537A0091A91A /* EditEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA671BED537A0091A91A /* EditEventViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1A0BEA6B1BED53E60091A91A /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -52,6 +57,16 @@
 		1A086DD31BE6D54F00980950 /* IOSCalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSCalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A086DD71BE6D54F00980950 /* IOSCalendarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOSCalendarUITests.m; sourceTree = "<group>"; };
 		1A086DD91BE6D54F00980950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A0BEA5D1BED12080091A91A /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		1A0BEA5E1BED12080091A91A /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		1A0BEA601BED12560091A91A /* signUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = signUpViewController.h; sourceTree = "<group>"; };
+		1A0BEA611BED12560091A91A /* signUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = signUpViewController.m; sourceTree = "<group>"; };
+		1A0BEA631BED53610091A91A /* ManageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageTableViewController.h; sourceTree = "<group>"; };
+		1A0BEA641BED53610091A91A /* ManageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageTableViewController.m; sourceTree = "<group>"; };
+		1A0BEA661BED537A0091A91A /* EditEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditEventViewController.h; sourceTree = "<group>"; };
+		1A0BEA671BED537A0091A91A /* EditEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditEventViewController.m; sourceTree = "<group>"; };
+		1A0BEA691BED53E60091A91A /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
+		1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +130,16 @@
 				1A086DB21BE6D54F00980950 /* Supporting Files */,
 				5B98BC081BE901DB004055C0 /* CalendarViewController.h */,
 				5B98BC091BE901DB004055C0 /* CalendarViewController.m */,
+				1A0BEA5D1BED12080091A91A /* LogInViewController.h */,
+				1A0BEA5E1BED12080091A91A /* LogInViewController.m */,
+				1A0BEA601BED12560091A91A /* signUpViewController.h */,
+				1A0BEA611BED12560091A91A /* signUpViewController.m */,
+				1A0BEA631BED53610091A91A /* ManageTableViewController.h */,
+				1A0BEA641BED53610091A91A /* ManageTableViewController.m */,
+				1A0BEA661BED537A0091A91A /* EditEventViewController.h */,
+				1A0BEA671BED537A0091A91A /* EditEventViewController.m */,
+				1A0BEA691BED53E60091A91A /* AddEventViewController.h */,
+				1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */,
 			);
 			path = IOSCalendar;
 			sourceTree = "<group>";
@@ -275,10 +300,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0BEA621BED12560091A91A /* signUpViewController.m in Sources */,
 				5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */,
+				1A0BEA651BED53610091A91A /* ManageTableViewController.m in Sources */,
+				1A0BEA681BED537A0091A91A /* EditEventViewController.m in Sources */,
 				1A086DBA1BE6D54F00980950 /* ViewController.m in Sources */,
+				1A0BEA5F1BED12080091A91A /* LogInViewController.m in Sources */,
 				1A086DB71BE6D54F00980950 /* AppDelegate.m in Sources */,
 				1A086DB41BE6D54F00980950 /* main.m in Sources */,
+				1A0BEA6B1BED53E60091A91A /* AddEventViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
