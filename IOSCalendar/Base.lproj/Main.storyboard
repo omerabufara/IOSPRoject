@@ -418,6 +418,11 @@ EFNpZ24gVXA
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c1v-dA-P12">
+                                <rect key="frame" x="195" y="138" width="319" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HrK-ek-9p7">
                                 <rect key="frame" x="195" y="272" width="319" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -433,8 +438,8 @@ EFNpZ24gVXA
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jV-at-TEF">
-                                <rect key="frame" x="195" y="506" width="48" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jV-at-TEF">
+                                <rect key="frame" x="135" y="479" width="112" height="30"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancelAdd:" destination="uXq-2O-7iG" eventType="touchUpInside" id="y0h-NX-T1z"/>
@@ -446,24 +451,30 @@ EFNpZ24gVXA
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAN-VG-FVl">
-                                <rect key="frame" x="480" y="506" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAN-VG-FVl">
+                                <rect key="frame" x="399" y="479" width="120" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveAdd:" destination="uXq-2O-7iG" eventType="touchUpInside" id="yTG-u3-9Wa"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c1v-dA-P12">
-                                <rect key="frame" x="195" y="138" width="319" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="OUC-1w-nN7" firstAttribute="top" secondItem="1jV-at-TEF" secondAttribute="bottom" constant="91" id="994-41-uIT"/>
+                            <constraint firstItem="1jV-at-TEF" firstAttribute="leading" secondItem="UmI-FX-jYX" secondAttribute="leadingMargin" constant="115" id="Rsb-Zo-ITJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IAN-VG-FVl" secondAttribute="trailing" constant="61" id="bHC-V1-E0A"/>
+                            <constraint firstItem="OUC-1w-nN7" firstAttribute="top" secondItem="IAN-VG-FVl" secondAttribute="bottom" constant="91" id="cvt-07-NKN"/>
                             <constraint firstItem="flI-Sf-pvr" firstAttribute="leading" secondItem="UmI-FX-jYX" secondAttribute="leadingMargin" constant="63" id="hwR-6e-ftV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="eventDate" destination="c1v-dA-P12" id="wOk-w1-bGd"/>
+                        <outlet property="eventDescription" destination="x6N-el-DjY" id="QQe-16-iaF"/>
+                        <outlet property="eventLocation" destination="HrK-ek-9p7" id="wGj-LY-ZzM"/>
+                        <outlet property="eventName" destination="9ZJ-4N-Fqt" id="hSr-Ta-eQ2"/>
+                        <outlet property="eventTime" destination="tU3-Xv-ln2" id="Ipt-c1-Bz9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3b-Bf-8FC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

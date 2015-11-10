@@ -24,7 +24,7 @@
 -(id) initWithName:(NSString*)eName evDate:(NSString*)edate evtime:(NSString*)etime evloc:(NSString*)eloc
             evdescribe:(NSString*)ediscribe;
 
-+(instancetype)eventName:(NSString*)n evDate:(NSString*)d evtime:(NSString*)t evloc:(NSString*)l
++(instancetype)eventWithName:(NSString*)n evDate:(NSString*)d evtime:(NSString*)t evloc:(NSString*)l
               evdescribe:(NSString*)ds;
 
 @end

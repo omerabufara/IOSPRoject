@@ -32,7 +32,7 @@ static NSString * const EventDescriptionKey = @"EventDiscriptionKey";
 
 }
 
-+(instancetype)eventName:(NSString*)n evDate:(NSString*)d evtime:(NSString*)t evloc:(NSString*)l
++(instancetype)eventWithName:(NSString*)n evDate:(NSString*)d evtime:(NSString*)t evloc:(NSString*)l
               evdescribe:(NSString*)ds{
 
 
