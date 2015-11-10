@@ -12,11 +12,10 @@
 
 @interface CalendarViewController () <AddEventViewControllerDelegate>
 
-@property EventManager *eventsToDisplay;
-@property (nonatomic, strong) NSOperationQueue *backgroundQueue;
-@property (nonatomic, strong) id didEnterBackgroundObserver;
 
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
+@property EventManager *eventsToDisplay;
+
 
 @end
 
@@ -29,6 +28,7 @@ NSInteger thisday;
 
 
 @implementation CalendarViewController
+
 @synthesize monthly;
 @synthesize year;
 @synthesize eventsArray = _eventsArray;
@@ -74,52 +74,29 @@ NSInteger thisday;
     return cell;
 }
 
-#pragma mark - Private Members
-//need these if this is telling manager what to do
--(void) save{
-    //this is a block
-    [self.backgroundQueue addOperationWithBlock: ^{
-        [self.eventsToDisplay saveModelToFile];
-    }];
-}
--(void) loadSampleContent {
-    [self.backgroundQueue addOperationWithBlock:^{
-        if(self.eventsToDisplay){
-            //in the background go tell main queue to do stuff
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [self.eventsToDisplay loadModelFromFile];
-                //telling the display to update
-                [self.calendarTableView reloadData];
-            }];
-        }
-    }];
-}
-
-#pragma mark - DetailViewControllerDelegate Methods
--(void)detailControllerSaved:(AddEventViewController *)controller{
+- (void)detailControllerSaved:(AddEventViewController *)controller {
     
-    NSIndexPath *indexPath = [self.calendarTableView indexPathForSelectedRow];
-    if (!indexPath) {
-        [self.eventsToDisplay insertEvent:controller.eventDetail atIndex:nil];
-        [self.navigationController popViewControllerAnimated:YES];
+    NSIndexPath *indexpath =[self.calendarTableView indexPathForSelectedRow];
+    
+    if(!indexpath){
         
-        // it's a modal view
-    } else {
-        // it's a navigation view
-        [self.eventsToDisplay replaceEvent:controller.eventDetail atIndex:indexPath.row];
+        [self.eventsToDisplay insertEvent:controller.eventDetail atIndex:nil];
+        
         [self.navigationController popViewControllerAnimated:YES];
     }
-    //good place to save
-    //need if telling manager what to do
-    [self save];
-    [self.calendarTableView reloadData];
+    
+    else if(indexpath)  {
+        
+        [self.eventsToDisplay replaceEvent:controller.eventDetail atIndex:indexpath.row];
+        [self.navigationController popViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    
+       [self.calendarTableView reloadData];
 }
 
--(void) reload{
-    [self.calendarTableView reloadData];
-}
-
--(void)detailControllerCanceled:(AddEventViewController *)controller{
+- (void)detailControllerCanceled:(AddEventViewController *)controller {
+    
     if ([self.presentedViewController isEqual:controller]) {
         
         // it's a modal view
@@ -132,6 +109,8 @@ NSInteger thisday;
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
+
+
 
 - (IBAction)nextAct:(id)sender {
     thisMonth++;

@@ -74,6 +74,7 @@
 - (IBAction)saveAdd:(id)sender {
     
     self.eventDetail = [Event eventWithName:self.eventName.text evDate:self.eventDate.text evtime:self.eventTime.text evloc:self.eventLocation.text evdescribe:self.eventDescription.text];
+    
      [self.delegate detailControllerSaved:self];
     
 }
