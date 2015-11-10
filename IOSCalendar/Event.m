@@ -7,7 +7,11 @@
 //
 
 #import "Event.h"
-
+static NSString * const EventNameKey = @"EventNameKey";
+static NSString * const EventDateKey = @"EventDateKey";
+static NSString * const EventTimeKey = @"EventTimeKey";
+static NSString * const EventLocationKey = @"EventLocationKey";
+static NSString * const EventDescriptionKey = @"EventDiscriptionKey";
 @implementation Event
 
 
@@ -39,13 +43,15 @@
 
 #pragma mark - NSCoding Methods
 
-/*-(id)initWithCoder:(NSCoder *)aDecoder{
+-(id)initWithCoder:(NSCoder *)aDecoder{
     self = [super init];
     
     if(self){
-        _movieTitle = [aDecoder decodeObjectForKey:MovieTitleKey];
-        _directorName = [aDecoder decodeObjectForKey:MovieDirectorKey];
-        _releaseDate = [aDecoder decodeObjectForKey:MovieReleaseDate];
+        _eventName= [aDecoder decodeObjectForKey:EventNameKey];
+        _eventDate= [aDecoder decodeObjectForKey:EventDateKey];
+        _eventTime = [aDecoder decodeObjectForKey:EventTimeKey];
+        _eventLocation= [aDecoder decodeObjectForKey:EventLocationKey];
+        _eventDescription = [aDecoder decodeObjectForKey:EventDescriptionKey];
     }
     return self;
 }
@@ -53,10 +59,12 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     
-    [aCoder encodeObject:self.movieTitle forKey:MovieTitleKey];
-    [aCoder encodeObject:self.directorName forKey:MovieDirectorKey];
-    [aCoder encodeObject:self.releaseDate forKey:MovieReleaseDate];
+    [aCoder encodeObject:self.eventName forKey:EventNameKey];
+    [aCoder encodeObject:self.eventDate forKey:EventDateKey];
+    [aCoder encodeObject:self.eventTime forKey:EventTimeKey];
+    [aCoder encodeObject:self.eventLocation forKey:EventLocationKey];
+    [aCoder encodeObject:self.eventDescription forKey:EventDescriptionKey];
     
-}*/
+}
 
 @end
