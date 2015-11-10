@@ -186,9 +186,6 @@ EFNpZ24gVXA
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbg-Jj-eOr">
                                 <rect key="frame" x="273" y="81" width="55" height="30"/>
                                 <state key="normal" title="Manage"/>
-                                <connections>
-                                    <segue destination="4Al-3y-dIG" kind="show" id="nf7-MZ-s5n"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -324,35 +321,6 @@ EFNpZ24gVXA
             </objects>
             <point key="canvasLocation" x="1866" y="227"/>
         </scene>
-        <!--Manage-->
-        <scene sceneID="U6X-yJ-0Kc">
-            <objects>
-                <tableViewController id="4Al-3y-dIG" customClass="ManageTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZHB-N9-uLW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mjJ-bT-JBz">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mjJ-bT-JBz" id="z3K-6A-sI7">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="4Al-3y-dIG" id="lza-Hr-iZg"/>
-                            <outlet property="delegate" destination="4Al-3y-dIG" id="uBV-RW-cQG"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Manage" id="iRZ-hO-8Tm"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Nz-9b-58H" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1856" y="-530"/>
-        </scene>
         <!--Edit Event View Controller-->
         <scene sceneID="rRb-l9-ueW">
             <objects>
@@ -369,7 +337,7 @@ EFNpZ24gVXA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74U-Cl-sd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2524" y="-530"/>
+            <point key="canvasLocation" x="1406" y="-524"/>
         </scene>
         <!--Add Event View Controller-->
         <scene sceneID="1c5-d2-jz8">
