@@ -38,13 +38,6 @@
                                     <segue destination="dRb-TR-IKf" kind="show" id="UPd-GT-Igu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ak5-57-9f9">
-                                <rect key="frame" x="260" y="135" width="70" height="30"/>
-                                <state key="normal" title="Add Event"/>
-                                <connections>
-                                    <segue destination="uXq-2O-7iG" kind="show" id="MXF-nJ-Gh4"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -100,14 +93,14 @@ EFNpZ24gVXA
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sy7-QE-mLX">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sy7-QE-mLX">
                                 <rect key="frame" x="25" y="186" width="54" height="30"/>
                                 <state key="normal" title="Prev"/>
                                 <connections>
                                     <action selector="prevAct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9WG-jf-D8P"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0e-st-HH5">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0e-st-HH5">
                                 <rect key="frame" x="233" y="186" width="55" height="30"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
@@ -187,6 +180,13 @@ EFNpZ24gVXA
                                 <rect key="frame" x="273" y="81" width="55" height="30"/>
                                 <state key="normal" title="Manage"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HL0-km-206">
+                                <rect key="frame" x="120" y="186" width="70" height="30"/>
+                                <state key="normal" title="Add Event"/>
+                                <connections>
+                                    <segue destination="uXq-2O-7iG" kind="show" id="PV4-IU-WML"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -194,10 +194,12 @@ EFNpZ24gVXA
                             <constraint firstItem="dbd-X3-13i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1eK-rz-2aO"/>
                             <constraint firstItem="dbd-X3-13i" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="2A9-ra-AHd"/>
                             <constraint firstItem="59n-Tk-BOZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="412-tQ-9YU"/>
+                            <constraint firstItem="HL0-km-206" firstAttribute="leading" secondItem="sy7-QE-mLX" secondAttribute="trailing" constant="41" id="6Of-d1-kd9"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dbd-X3-13i" secondAttribute="bottom" constant="15" id="D4k-L5-J4N"/>
                             <constraint firstAttribute="leadingMargin" secondItem="dbd-X3-13i" secondAttribute="leading" id="L7I-zT-F1R"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9EG-cc-kRd" secondAttribute="trailing" constant="45" id="RQ1-Wk-EVG"/>
                             <constraint firstItem="yN2-z3-qEp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="bjn-6Z-OZv"/>
+                            <constraint firstItem="n0e-st-HH5" firstAttribute="leading" secondItem="HL0-km-206" secondAttribute="trailing" constant="43" id="csb-eT-H5A"/>
                             <constraint firstItem="Dbg-Jj-eOr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e3o-41-LR2"/>
                             <constraint firstItem="9EG-cc-kRd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="g7p-eg-SVA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dbd-X3-13i" secondAttribute="trailing" id="h3U-hs-GJQ"/>
@@ -337,12 +339,12 @@ EFNpZ24gVXA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74U-Cl-sd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1406" y="-524"/>
+            <point key="canvasLocation" x="2004" y="-586"/>
         </scene>
         <!--Add Event View Controller-->
         <scene sceneID="1c5-d2-jz8">
             <objects>
-                <viewController id="uXq-2O-7iG" customClass="AddEventViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="add" id="uXq-2O-7iG" customClass="AddEventViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q94-7K-6Fr"/>
                         <viewControllerLayoutGuide type="bottom" id="OUC-1w-nN7"/>
@@ -446,7 +448,7 @@ EFNpZ24gVXA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3b-Bf-8FC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-396" y="-502"/>
+            <point key="canvasLocation" x="1156" y="-450"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="klE-Ru-c01">
@@ -598,7 +600,7 @@ EFNpZ24gVXA
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="QuL-s3-xfI"/>
-        <segue reference="UPd-GT-Igu"/>
+        <segue reference="YaY-Me-SMo"/>
+        <segue reference="LUo-pO-A63"/>
     </inferredMetricsTieBreakers>
 </document>

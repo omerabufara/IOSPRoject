@@ -48,6 +48,19 @@ NSInteger thisday;
     // Dispose of any resources that can be recreated.
 }
 
+- (void)insertNewObject:(id)sender {
+    if (!self.eventsToDisplay ) {
+        self.eventsToDisplay = [EventManager initEventManager];
+    }
+    AddEventViewController *foundDVC = (AddEventViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"add"];
+    
+    if ([foundDVC respondsToSelector:@selector(setDelegate:)]) {
+        [foundDVC setDelegate:self];
+    }
+    [self.navigationController pushViewController:foundDVC animated:YES];
+    
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -86,11 +99,11 @@ NSInteger thisday;
     }
     
     else if(indexpath)  {
-        
+    
         [self.eventsToDisplay replaceEvent:controller.eventDetail atIndex:indexpath.row];
         [self.navigationController popViewControllerAnimated:YES];
         [self dismissViewControllerAnimated:YES completion:nil];
-    }
+   }
     
        [self.calendarTableView reloadData];
 }
