@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CalendarViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+@class AddEventViewController;
 
+@interface CalendarViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+@property (strong, nonatomic) AddEventViewController *addEventViewController;
 - (IBAction)nextAct:(id)sender;
 
 - (IBAction)prevAct:(id)sender;

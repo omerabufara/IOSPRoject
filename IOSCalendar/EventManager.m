@@ -31,7 +31,7 @@ static NSString *eventsFileName = @"Events.data";
     return self;
 }
 
-+(id)initMovieManager
++(id)initEventManager
 {
     EventManager *eventManager = [[EventManager alloc]init];
     //need to init background queue

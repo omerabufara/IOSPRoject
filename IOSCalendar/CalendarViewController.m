@@ -7,8 +7,14 @@
 //
 
 #import "CalendarViewController.h"
+#import "AddEventViewController.h"
+#import "EventManager.h"
 
-@interface CalendarViewController ()
+@interface CalendarViewController () <AddEventViewControllerDelegate>
+
+@property EventManager *eventsToDisplay;
+@property (nonatomic, strong) NSOperationQueue *backgroundQueue;
+@property (nonatomic, strong) id didEnterBackgroundObserver;
 
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
 
@@ -66,6 +72,65 @@ NSInteger thisday;
     cell.textLabel.text = cellValue;
     
     return cell;
+}
+
+#pragma mark - Private Members
+//need these if this is telling manager what to do
+-(void) save{
+    //this is a block
+    [self.backgroundQueue addOperationWithBlock: ^{
+        [self.eventsToDisplay saveModelToFile];
+    }];
+}
+-(void) loadSampleContent {
+    [self.backgroundQueue addOperationWithBlock:^{
+        if(self.eventsToDisplay){
+            //in the background go tell main queue to do stuff
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.eventsToDisplay loadModelFromFile];
+                //telling the display to update
+                [self.calendarTableView reloadData];
+            }];
+        }
+    }];
+}
+
+#pragma mark - DetailViewControllerDelegate Methods
+-(void)detailControllerSaved:(AddEventViewController *)controller{
+    
+    NSIndexPath *indexPath = [self.calendarTableView indexPathForSelectedRow];
+    if (!indexPath) {
+        [self.eventsToDisplay insertEvent:controller.eventDetail atIndex:nil];
+        [self.navigationController popViewControllerAnimated:YES];
+        
+        // it's a modal view
+    } else {
+        // it's a navigation view
+        [self.eventsToDisplay replaceEvent:controller.eventDetail atIndex:indexPath.row];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    //good place to save
+    //need if telling manager what to do
+    [self save];
+    [self.calendarTableView reloadData];
+}
+
+-(void) reload{
+    [self.calendarTableView reloadData];
+}
+
+-(void)detailControllerCanceled:(AddEventViewController *)controller{
+    if ([self.presentedViewController isEqual:controller]) {
+        
+        // it's a modal view
+        [self dismissViewControllerAnimated:YES
+                                 completion:nil];
+        
+    } else {
+        
+        // it's a navigation view
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (IBAction)nextAct:(id)sender {

@@ -14,7 +14,7 @@
 +(id)initEventManager;
 -(id) init;
 
--(Event*)getMovieAtIndex: (NSInteger) index;
+-(Event*)getEventAtIndex: (NSInteger) index;
 -(void)removeEventAtIndex: (NSUInteger) index;
 -(void)replaceEvent: (Event *)event atIndex: (NSUInteger) index;
 -(void)insertEvent: (Event *)event atIndex: (NSUInteger*) index;
