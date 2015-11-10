@@ -10,13 +10,53 @@
 
 @interface AddEventViewController ()
 
+
+@property (weak, nonatomic) IBOutlet UITextField *eventName;
+@property (weak, nonatomic) IBOutlet UITextField *eventDate;
+@property (weak, nonatomic) IBOutlet UITextField *eventTime;
+@property (weak, nonatomic) IBOutlet UITextField *eventLocation;
+@property (weak, nonatomic) IBOutlet UITextField *eventDescription;
+
+
 @end
 
 @implementation AddEventViewController
 
+
+- (void)setEventDetail:(id)newDetailItem {
+    if (_eventDetail != newDetailItem) {
+        _eventDetail = newDetailItem;
+        
+        // Update the view.
+        [self configureView];
+    }
+}
+
+
+- (void)configureView {
+    // Update the user interface for the detail item.
+    if (self.eventDetail) {
+        
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self configureView];
+
+}
+
+
+-(void)viewWillAppear:(BOOL)animated {
+    if(self.eventDetail) {
+        self.eventName.text = self.eventDetail.eventName;
+        self.eventDate.text = self.eventDetail.eventDate;
+        self.eventTime.text = self.eventDetail.eventTime;
+        self.eventLocation.text = self.eventDetail.eventLocation;
+        self.eventDescription.text = self.eventDetail.eventDescription;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

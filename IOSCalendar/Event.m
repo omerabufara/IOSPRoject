@@ -15,7 +15,7 @@ static NSString * const EventDescriptionKey = @"EventDiscriptionKey";
 @implementation Event
 
 
--(id) initWithName:(NSString*)eName evDate:(NSDate*)edate evtime:(NSString*)etime evloc:(NSString*)eloc
+-(id) initWithName:(NSString*)eName evDate:(NSString*)edate evtime:(NSString*)etime evloc:(NSString*)eloc
         evdescribe:(NSString*)ediscribe{
 
     self = [super init];
@@ -32,7 +32,7 @@ static NSString * const EventDescriptionKey = @"EventDiscriptionKey";
 
 }
 
-+(instancetype)eventName:(NSString*)n evDate:(NSDate*)d evtime:(NSString*)t evloc:(NSString*)l
++(instancetype)eventName:(NSString*)n evDate:(NSString*)d evtime:(NSString*)t evloc:(NSString*)l
               evdescribe:(NSString*)ds{
 
 
