@@ -37,4 +37,26 @@
 
 }
 
+#pragma mark - NSCoding Methods
+
+/*-(id)initWithCoder:(NSCoder *)aDecoder{
+    self = [super init];
+    
+    if(self){
+        _movieTitle = [aDecoder decodeObjectForKey:MovieTitleKey];
+        _directorName = [aDecoder decodeObjectForKey:MovieDirectorKey];
+        _releaseDate = [aDecoder decodeObjectForKey:MovieReleaseDate];
+    }
+    return self;
+}
+
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    
+    [aCoder encodeObject:self.movieTitle forKey:MovieTitleKey];
+    [aCoder encodeObject:self.directorName forKey:MovieDirectorKey];
+    [aCoder encodeObject:self.releaseDate forKey:MovieReleaseDate];
+    
+}*/
+
 @end
