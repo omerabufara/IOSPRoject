@@ -12,7 +12,7 @@
 
 @property (weak,nonatomic) NSString *eventName;
 
-@property (weak,nonatomic) NSDate *eventDate;
+@property (weak,nonatomic) NSString *eventDate;
 
 @property (weak,nonatomic) NSString *eventTime;
 
@@ -21,10 +21,10 @@
 @property (weak,nonatomic) NSString *eventDescription;
 
 
--(id) initWithName:(NSString*)eName evDate:(NSDate*)edate evtime:(NSString*)etime evloc:(NSString*)eloc
+-(id) initWithName:(NSString*)eName evDate:(NSString*)edate evtime:(NSString*)etime evloc:(NSString*)eloc
             evdescribe:(NSString*)ediscribe;
 
-+(instancetype)eventName:(NSString*)n evDate:(NSDate*)d evtime:(NSString*)t evloc:(NSString*)l
++(instancetype)eventWithName:(NSString*)n evDate:(NSString*)d evtime:(NSString*)t evloc:(NSString*)l
               evdescribe:(NSString*)ds;
 
 @end
