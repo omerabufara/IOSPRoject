@@ -160,6 +160,12 @@ NSInteger thisday;
     
     // NSLog(@"Day week %d",newWeekDay);
     
+    
+//    CGPoint midPoint;
+//    midPoint.x = self.view.bounds.origin.x + self.view.bounds.size.width /2;
+    
+    //self.bounds.size.width /2;
+    
     //coordinates for displaying the buttons
     int yVal=220;
     int yCount=1;
@@ -179,7 +185,7 @@ NSInteger thisday;
         UIButton *addProject = [UIButton buttonWithType: UIButtonTypeRoundedRect];
         addProject.tag = startD;
         
-        int xCoord=(newWeekDay*40)+15;
+        int xCoord =(newWeekDay*40) + 15; //(self.view.bounds.origin.x + self.view.bounds.size.width/2);
         int yCoord=(yCount*30)+yVal;
         
         newWeekDay++;
