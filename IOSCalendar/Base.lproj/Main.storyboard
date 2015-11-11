@@ -411,9 +411,6 @@ EFNpZ24gVXA
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jV-at-TEF">
                                 <rect key="frame" x="135" y="479" width="112" height="30"/>
                                 <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelAdd:" destination="uXq-2O-7iG" eventType="touchUpInside" id="y0h-NX-T1z"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAt-8z-D0r">
                                 <rect key="frame" x="261" y="28" width="78" height="21"/>
@@ -424,9 +421,6 @@ EFNpZ24gVXA
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAN-VG-FVl">
                                 <rect key="frame" x="399" y="479" width="120" height="30"/>
                                 <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveAdd:" destination="uXq-2O-7iG" eventType="touchUpInside" id="yTG-u3-9Wa"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -438,13 +432,6 @@ EFNpZ24gVXA
                             <constraint firstItem="flI-Sf-pvr" firstAttribute="leading" secondItem="UmI-FX-jYX" secondAttribute="leadingMargin" constant="63" id="hwR-6e-ftV"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="eventDate" destination="c1v-dA-P12" id="wOk-w1-bGd"/>
-                        <outlet property="eventDescription" destination="x6N-el-DjY" id="QQe-16-iaF"/>
-                        <outlet property="eventLocation" destination="HrK-ek-9p7" id="wGj-LY-ZzM"/>
-                        <outlet property="eventName" destination="9ZJ-4N-Fqt" id="hSr-Ta-eQ2"/>
-                        <outlet property="eventTime" destination="tU3-Xv-ln2" id="Ipt-c1-Bz9"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3b-Bf-8FC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
