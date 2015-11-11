@@ -29,7 +29,7 @@
     self.txtEventDescription.delegate = self;
     self.txtEventVisible.delegate = self;
     
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql.SQLite"];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"iOSPSSH.sql.SQLite"];
 }
 
 - (void)didReceiveMemoryWarning {

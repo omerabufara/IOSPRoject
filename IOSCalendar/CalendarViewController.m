@@ -42,7 +42,7 @@ NSInteger thisday;
     [self myCalView];
     self.eventsArray = [[NSMutableArray alloc]init];
     
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql.SQLite"];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"iOSPSSH.sql.SQLite"];
     
     [self loadData];
     
@@ -90,9 +90,9 @@ NSInteger thisday;
     NSInteger indexOfEventDescription = [self.dbManager.arrColumnNames indexOfObject:@"event_description"];
     
     // Set the loaded data to the appropriate cell labels.
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:indexOfEventName-1]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:indexOfEventName]];
     
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Time: %@", [[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:indexOfEventTime-1]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Time: %@", [[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:indexOfEventTime]];
     
     return cell;
 }
