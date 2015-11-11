@@ -44,7 +44,7 @@
 
 - (IBAction)saveInfo:(id)sender{
     // Prepare the query string.
-    NSString *query = [NSString stringWithFormat:@"insert into eventsTable values(%d,'%@', '%@', '%@', '%@', '%@', '%@')", 1, self.txtEventName.text, self.txtEventDate.text, self.txtEventTime.text, self.txtEventLocation.text, self.txtEventDescription.text, self.txtEventVisible.text];
+    NSString *query = [NSString stringWithFormat:@"insert into eventsTable values(null,'%@', '%@', '%@', '%@', '%@', '%@')", self.txtEventName.text, self.txtEventDate.text, self.txtEventTime.text, self.txtEventLocation.text, self.txtEventDescription.text, self.txtEventVisible.text];
     
     // Execute the query.
     [self.dbManager executeQuery:query];
