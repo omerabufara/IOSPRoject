@@ -182,9 +182,6 @@ EFNpZ24gVXA
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Pnl-Le-BPU" kind="show" identifier="editEventSegue" id="v8X-QV-oWA"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -200,7 +197,7 @@ EFNpZ24gVXA
                                 <rect key="frame" x="120" y="186" width="70" height="30"/>
                                 <state key="normal" title="Add Event"/>
                                 <connections>
-                                    <segue destination="uXq-2O-7iG" kind="show" id="PV4-IU-WML"/>
+                                    <segue destination="uXq-2O-7iG" kind="show" identifier="addEventSegue" id="PV4-IU-WML"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -424,27 +421,15 @@ EFNpZ24gVXA
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Edit Event" id="fUi-Oe-jzp">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="x0q-ht-dWG">
-                            <connections>
-                                <action selector="saveInfo:" destination="Pnl-Le-BPU" id="bf5-3O-Y6G"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="x0q-ht-dWG"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="txtEventDate" destination="BD8-51-hMl" id="PJP-tb-qVD"/>
-                        <outlet property="txtEventDescription" destination="rUx-PK-6gt" id="lby-Wb-laU"/>
-                        <outlet property="txtEventLocation" destination="2JS-DD-Oga" id="IBV-Kc-nhV"/>
-                        <outlet property="txtEventName" destination="LNu-12-nDJ" id="Rkm-GU-5xo"/>
-                        <outlet property="txtEventTime" destination="HTD-5x-q2s" id="D3Y-Q5-Mw7"/>
-                        <outlet property="txtEventVisible" destination="mkR-uN-K7d" id="Fqh-Ad-8h6"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74U-Cl-sd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1874" y="-462"/>
         </scene>
-        <!--Add Event View Controller-->
+        <!--Add Event-->
         <scene sceneID="1c5-d2-jz8">
             <objects>
                 <viewController storyboardIdentifier="add" id="uXq-2O-7iG" customClass="AddEventViewController" sceneMemberID="viewController">
@@ -535,6 +520,9 @@ EFNpZ24gVXA
                             <constraint firstItem="flI-Sf-pvr" firstAttribute="leading" secondItem="UmI-FX-jYX" secondAttribute="leadingMargin" constant="63" id="hwR-6e-ftV"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Event" id="fR5-dD-6z7">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="fo1-Tf-iN7"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3b-Bf-8FC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
