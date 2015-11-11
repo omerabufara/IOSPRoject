@@ -7,22 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Event.h"
-
-@protocol AddEventViewControllerDelegate;
 
 @interface AddEventViewController : UIViewController
-
-
-@property (strong, nonatomic) Event *eventDetail;
-@property (nonatomic, weak) id <AddEventViewControllerDelegate> delegate;
-
-@end
-
-
-@protocol AddEventViewControllerDelegate <NSObject>
-
-- (void)detailControllerSaved:(AddEventViewController *) controller;
-- (void)detailControllerCanceled:(AddEventViewController *) controller;
 
 @end

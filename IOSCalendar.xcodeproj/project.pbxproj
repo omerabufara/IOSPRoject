@@ -19,8 +19,6 @@
 		1A0BEA621BED12560091A91A /* signUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA611BED12560091A91A /* signUpViewController.m */; settings = {ASSET_TAGS = (); }; };
 		1A0BEA681BED537A0091A91A /* EditEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA671BED537A0091A91A /* EditEventViewController.m */; settings = {ASSET_TAGS = (); }; };
 		1A0BEA6B1BED53E60091A91A /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */; settings = {ASSET_TAGS = (); }; };
-		1AE902411BF25BD20054596E /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE902401BF25BD20054596E /* Event.m */; settings = {ASSET_TAGS = (); }; };
-		5B26F1BD1BF2668C00F02D35 /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B26F1BC1BF2668C00F02D35 /* EventManager.m */; settings = {ASSET_TAGS = (); }; };
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -66,10 +64,6 @@
 		1A0BEA671BED537A0091A91A /* EditEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditEventViewController.m; sourceTree = "<group>"; };
 		1A0BEA691BED53E60091A91A /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
 		1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
-		1AE9023F1BF25BD20054596E /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		1AE902401BF25BD20054596E /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
-		5B26F1BB1BF2668C00F02D35 /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
-		5B26F1BC1BF2668C00F02D35 /* EventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventManager.m; sourceTree = "<group>"; };
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,10 +135,6 @@
 				1A0BEA671BED537A0091A91A /* EditEventViewController.m */,
 				1A0BEA691BED53E60091A91A /* AddEventViewController.h */,
 				1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */,
-				1AE9023F1BF25BD20054596E /* Event.h */,
-				1AE902401BF25BD20054596E /* Event.m */,
-				5B26F1BB1BF2668C00F02D35 /* EventManager.h */,
-				5B26F1BC1BF2668C00F02D35 /* EventManager.m */,
 			);
 			path = IOSCalendar;
 			sourceTree = "<group>";
@@ -307,11 +297,9 @@
 			files = (
 				1A0BEA621BED12560091A91A /* signUpViewController.m in Sources */,
 				5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */,
-				1AE902411BF25BD20054596E /* Event.m in Sources */,
 				1A0BEA681BED537A0091A91A /* EditEventViewController.m in Sources */,
 				1A086DBA1BE6D54F00980950 /* ViewController.m in Sources */,
 				1A0BEA5F1BED12080091A91A /* LogInViewController.m in Sources */,
-				5B26F1BD1BF2668C00F02D35 /* EventManager.m in Sources */,
 				1A086DB71BE6D54F00980950 /* AppDelegate.m in Sources */,
 				1A086DB41BE6D54F00980950 /* main.m in Sources */,
 				1A0BEA6B1BED53E60091A91A /* AddEventViewController.m in Sources */,

@@ -7,15 +7,10 @@
 //
 
 #import "CalendarViewController.h"
-#import "AddEventViewController.h"
-#import "EventManager.h"
 
-@interface CalendarViewController () <AddEventViewControllerDelegate>
-
+@interface CalendarViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
-@property EventManager *eventsToDisplay;
-
 
 @end
 
@@ -48,18 +43,6 @@ NSInteger thisday;
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender {
-    if (!self.eventsToDisplay ) {
-        self.eventsToDisplay = [EventManager initEventManager];
-    }
-    AddEventViewController *foundDVC = (AddEventViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"add"];
-    
-    if ([foundDVC respondsToSelector:@selector(setDelegate:)]) {
-        [foundDVC setDelegate:self];
-    }
-    [self.navigationController pushViewController:foundDVC animated:YES];
-    
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -86,43 +69,6 @@ NSInteger thisday;
     
     return cell;
 }
-
-- (void)detailControllerSaved:(AddEventViewController *)controller {
-    
-    NSIndexPath *indexpath =[self.calendarTableView indexPathForSelectedRow];
-    
-    if(!indexpath){
-        
-        [self.eventsToDisplay insertEvent:controller.eventDetail atIndex:nil];
-        
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-    
-    else if(indexpath)  {
-    
-        [self.eventsToDisplay replaceEvent:controller.eventDetail atIndex:indexpath.row];
-        [self.navigationController popViewControllerAnimated:YES];
-        [self dismissViewControllerAnimated:YES completion:nil];
-   }
-    
-       [self.calendarTableView reloadData];
-}
-
-- (void)detailControllerCanceled:(AddEventViewController *)controller {
-    
-    if ([self.presentedViewController isEqual:controller]) {
-        
-        // it's a modal view
-        [self dismissViewControllerAnimated:YES
-                                 completion:nil];
-        
-    } else {
-        
-        // it's a navigation view
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-}
-
 
 
 - (IBAction)nextAct:(id)sender {

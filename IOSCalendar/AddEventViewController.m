@@ -12,27 +12,9 @@
 
 @interface AddEventViewController ()
 
-
-@property (weak, nonatomic) IBOutlet UITextField *eventName;
-@property (weak, nonatomic) IBOutlet UITextField *eventDate;
-@property (weak, nonatomic) IBOutlet UITextField *eventTime;
-@property (weak, nonatomic) IBOutlet UITextField *eventLocation;
-@property (weak, nonatomic) IBOutlet UITextField *eventDescription;
-
-
 @end
 
 @implementation AddEventViewController
-
-
-- (void)setEventDetail:(id)newDetailItem {
-    if (_eventDetail != newDetailItem) {
-        _eventDetail = newDetailItem;
-        
-        // Update the view.
-        [self configureView];
-    }
-}
 
 
 - (void)configureView {
@@ -50,34 +32,11 @@
 
 }
 
-
--(void)viewWillAppear:(BOOL)animated {
-    if(self.eventDetail) {
-        self.eventName.text = self.eventDetail.eventName;
-        self.eventDate.text = self.eventDetail.eventDate;
-        self.eventTime.text = self.eventDetail.eventTime;
-        self.eventLocation.text = self.eventDetail.eventLocation;
-        self.eventDescription.text = self.eventDetail.eventDescription;
-    }
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)cancelAdd:(id)sender {
-    
-    [self.navigationController popViewControllerAnimated:YES];
-    
-}
 
-- (IBAction)saveAdd:(id)sender {
-    
-    self.eventDetail = [Event eventWithName:self.eventName.text evDate:self.eventDate.text evtime:self.eventTime.text evloc:self.eventLocation.text evdescribe:self.eventDescription.text];
-    
-     [self.delegate detailControllerSaved:self];
-    
-}
 
 /*
 #pragma mark - Navigation
