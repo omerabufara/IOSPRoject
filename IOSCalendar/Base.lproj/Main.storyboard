@@ -510,6 +510,11 @@ EFNpZ24gVXA
                                 <rect key="frame" x="399" y="479" width="120" height="30"/>
                                 <state key="normal" title="Save"/>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WZ8-lb-BhG">
+                                <rect key="frame" x="195" y="416" width="319" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -521,8 +526,20 @@ EFNpZ24gVXA
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Event" id="fR5-dD-6z7">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="fo1-Tf-iN7"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="fo1-Tf-iN7">
+                            <connections>
+                                <action selector="saveInfo:" destination="uXq-2O-7iG" id="o04-8s-xDg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="txtEventDate" destination="c1v-dA-P12" id="RlW-aY-CNt"/>
+                        <outlet property="txtEventDescription" destination="x6N-el-DjY" id="h11-9I-DiY"/>
+                        <outlet property="txtEventLocation" destination="HrK-ek-9p7" id="lWL-y5-7Zx"/>
+                        <outlet property="txtEventName" destination="9ZJ-4N-Fqt" id="ppP-pk-uWv"/>
+                        <outlet property="txtEventTime" destination="tU3-Xv-ln2" id="yJI-l9-jYP"/>
+                        <outlet property="txtEventVisible" destination="WZ8-lb-BhG" id="NKf-Pb-bN1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3b-Bf-8FC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
