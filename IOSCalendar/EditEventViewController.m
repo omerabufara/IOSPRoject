@@ -7,8 +7,12 @@
 //
 
 #import "EditEventViewController.h"
+#import "DBManager.h"
+
 
 @interface EditEventViewController ()
+
+@property (nonatomic, strong) DBManager *dbManager;
 
 @end
 
@@ -17,11 +21,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.tintColor = self.navigationItem.rightBarButtonItem.tintColor;
+    self.txtEventName.delegate = self;
+    self.txtEventDate.delegate = self;
+    self.txtEventTime.delegate = self;
+    self.txtEventLocation.delegate = self;
+    self.txtEventDescription.delegate = self;
+    self.txtEventVisible.delegate = self;
+    
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql.SQLite"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (IBAction)saveInfo:(id)sender{
+    // Prepare the query string.
+    NSString *query = [NSString stringWithFormat:@"insert into eventsTable values(%d,'%@', '%@', '%@', '%@', '%@', '%@')", 1, self.txtEventName.text, self.txtEventDate.text, self.txtEventTime.text, self.txtEventLocation.text, self.txtEventDescription.text, self.txtEventVisible.text];
+    
+    // Execute the query.
+    [self.dbManager executeQuery:query];
+    
+    // If the query was successfully executed then pop the view controller.
+    if (self.dbManager.affectedRows != 0) {
+        NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+        
+        // Pop the view controller.
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else{
+        NSLog(@"Could not execute the query.");
+    }
 }
 
 /*

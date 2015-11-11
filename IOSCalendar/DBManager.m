@@ -126,7 +126,7 @@
                 
                 // Execute the query.
                 BOOL executeQueryResults = sqlite3_step(compiledStatement);
-                if (executeQueryResults == SQLITE_DONE) {
+                if (executeQueryResults == YES) { //SQLITE_DONE
                     // Keep the affected rows.
                     self.affectedRows = sqlite3_changes(sqlite3Database);
                     

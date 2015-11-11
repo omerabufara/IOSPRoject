@@ -8,8 +8,6 @@
 
 #import "AddEventViewController.h"
 
-@protocol DetailViewControllerDelegate;
-
 @interface AddEventViewController ()
 
 @end
