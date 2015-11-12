@@ -32,6 +32,6 @@
 
 @protocol AddProtocols <NSObject>
 
-- (void)loadData;
+- (void) reloadCalendarTable;
 
 @end

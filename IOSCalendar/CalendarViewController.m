@@ -285,5 +285,9 @@ NSInteger thisday;
     [self.calendarTableView reloadData];
 }
 
+- (void) reloadCalendarTable{
+    [self loadData];
+}
+
 
 @end

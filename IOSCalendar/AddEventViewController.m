@@ -55,7 +55,7 @@
         NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
         
         // Pop the view controller.
-        [self.delegate loadData];
+        [self.delegate reloadCalendarTable];
         [self.navigationController popViewControllerAnimated:YES];
         
     }
