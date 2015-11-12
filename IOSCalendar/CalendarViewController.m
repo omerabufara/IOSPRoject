@@ -10,7 +10,7 @@
 #import "AddEventViewController.h"
 #import "DBManager.h"
 
-@interface CalendarViewController () //<AddProtocols>
+@interface CalendarViewController () <EditInfoViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
 
@@ -281,7 +281,7 @@ NSInteger thisday;
 
 -(void)loadData{
     
-    NSString *query = @"select * from eventsTable";
+    NSString *query = @"select * from eventTable";
     
     // Get the results.
     if (self.eventsArray != nil) {

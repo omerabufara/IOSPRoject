@@ -26,8 +26,6 @@
 
 @property (nonatomic, strong) DBManager *dbManager;
 
-@property (nonatomic, strong) NSArray *arrEventsInfo;
-
 
 -(void)loadData;
 
