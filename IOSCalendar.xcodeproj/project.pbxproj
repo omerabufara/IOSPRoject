@@ -23,6 +23,7 @@
 		1AE902461BF3DD960054596E /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE902451BF3DD960054596E /* DBManager.m */; settings = {ASSET_TAGS = (); }; };
 		1AE902501BF404650054596E /* iOSPSSH.sql.SQLite in Resources */ = {isa = PBXBuildFile; fileRef = 1AE9024F1BF404650054596E /* iOSPSSH.sql.SQLite */; settings = {ASSET_TAGS = (); }; };
 		1AE902A31BF51A500054596E /* IOSPSSH.sql in Resources */ = {isa = PBXBuildFile; fileRef = 1AE902A21BF51A500054596E /* IOSPSSH.sql */; settings = {ASSET_TAGS = (); }; };
+		1AE902A51BF522350054596E /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE902A41BF522350054596E /* libsqlite3.0.dylib */; };
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		1AE902451BF3DD960054596E /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		1AE9024F1BF404650054596E /* iOSPSSH.sql.SQLite */ = {isa = PBXFileReference; lastKnownFileType = file; path = iOSPSSH.sql.SQLite; sourceTree = "<group>"; };
 		1AE902A21BF51A500054596E /* IOSPSSH.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = IOSPSSH.sql; sourceTree = "<group>"; };
+		1AE902A41BF522350054596E /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = ../../Downloads/libsqlite3.0.dylib; sourceTree = "<group>"; };
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE902A51BF522350054596E /* libsqlite3.0.dylib in Frameworks */,
 				1AE902431BF3DD6F0054596E /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +109,7 @@
 		1A086DA61BE6D54F00980950 = {
 			isa = PBXGroup;
 			children = (
+				1AE902A41BF522350054596E /* libsqlite3.0.dylib */,
 				1AE902421BF3DD6F0054596E /* libsqlite3.tbd */,
 				1AE9024F1BF404650054596E /* iOSPSSH.sql.SQLite */,
 				1A086DB11BE6D54F00980950 /* IOSCalendar */,
