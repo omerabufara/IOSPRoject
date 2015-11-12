@@ -21,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self configureView];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.tintColor = self.navigationItem.rightBarButtonItem.tintColor;
     self.txtEventName.delegate = self;
@@ -54,12 +56,12 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     if(self.detailItem) {
-        self.txtEventName.delegate = self;
-        self.txtEventDate.delegate = self;
-        self.txtEventTime.delegate = self;
-        self.txtEventLocation.delegate = self;
-        self.txtEventDescription.delegate = self;
-        self.txtEventVisible.delegate = self;
+        self.txtEventName.delegate = self.detailItem.txtEventName.delegate;
+        self.txtEventDate.delegate = self.detailItem.txtEventDate.delegate;
+        self.txtEventTime.delegate = self.detailItem.txtEventTime.delegate;
+        self.txtEventLocation.delegate = self.detailItem.txtEventLocation.delegate;
+        self.txtEventDescription.delegate = self.detailItem.txtEventDescription.delegate;
+        self.txtEventVisible.delegate = self.detailItem.txtEventDescription.delegate;
     }
 }
 
@@ -67,12 +69,14 @@
     // Update the user interface for the detail item.
     if (self.detailItem) {
         
+        [self viewWillAppear:YES];
+        
     }
 }
 
 - (IBAction)saveInfo:(id)sender{
     // Prepare the query string.
-    NSString *query = [NSString stringWithFormat:@"INSERT INTO eventsTable (event_name, event_date, event_time, event_location, event_description, event_visible) values ('%@', '%@', '%@', '%@', '%@', '%@')", self.txtEventName.text, self.txtEventDate.text, self.txtEventTime.text, self.txtEventLocation.text, self.txtEventDescription.text, self.txtEventVisible.text];
+    NSString *query = [NSString stringWithFormat:@"INSERT INTO eventsTable (event_name, event_date, event_time, event_location, event_description, event_visible) values ('%@' , '%@' , '%@' , '%@' , '%@' , '%@' )", self.txtEventName.text, self.txtEventDate.text, self.txtEventTime.text, self.txtEventLocation.text, self.txtEventDescription.text, self.txtEventVisible.text];
     
     // Execute the query.
     [self.dbManager executeQuery:query];
@@ -85,7 +89,20 @@
 //        [self.delegate reloadCalendarTable:self];
 //        [self.navigationController popViewControllerAnimated:YES];
         
-        [self viewWillAppear:YES];
+//        self.detailItem.txtEventName.delegate ;
+//        self.detailItem.txtEventDate.delegate;
+//        self.detailItem.txtEventTime.delegate;
+//        self.detailItem.txtEventLocation.delegate;
+//        self.detailItem.txtEventDescription.delegate;
+//        self.detailItem.txtEventVisible.delegate;
+
+        
+        
+//                           self.txtEventDate.delegate = self,
+//                           self.txtEventTime.delegate = self,
+//                           self.txtEventLocation.delegate = self,
+//                           self.txtEventDescription.delegate = self,
+//                           self.txtEventVisible.delegate = self ;
          [self.delegate reloadCalendarTable:self];
         [self.navigationController popViewControllerAnimated:YES];
         [self dismissViewControllerAnimated:YES completion:nil];

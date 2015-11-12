@@ -289,23 +289,15 @@ NSInteger thisday;
 //        self.eventsArray = nil;
 //    }
 //    self.eventsArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-    
     // Reload the table view.
     //[self.calendarTableView reloadData];
 }
 
 - (void) reloadCalendarTable:(AddEventViewController *) controller{
     
-    NSIndexPath *indexpath =[self.calendarTableView indexPathForSelectedRow];
-    
-        
-        //[self.calendarTableView insertfilm:controller.detailItem atIndex:nil];
-        
+    //NSIndexPath *indexpath =[self.calendarTableView indexPathForSelectedRow];
+   //[self.calendarTableView insertfilm:controller.detailItem atIndex:nil];
         [self.navigationController popViewControllerAnimated:YES];
-
-    
-
-        
         //[self.moviesToDisplay replaceFilm:controller.detailItem atIndex:indexpath.row];
         [self.navigationController popViewControllerAnimated:YES];
          [self dismissViewControllerAnimated:YES completion:nil];
