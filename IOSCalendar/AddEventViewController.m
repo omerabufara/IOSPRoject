@@ -47,7 +47,7 @@
 
 - (IBAction)saveInfo:(id)sender{
     // Prepare the query string.
-    NSString *query = [NSString stringWithFormat:@"INSERT INTO eventsTable (event_name, event_date, event_time, event_location, event_description, event_visible) values ('%@' , '%@' , '%@' , '%@' , '%@' , '%@' )", self.txtEventName.text, self.txtEventDate.text, self.txtEventTime.text, self.txtEventLocation.text, self.txtEventDescription.text, self.txtEventVisible.text];
+    NSMutableString *query = [NSMutableString stringWithFormat:@"INSERT INTO eventsTable (event_name, event_date, event_time, event_location, event_description, event_visible) VALUES ('%@' , '%@' , '%@' , '%@' , '%@' , '%@' )", self.txtEventName.text, self.txtEventDate.text, self.txtEventTime.text, self.txtEventLocation.text, self.txtEventDescription.text, self.txtEventVisible.text];
     
     // Execute the query.
     [self.dbManager executeQuery:query];
@@ -60,13 +60,13 @@
          [self.delegate editingInfoWasFinished];
         [self.navigationController popViewControllerAnimated:YES];
         //[self dismissViewControllerAnimated:YES completion:nil];
-       
-        
+      
     }
     else{
         NSLog(@"Could not execute the query.");
     }
 }
+
 
 
 

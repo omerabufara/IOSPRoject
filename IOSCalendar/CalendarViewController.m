@@ -10,7 +10,7 @@
 #import "AddEventViewController.h"
 #import "DBManager.h"
 
-@interface CalendarViewController () //<AddProtocols>
+@interface CalendarViewController () <EditInfoViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
 
