@@ -301,18 +301,23 @@ EFNpZ24gVXA
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JX-bp-aPs">
-                                <rect key="frame" x="68" y="466" width="560" height="83"/>
-                                <animations/>
-                                <state key="normal" title="Register"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ng7-ML-nha">
-                                <rect key="frame" x="214" y="493" width="30" height="30"/>
+                                <rect key="frame" x="212" y="513" width="30" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Edit"/>
                                 <connections>
                                     <segue destination="Pnl-Le-BPU" kind="show" identifier="EditEventsSegue" id="zsz-WS-MCJ"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrX-aE-C5h">
+                                <rect key="frame" x="353" y="513" width="45" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Delete"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JX-bp-aPs">
+                                <rect key="frame" x="20" y="441" width="560" height="83"/>
+                                <animations/>
+                                <state key="normal" title="Register"/>
                             </button>
                         </subviews>
                         <animations/>
