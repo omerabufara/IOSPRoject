@@ -44,7 +44,7 @@ NSInteger thisday;
     self.calendarTableView.delegate = self;
     self.calendarTableView.dataSource = self;
     
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"iOSPSSH.sql.SQLite"];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"IOSPSSH.sql"];
     [self checkAndCreateDatabase];
     
     [self loadData];
