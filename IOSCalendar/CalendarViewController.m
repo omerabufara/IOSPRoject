@@ -10,11 +10,11 @@
 #import "AddEventViewController.h"
 #import "DBManager.h"
 
-@interface CalendarViewController () <AddProtocols>
+@interface CalendarViewController () //<AddProtocols>
 
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
 
-@property (nonatomic, strong) DBManager *dbManager;
+
 
 @property (nonatomic, strong) NSArray *eventsArray;
 
@@ -35,20 +35,18 @@ NSInteger thisday;
 
 @synthesize monthly;
 @synthesize year;
-@synthesize eventsArray = _eventsArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self myCalView];
-    self.eventsArray = [[NSMutableArray alloc]init];
+    
+    self.calendarTableView.delegate = self;
+    self.calendarTableView.dataSource = self;
     
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"iOSPSSH.sql.SQLite"];
     
     [self loadData];
-    
-    //self.eventsArray = [[NSMutableArray alloc]initWithObjects:@"Event1",@"Event2",@"Event3", nil];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,7 +63,9 @@ NSInteger thisday;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.eventsArray count];
+  return [self.eventsArray count];
+    
+    //return self.arrEventsInfo.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -85,10 +85,8 @@ NSInteger thisday;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     NSInteger indexOfEventName = [self.dbManager.arrColumnNames indexOfObject:@"event_name"];
-    NSInteger indexOfEventDate = [self.dbManager.arrColumnNames indexOfObject:@"event_date"];
+
     NSInteger indexOfEventTime = [self.dbManager.arrColumnNames indexOfObject:@"event_time"];
-    NSInteger indexOfEventLocation = [self.dbManager.arrColumnNames indexOfObject:@"event_location"];
-    NSInteger indexOfEventDescription = [self.dbManager.arrColumnNames indexOfObject:@"event_description"];
     
     // Set the loaded data to the appropriate cell labels.
     cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:indexOfEventName]];
@@ -255,23 +253,23 @@ NSInteger thisday;
 
 -(IBAction)showEvents:(id)sender{
     //will have to adjust this to show different events by date when we get to it
-    NSLog(@"Events shown");
+    //NSLog(@"Events shown");
 //    [self.eventsArray removeAllObjects];
 //    [self.eventsArray addObject:@"Event 1"];
 //    [self.eventsArray addObject:@"Event 2"];
 //    [self.eventsArray addObject:@"Event 3"];
 //    [self.eventsArray addObject:@"Event 4"];
     
-    NSString *query = @"select * from eventsTable";
-    
-    // Get the results.
-    if (self.eventsArray != nil) {
-        self.eventsArray = nil;
-    }
-    
-    self.eventsArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-    NSLog(@"array count is : %lu", (unsigned long)[self.eventsArray count]);
-    [self.calendarTableView reloadData];
+//    NSString *query = @"select * from eventsTable";
+//    
+//    // Get the results.
+//    if (self.eventsArray != nil) {
+//        self.eventsArray = nil;
+//    }
+//    
+//    self.eventsArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+//    NSLog(@"array count is : %lu", (unsigned long)[self.eventsArray count]);
+//    [self.calendarTableView reloadData];
 }
 
 - (void)addNewEvent:(id)sender{
@@ -281,26 +279,31 @@ NSInteger thisday;
 }
 
 -(void)loadData{
-    // Form the query.
-//    NSString *query = @"select * from eventsTable";
+    
+    NSString *query = @"select * from eventsTable";
     
     // Get the results.
-//    if (self.eventsArray != nil) {
-//        self.eventsArray = nil;
-//    }
-//    self.eventsArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    if (self.eventsArray != nil) {
+        self.eventsArray = nil;
+    }
+    self.eventsArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    
     // Reload the table view.
-    //[self.calendarTableView reloadData];
+    [self.calendarTableView reloadData];
+    
 }
 
-- (void) reloadCalendarTable:(AddEventViewController *) controller{
-    
-    //NSIndexPath *indexpath =[self.calendarTableView indexPathForSelectedRow];
-   //[self.calendarTableView insertfilm:controller.detailItem atIndex:nil];
-        [self.navigationController popViewControllerAnimated:YES];
-        //[self.moviesToDisplay replaceFilm:controller.detailItem atIndex:indexpath.row];
-        [self.navigationController popViewControllerAnimated:YES];
-         [self dismissViewControllerAnimated:YES completion:nil];
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    AddEventViewController *AddEventViewController = [segue destinationViewController];
+    AddEventViewController.delegate = self;
+}
+
+
+
+
+-(void)editingInfoWasFinished{
+    // Reload the data.
+    [self loadData];
 }
 
 

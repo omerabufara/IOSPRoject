@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol AddProtocols;
+@protocol EditInfoViewControllerDelegate;
 
 @interface AddEventViewController : UIViewController <UITextFieldDelegate>
 
-@property (nonatomic, weak) id <AddProtocols> delegate;
+@property (nonatomic, strong) id <EditInfoViewControllerDelegate> delegate;
 
 @property (strong, nonatomic) AddEventViewController *detailItem;
 
@@ -32,8 +32,8 @@
 
 @end
 
-@protocol AddProtocols <NSObject>
+@protocol EditInfoViewControllerDelegate
 
-- (void) reloadCalendarTable:(AddEventViewController *) controller;
+-(void)editingInfoWasFinished;
 
 @end

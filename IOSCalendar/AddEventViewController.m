@@ -22,7 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self configureView];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.tintColor = self.navigationItem.rightBarButtonItem.tintColor;
     self.txtEventName.delegate = self;
@@ -45,34 +44,6 @@
     return YES;
 }
 
-- (void)setDetailItem:(id)newDetailItem {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-        
-        // Update the view.
-        [self configureView];
-    }
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    if(self.detailItem) {
-        self.txtEventName.delegate = self.detailItem.txtEventName.delegate;
-        self.txtEventDate.delegate = self.detailItem.txtEventDate.delegate;
-        self.txtEventTime.delegate = self.detailItem.txtEventTime.delegate;
-        self.txtEventLocation.delegate = self.detailItem.txtEventLocation.delegate;
-        self.txtEventDescription.delegate = self.detailItem.txtEventDescription.delegate;
-        self.txtEventVisible.delegate = self.detailItem.txtEventDescription.delegate;
-    }
-}
-
-- (void)configureView {
-    // Update the user interface for the detail item.
-    if (self.detailItem) {
-        
-        [self viewWillAppear:YES];
-        
-    }
-}
 
 - (IBAction)saveInfo:(id)sender{
     // Prepare the query string.
@@ -85,30 +56,10 @@
     if (self.dbManager.affectedRows != 0) {
         NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
         
-        // Pop the view controller.
-//        [self.delegate reloadCalendarTable:self];
-//        [self.navigationController popViewControllerAnimated:YES];
-        
-//        self.detailItem.txtEventName.delegate ;
-//        self.detailItem.txtEventDate.delegate;
-//        self.detailItem.txtEventTime.delegate;
-//        self.detailItem.txtEventLocation.delegate;
-//        self.detailItem.txtEventDescription.delegate;
-//        self.detailItem.txtEventVisible.delegate;
-
-        
-        
-//                           self.txtEventDate.delegate = self,
-//                           self.txtEventTime.delegate = self,
-//                           self.txtEventLocation.delegate = self,
-//                           self.txtEventDescription.delegate = self,
-//                           self.txtEventVisible.delegate = self ;
-         [self.delegate reloadCalendarTable:self];
+       
+         [self.delegate editingInfoWasFinished];
         [self.navigationController popViewControllerAnimated:YES];
-        [self dismissViewControllerAnimated:YES completion:nil];
-
-        
-        
+        //[self dismissViewControllerAnimated:YES completion:nil];
        
         
     }
@@ -117,6 +68,28 @@
     }
 }
 
+
+
+
+
+// Pop the view controller.
+//        [self.delegate reloadCalendarTable:self];
+//        [self.navigationController popViewControllerAnimated:YES];
+
+//        self.detailItem.txtEventName.delegate ;
+//        self.detailItem.txtEventDate.delegate;
+//        self.detailItem.txtEventTime.delegate;
+//        self.detailItem.txtEventLocation.delegate;
+//        self.detailItem.txtEventDescription.delegate;
+//        self.detailItem.txtEventVisible.delegate;
+
+
+
+//                           self.txtEventDate.delegate = self,
+//                           self.txtEventTime.delegate = self,
+//                           self.txtEventLocation.delegate = self,
+//                           self.txtEventDescription.delegate = self,
+//                           self.txtEventVisible.delegate = self ;
 
 
 /*
