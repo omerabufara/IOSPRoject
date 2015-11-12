@@ -7,9 +7,10 @@
 //
 
 #import "CalendarViewController.h"
+#import "AddEventViewController.h"
 #import "DBManager.h"
 
-@interface CalendarViewController ()
+@interface CalendarViewController () <AddProtocols>
 
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
 
@@ -266,7 +267,7 @@ NSInteger thisday;
 
 - (void)addNewEvent:(id)sender{
    
-    [self performSegueWithIdentifier:@"editEventSegue" sender:self];
+    [self performSegueWithIdentifier:@"addEventSegue" sender:self];
     
 }
 

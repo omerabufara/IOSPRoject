@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddEventViewController.h"
 
 @class AddEventViewController;
 

@@ -7,6 +7,7 @@
 //
 
 #import "AddEventViewController.h"
+#import "CalendarViewController.h"
 #import "DBManager.h"
 
 @interface AddEventViewController ()
@@ -54,7 +55,9 @@
         NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
         
         // Pop the view controller.
+        [self.delegate loadData];
         [self.navigationController popViewControllerAnimated:YES];
+        
     }
     else{
         NSLog(@"Could not execute the query.");

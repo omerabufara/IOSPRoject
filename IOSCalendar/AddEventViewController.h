@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol AddProtocols;
+
 @interface AddEventViewController : UIViewController <UITextFieldDelegate>
+
+@property (nonatomic, weak) id <AddProtocols> delegate;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtEventName;
 
@@ -23,5 +27,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtEventVisible;
 
 - (IBAction)saveInfo:(id)sender;
+
+@end
+
+@protocol AddProtocols <NSObject>
+
+- (void)loadData;
 
 @end
