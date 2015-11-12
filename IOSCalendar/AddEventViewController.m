@@ -31,7 +31,7 @@
     self.txtEventDescription.delegate = self;
     self.txtEventVisible.delegate = self;
     
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"iOSPSSH.sql.SQLite"];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"IOSPSSH.sql"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,7 +47,7 @@
 
 - (IBAction)saveInfo:(id)sender{
     // Prepare the query string.
-    NSMutableString *query = [NSMutableString stringWithFormat:@"INSERT INTO eventsTable (event_name, event_date, event_time, event_location, event_description, event_visible) VALUES ('%@' , '%@' , '%@' , '%@' , '%@' , '%@' )", self.txtEventName.text, self.txtEventDate.text, self.txtEventTime.text, self.txtEventLocation.text, self.txtEventDescription.text, self.txtEventVisible.text];
+    NSMutableString *query = [NSMutableString stringWithFormat:@"insert into eventTable values (null ,'%@' , '%@' , '%@' , '%@' , '%@' , '%@' )", self.txtEventName.text, self.txtEventDate.text, self.txtEventTime.text, self.txtEventLocation.text, self.txtEventDescription.text, self.txtEventVisible.text];
     
     // Execute the query.
     [self.dbManager executeQuery:query];
