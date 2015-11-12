@@ -43,9 +43,36 @@
     return YES;
 }
 
+- (void)setDetailItem:(id)newDetailItem {
+    if (_detailItem != newDetailItem) {
+        _detailItem = newDetailItem;
+        
+        // Update the view.
+        [self configureView];
+    }
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    if(self.detailItem) {
+        self.txtEventName.delegate = self;
+        self.txtEventDate.delegate = self;
+        self.txtEventTime.delegate = self;
+        self.txtEventLocation.delegate = self;
+        self.txtEventDescription.delegate = self;
+        self.txtEventVisible.delegate = self;
+    }
+}
+
+- (void)configureView {
+    // Update the user interface for the detail item.
+    if (self.detailItem) {
+        
+    }
+}
+
 - (IBAction)saveInfo:(id)sender{
     // Prepare the query string.
-    NSString *query = [NSString stringWithFormat:@"insert into eventsTable values(null,'%@', '%@', '%@', '%@', '%@', '%@')", self.txtEventName.text, self.txtEventDate.text, self.txtEventTime.text, self.txtEventLocation.text, self.txtEventDescription.text, self.txtEventVisible.text];
+    NSString *query = [NSString stringWithFormat:@"INSERT INTO eventsTable (event_name, event_date, event_time, event_location, event_description, event_visible) values ('%@', '%@', '%@', '%@', '%@', '%@')", self.txtEventName.text, self.txtEventDate.text, self.txtEventTime.text, self.txtEventLocation.text, self.txtEventDescription.text, self.txtEventVisible.text];
     
     // Execute the query.
     [self.dbManager executeQuery:query];
@@ -55,8 +82,17 @@
         NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
         
         // Pop the view controller.
-        [self.delegate reloadCalendarTable];
+//        [self.delegate reloadCalendarTable:self];
+//        [self.navigationController popViewControllerAnimated:YES];
+        
+        [self viewWillAppear:YES];
+         [self.delegate reloadCalendarTable:self];
         [self.navigationController popViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
+
+        
+        
+       
         
     }
     else{

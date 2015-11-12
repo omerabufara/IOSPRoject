@@ -256,11 +256,20 @@ NSInteger thisday;
 -(IBAction)showEvents:(id)sender{
     //will have to adjust this to show different events by date when we get to it
     NSLog(@"Events shown");
-    /*[self.eventsArray removeAllObjects];
-    [self.eventsArray addObject:@"Event 1"];
-    [self.eventsArray addObject:@"Event 2"];
-    [self.eventsArray addObject:@"Event 3"];
-    [self.eventsArray addObject:@"Event 4"];*/
+//    [self.eventsArray removeAllObjects];
+//    [self.eventsArray addObject:@"Event 1"];
+//    [self.eventsArray addObject:@"Event 2"];
+//    [self.eventsArray addObject:@"Event 3"];
+//    [self.eventsArray addObject:@"Event 4"];
+    
+    NSString *query = @"select * from eventsTable";
+    
+    // Get the results.
+    if (self.eventsArray != nil) {
+        self.eventsArray = nil;
+    }
+    
+    self.eventsArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     NSLog(@"array count is : %lu", (unsigned long)[self.eventsArray count]);
     [self.calendarTableView reloadData];
 }
@@ -273,20 +282,33 @@ NSInteger thisday;
 
 -(void)loadData{
     // Form the query.
-    NSString *query = @"select * from eventsTable";
+//    NSString *query = @"select * from eventsTable";
     
     // Get the results.
-    if (self.eventsArray != nil) {
-        self.eventsArray = nil;
-    }
-    self.eventsArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+//    if (self.eventsArray != nil) {
+//        self.eventsArray = nil;
+//    }
+//    self.eventsArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     
     // Reload the table view.
-    [self.calendarTableView reloadData];
+    //[self.calendarTableView reloadData];
 }
 
-- (void) reloadCalendarTable{
-    [self loadData];
+- (void) reloadCalendarTable:(AddEventViewController *) controller{
+    
+    NSIndexPath *indexpath =[self.calendarTableView indexPathForSelectedRow];
+    
+        
+        //[self.calendarTableView insertfilm:controller.detailItem atIndex:nil];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+
+    
+
+        
+        //[self.moviesToDisplay replaceFilm:controller.detailItem atIndex:indexpath.row];
+        [self.navigationController popViewControllerAnimated:YES];
+         [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

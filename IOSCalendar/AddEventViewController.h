@@ -14,6 +14,8 @@
 
 @property (nonatomic, weak) id <AddProtocols> delegate;
 
+@property (strong, nonatomic) AddEventViewController *detailItem;
+
 @property (weak, nonatomic) IBOutlet UITextField *txtEventName;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtEventDate;
@@ -32,6 +34,6 @@
 
 @protocol AddProtocols <NSObject>
 
-- (void) reloadCalendarTable;
+- (void) reloadCalendarTable:(AddEventViewController *) controller;
 
 @end
