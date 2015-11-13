@@ -8,6 +8,7 @@
 
 #import "CalendarViewController.h"
 #import "AddEventViewController.h"
+#import "EditEventViewController.h"
 #import "DBManager.h"
 #import "AppDelegate.h"
 
@@ -153,8 +154,6 @@ NSInteger thisday;
 }
 
 -(void)myCalView{
-    
-    
     thisYear = [[[NSCalendar currentCalendar]
                  components:NSCalendarUnitYear fromDate:[NSDate date]]
                 year];
@@ -166,8 +165,6 @@ NSInteger thisday;
     thisday = [[[NSCalendar currentCalendar]
                 components:NSCalendarUnitDay fromDate:[NSDate date]]
                day];
-    
-    
     [self moreDateInfo];
     
 }
@@ -322,6 +319,16 @@ NSInteger thisday;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     AddEventViewController *AddEventViewController = [segue destinationViewController];
     AddEventViewController.delegate = self;
+    
+    //if ([[segue identifier] isEqualToString:@"showDetail"]) {
+       // NSIndexPath *indexPath = [self.calendarTableView indexPathForSelectedRow];
+        //CalendarViewController *object = [self.calendarTableView indexPathForSelectedRow];
+       // EditEventViewController *controller = (EditEventViewController *)[[segue destinationViewController] topViewController];
+        //[controller setDetailItem:object];
+        //[controller setDelegate:self];
+//        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+//        controller.navigationItem.leftItemsSupplementBackButton = YES;
+    //}
 }
 
 
