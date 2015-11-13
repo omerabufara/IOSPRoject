@@ -7,6 +7,7 @@
 //
 //edited for commit 2
 #import "ViewController.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 

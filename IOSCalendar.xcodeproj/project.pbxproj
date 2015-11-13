@@ -15,16 +15,15 @@
 		1A086DC21BE6D54F00980950 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A086DC01BE6D54F00980950 /* LaunchScreen.storyboard */; };
 		1A086DCD1BE6D54F00980950 /* IOSCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A086DCC1BE6D54F00980950 /* IOSCalendarTests.m */; };
 		1A086DD81BE6D54F00980950 /* IOSCalendarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A086DD71BE6D54F00980950 /* IOSCalendarUITests.m */; };
-		1A0BEA5F1BED12080091A91A /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA5E1BED12080091A91A /* LogInViewController.m */; settings = {ASSET_TAGS = (); }; };
-		1A0BEA621BED12560091A91A /* signUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA611BED12560091A91A /* signUpViewController.m */; settings = {ASSET_TAGS = (); }; };
-		1A0BEA681BED537A0091A91A /* EditEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA671BED537A0091A91A /* EditEventViewController.m */; settings = {ASSET_TAGS = (); }; };
-		1A0BEA6B1BED53E60091A91A /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */; settings = {ASSET_TAGS = (); }; };
-		1AE902431BF3DD6F0054596E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE902421BF3DD6F0054596E /* libsqlite3.tbd */; };
-		1AE902461BF3DD960054596E /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE902451BF3DD960054596E /* DBManager.m */; settings = {ASSET_TAGS = (); }; };
-		1AE902501BF404650054596E /* iOSPSSH.sql.SQLite in Resources */ = {isa = PBXBuildFile; fileRef = 1AE9024F1BF404650054596E /* iOSPSSH.sql.SQLite */; settings = {ASSET_TAGS = (); }; };
-		1AE902A31BF51A500054596E /* IOSPSSH.sql in Resources */ = {isa = PBXBuildFile; fileRef = 1AE902A21BF51A500054596E /* IOSPSSH.sql */; settings = {ASSET_TAGS = (); }; };
-		1AE902A51BF522350054596E /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE902A41BF522350054596E /* libsqlite3.0.dylib */; };
-		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1A0BEA5F1BED12080091A91A /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA5E1BED12080091A91A /* LogInViewController.m */; };
+		1A0BEA621BED12560091A91A /* signUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA611BED12560091A91A /* signUpViewController.m */; };
+		1A0BEA681BED537A0091A91A /* EditEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA671BED537A0091A91A /* EditEventViewController.m */; };
+		1A0BEA6B1BED53E60091A91A /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */; };
+		1A8983DC1BF5E7C20040E791 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */; };
+		1A8983DE1BF5E7CE0040E791 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */; };
+		1A8983E01BF5E7F20040E791 /* PSSH.sql in Resources */ = {isa = PBXBuildFile; fileRef = 1A8983DF1BF5E7F20040E791 /* PSSH.sql */; };
+		1AE902461BF3DD960054596E /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE902451BF3DD960054596E /* DBManager.m */; };
+		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,12 +68,11 @@
 		1A0BEA671BED537A0091A91A /* EditEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditEventViewController.m; sourceTree = "<group>"; };
 		1A0BEA691BED53E60091A91A /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
 		1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
-		1AE902421BF3DD6F0054596E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1A8983DF1BF5E7F20040E791 /* PSSH.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = PSSH.sql; path = ../PSSH.sql; sourceTree = "<group>"; };
 		1AE902441BF3DD960054596E /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		1AE902451BF3DD960054596E /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
-		1AE9024F1BF404650054596E /* iOSPSSH.sql.SQLite */ = {isa = PBXFileReference; lastKnownFileType = file; path = iOSPSSH.sql.SQLite; sourceTree = "<group>"; };
-		1AE902A21BF51A500054596E /* IOSPSSH.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = IOSPSSH.sql; sourceTree = "<group>"; };
-		1AE902A41BF522350054596E /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = ../../Downloads/libsqlite3.0.dylib; sourceTree = "<group>"; };
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,8 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AE902A51BF522350054596E /* libsqlite3.0.dylib in Frameworks */,
-				1AE902431BF3DD6F0054596E /* libsqlite3.tbd in Frameworks */,
+				1A8983DE1BF5E7CE0040E791 /* libsqlite3.tbd in Frameworks */,
+				1A8983DC1BF5E7C20040E791 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,9 +107,9 @@
 		1A086DA61BE6D54F00980950 = {
 			isa = PBXGroup;
 			children = (
-				1AE902A41BF522350054596E /* libsqlite3.0.dylib */,
-				1AE902421BF3DD6F0054596E /* libsqlite3.tbd */,
-				1AE9024F1BF404650054596E /* iOSPSSH.sql.SQLite */,
+				1A8983DF1BF5E7F20040E791 /* PSSH.sql */,
+				1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */,
+				1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */,
 				1A086DB11BE6D54F00980950 /* IOSCalendar */,
 				1A086DCB1BE6D54F00980950 /* IOSCalendarTests */,
 				1A086DD61BE6D54F00980950 /* IOSCalendarUITests */,
@@ -132,7 +130,6 @@
 		1A086DB11BE6D54F00980950 /* IOSCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				1AE902A21BF51A500054596E /* IOSPSSH.sql */,
 				1A086DB51BE6D54F00980950 /* AppDelegate.h */,
 				1A086DB61BE6D54F00980950 /* AppDelegate.m */,
 				1A086DB81BE6D54F00980950 /* ViewController.h */,
@@ -287,9 +284,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AE902A31BF51A500054596E /* IOSPSSH.sql in Resources */,
+				1A8983E01BF5E7F20040E791 /* PSSH.sql in Resources */,
 				1A086DC21BE6D54F00980950 /* LaunchScreen.storyboard in Resources */,
-				1AE902501BF404650054596E /* iOSPSSH.sql.SQLite in Resources */,
 				1A086DBF1BE6D54F00980950 /* Assets.xcassets in Resources */,
 				1A086DBD1BE6D54F00980950 /* Main.storyboard in Resources */,
 			);

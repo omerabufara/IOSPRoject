@@ -9,6 +9,7 @@
 #import "CalendarViewController.h"
 #import "AddEventViewController.h"
 #import "DBManager.h"
+#import "AppDelegate.h"
 
 @interface CalendarViewController () <EditInfoViewControllerDelegate>
 
@@ -36,6 +37,7 @@ NSInteger thisday;
 @synthesize monthly;
 @synthesize year;
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -44,10 +46,11 @@ NSInteger thisday;
     self.calendarTableView.delegate = self;
     self.calendarTableView.dataSource = self;
     
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"IOSPSSH.sql"];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
     
     [self loadData];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -280,7 +283,7 @@ NSInteger thisday;
 
 -(void)loadData{
     
-    NSString *query = @"select * from eventTable";
+    NSString *query = @"select * from eventsTable";
     
     // Get the results.
     if (self.eventsArray != nil) {
