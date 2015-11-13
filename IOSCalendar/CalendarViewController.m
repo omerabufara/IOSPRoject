@@ -41,6 +41,15 @@ NSInteger thisday;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:
+        
+    UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    
+    self.navigationItem.rightBarButtonItem = addButton;
+    self.addEventViewController = (AddEventViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
     [self myCalView];
     
     self.calendarTableView.delegate = self;
@@ -49,6 +58,20 @@ NSInteger thisday;
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
     
     [self loadData];
+}
+
+- (void)insertNewObject:(id)sender {
+  
+    if (!self.calendarTableView) {
+  self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
+    }
+    AddEventViewController *foundDVC = (AddEventViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"add"];
+    
+    if ([foundDVC respondsToSelector:@selector(setDelegate:)]) {
+        [foundDVC setDelegate:self];
+    }
+    [self.navigationController pushViewController:foundDVC animated:YES];
+    
 }
 
 
