@@ -30,8 +30,10 @@ NSInteger thisday;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     [self myCalView];
     self.eventsArray = [[NSMutableArray alloc]init];
+    
     
     //self.eventsArray = [[NSMutableArray alloc]initWithObjects:@"Event1",@"Event2",@"Event3", nil];
     // Do any additional setup after loading the view, typically from a nib.

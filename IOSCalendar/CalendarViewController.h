@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *year;
 @property (strong, nonatomic) NSDate *defaulComp;
 
+
 @property (strong, nonatomic) NSMutableArray *eventsArray;
 
 @end
