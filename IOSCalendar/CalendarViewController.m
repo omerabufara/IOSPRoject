@@ -42,7 +42,7 @@ NSInteger thisday;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:
         
@@ -339,6 +339,25 @@ NSInteger thisday;
     [self loadData];
 }
 
+- (IBAction)showEditOptions:(UIBarButtonItem *)sender {
+    
+    sender.title = @"Done";
+    //create delete option on left
+    //deletebutton.action = showDelete
+    //create edit arrow option on right
+}
+
+- (IBAction)showDelete:(id)sender{
+    //show delete box on right
+}
+
+- (IBAction)deleteEvent:(id)sender{
+    //deletes from table
+}
+
+- (IBAction)segueToEdit:(id)sender{
+    
+}
 
 
 @end

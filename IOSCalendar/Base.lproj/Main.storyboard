@@ -203,7 +203,13 @@
                             <constraint firstItem="dbd-X3-13i" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="329" id="xz2-kc-hF5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Events" id="MXv-PN-6nb"/>
+                    <navigationItem key="navigationItem" title="Events" id="MXv-PN-6nb">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="Wed-mz-oTx">
+                            <connections>
+                                <action selector="showEditOptions:" destination="BYZ-38-t0r" id="61Q-LT-DIa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="calendarTableView" destination="dbd-X3-13i" id="e3y-4g-r2g"/>
                         <outlet property="monthly" destination="59n-Tk-BOZ" id="GcJ-6b-Rjy"/>
