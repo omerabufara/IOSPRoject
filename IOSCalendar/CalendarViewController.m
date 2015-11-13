@@ -8,6 +8,7 @@
 
 #import "CalendarViewController.h"
 #import "AddEventViewController.h"
+#import "EditEventViewController.h"
 #import "DBManager.h"
 #import "AppDelegate.h"
 
@@ -15,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
 
+@property (nonatomic) int recordIDToEdit;
 
 
 @property (nonatomic, strong) NSArray *eventsArray;
@@ -49,6 +51,7 @@ NSInteger thisday;
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
     
     [self loadData];
+    
 }
 
 
@@ -85,6 +88,13 @@ NSInteger thisday;
     
     return cell;*/
     // Dequeue the cell.
+    // Get the record ID of the selected name and set it to the recordIDToEdit property.
+    
+    self.recordIDToEdit = [[[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
+    
+    // Perform the segue.
+    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     NSInteger indexOfEventName = [self.dbManager.arrColumnNames indexOfObject:@"event_name"];
@@ -275,7 +285,13 @@ NSInteger thisday;
 //    [self.calendarTableView reloadData];
 }
 
-- (void)addNewEvent:(id)sender{
+- (IBAction)addNewRecord:(id)sender {
+    
+    // Before performing the segue, set the -1 value to the recordIDToEdit. That way we'll indicate that we want to add a new record and not to edit an existing one.
+    self.recordIDToEdit = -1;
+    
+    // Perform the segue.
+    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
    
     [self performSegueWithIdentifier:@"addEventSegue" sender:self];
     
@@ -299,6 +315,8 @@ NSInteger thisday;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     AddEventViewController *AddEventViewController = [segue destinationViewController];
     AddEventViewController.delegate = self;
+    EditEventViewController.recordIDToEdit = self.recordIDToEdit;
+
 }
 
 
