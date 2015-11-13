@@ -7,6 +7,7 @@
 //
 
 #import "CalendarViewController.h"
+#import "EventDetailViewController.h"
 
 @interface CalendarViewController ()
 
@@ -29,6 +30,15 @@ NSInteger thisday;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    self.navigationItem.rightBarButtonItem = addButton;
+ //   self.eventdetailViewController = (EventDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    self.eventsArray = [NSMutableArray array];
+  //  [self loadSample];
     
     
     [self myCalView];
@@ -98,6 +108,18 @@ NSInteger thisday;
     
     return numberOfDaysInMonth;
 }
+
+- (void)insertNewObject:(id)sender {
+    if (!self.eventsArray) {
+        self.eventsArray = [[NSMutableArray alloc] init];
+    }
+   // EventsDetailViewController *foundDVC = (EventsDetailViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"add"];
+    
+   // if ([foundDVC respondsToSelector:@selector(setDelegate:)]) {
+       // [foundDVC setDelegate:self];
+    }
+   // [self.navigationController pushViewController:foundDVC animated:YES];
+
 
 -(void)myCalView{
     
