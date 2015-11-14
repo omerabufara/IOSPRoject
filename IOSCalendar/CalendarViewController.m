@@ -8,7 +8,9 @@
 
 #import "CalendarViewController.h"
 #import "AddEventViewController.h"
+#import "EditEventViewController.h"
 #import "DBManager.h"
+#import "AppDelegate.h"
 
 @interface CalendarViewController () <EditInfoViewControllerDelegate>
 
@@ -36,8 +38,18 @@ NSInteger thisday;
 @synthesize monthly;
 @synthesize year;
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:
+        
+    UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    
+    self.navigationItem.rightBarButtonItem = addButton;
+    self.addEventViewController = (AddEventViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     [self myCalView];
     
@@ -48,6 +60,21 @@ NSInteger thisday;
     
     [self loadData];
 }
+
+- (void)insertNewObject:(id)sender {
+  
+    if (!self.calendarTableView) {
+  self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
+    }
+    AddEventViewController *foundDVC = (AddEventViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"add"];
+    
+    if ([foundDVC respondsToSelector:@selector(setDelegate:)]) {
+        [foundDVC setDelegate:self];
+    }
+    [self.navigationController pushViewController:foundDVC animated:YES];
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -127,8 +154,6 @@ NSInteger thisday;
 }
 
 -(void)myCalView{
-    
-    
     thisYear = [[[NSCalendar currentCalendar]
                  components:NSCalendarUnitYear fromDate:[NSDate date]]
                 year];
@@ -140,8 +165,6 @@ NSInteger thisday;
     thisday = [[[NSCalendar currentCalendar]
                 components:NSCalendarUnitDay fromDate:[NSDate date]]
                day];
-    
-    
     [self moreDateInfo];
     
 }
@@ -281,7 +304,7 @@ NSInteger thisday;
 
 -(void)loadData{
     
-    NSString *query = @"select * from eventTable";
+    NSString *query = @"select * from eventsTable";
     
     // Get the results.
     if (self.eventsArray != nil) {
@@ -297,6 +320,16 @@ NSInteger thisday;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     AddEventViewController *AddEventViewController = [segue destinationViewController];
     AddEventViewController.delegate = self;
+    
+    //if ([[segue identifier] isEqualToString:@"showDetail"]) {
+       // NSIndexPath *indexPath = [self.calendarTableView indexPathForSelectedRow];
+        //CalendarViewController *object = [self.calendarTableView indexPathForSelectedRow];
+       // EditEventViewController *controller = (EditEventViewController *)[[segue destinationViewController] topViewController];
+        //[controller setDetailItem:object];
+        //[controller setDelegate:self];
+//        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+//        controller.navigationItem.leftItemsSupplementBackButton = YES;
+    //}
 }
 
 

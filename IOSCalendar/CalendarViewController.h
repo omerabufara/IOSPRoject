@@ -26,7 +26,6 @@
 
 @property (nonatomic, strong) DBManager *dbManager;
 
-
 -(void)loadData;
 
 
