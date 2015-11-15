@@ -284,6 +284,11 @@ NSInteger thisday;
 }
 
 -(void)loadData:(id)sender{
+    //will not happen for current date and need a click off function to turn back to grey
+    if([sender isKindOfClass:[UIButton class]]){
+        UIButton *senderButton = sender;
+        senderButton.backgroundColor = [UIColor greenColor];
+    }
     
     if (sender != nil)
     {
