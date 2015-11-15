@@ -26,7 +26,7 @@
 
 @property (nonatomic, strong) DBManager *dbManager;
 
--(void)loadData;
+-(void)loadData:(id)sender;
 
 
 

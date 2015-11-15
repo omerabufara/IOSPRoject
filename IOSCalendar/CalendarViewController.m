@@ -21,7 +21,7 @@
 @property (nonatomic, strong) NSArray *eventsArray;
 
 
--(void)loadData;
+//-(void)loadData;
 
 @end
 
@@ -56,9 +56,9 @@ NSInteger thisday;
     self.calendarTableView.delegate = self;
     self.calendarTableView.dataSource = self;
     
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"IOSPSSH.sql"];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
     
-    [self loadData];
+    //[self loadData];
 }
 
 - (void)insertNewObject:(id)sender {
@@ -256,12 +256,10 @@ NSInteger thisday;
         [addProject addTarget:self
                        action:@selector(showEvents:)
              forControlEvents:UIControlEventTouchUpInside];
+        //[self loadData: addProject];
         
         if(currMonth == thisMonth && currYear == thisYear && currDay == [[addProject.currentTitle stringByReplacingOccurrencesOfString:@" " withString:@""] intValue]){
             addProject.backgroundColor = [UIColor blueColor];
-            //how to click current date button so events show up???????????
-            //when you do this, may be able to but blueColor in click event showEvents because will turn whichever is clicked to blue
-            [addProject sendActionsForControlEvents:UIControlEventTouchUpInside];
         }
         else{
             addProject.backgroundColor = [UIColor grayColor];
@@ -275,25 +273,7 @@ NSInteger thisday;
 }
 
 -(IBAction)showEvents:(id)sender{
-    [self loadData];
-    //will have to adjust this to show different events by date when we get to it
-    //NSLog(@"Events shown");
-//    [self.eventsArray removeAllObjects];
-//    [self.eventsArray addObject:@"Event 1"];
-//    [self.eventsArray addObject:@"Event 2"];
-//    [self.eventsArray addObject:@"Event 3"];
-//    [self.eventsArray addObject:@"Event 4"];
-    
-//    NSString *query = @"select * from eventsTable";
-//    
-//    // Get the results.
-//    if (self.eventsArray != nil) {
-//        self.eventsArray = nil;
-//    }
-//    
-//    self.eventsArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-//    NSLog(@"array count is : %lu", (unsigned long)[self.eventsArray count]);
-//    [self.calendarTableView reloadData];
+    [self loadData:sender];
 }
 
 - (void)addNewEvent:(id)sender{
@@ -302,9 +282,16 @@ NSInteger thisday;
     
 }
 
--(void)loadData{
+-(void)loadData:(id)sender{
     
-    NSString *query = @"select * from eventsTable";
+    NSString *day = [sender currentTitle];
+    NSString *month = [monthly text];
+    NSString *yearString = [NSString stringWithFormat:@"%ld", (long)thisYear];
+    NSString *senderDate = month;
+    senderDate = [[senderDate stringByAppendingString:@"-"] stringByAppendingString:day];
+    senderDate = [[senderDate stringByAppendingString:@"-"] stringByAppendingString:yearString];
+    
+    NSString *query = [NSString stringWithFormat:@"select * from eventsTable where event_date = '%@'", senderDate];
     
     // Get the results.
     if (self.eventsArray != nil) {
@@ -317,9 +304,9 @@ NSInteger thisday;
     
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    AddEventViewController *AddEventViewController = [segue destinationViewController];
-    AddEventViewController.delegate = self;
+/*-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    //AddEventViewController *AddEventViewController = [segue destinationViewController];
+    //AddEventViewController.delegate = self;
     
     //if ([[segue identifier] isEqualToString:@"showDetail"]) {
        // NSIndexPath *indexPath = [self.calendarTableView indexPathForSelectedRow];
@@ -330,14 +317,14 @@ NSInteger thisday;
 //        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
 //        controller.navigationItem.leftItemsSupplementBackButton = YES;
     //}
-}
+}*/
 
 
 
 
 -(void)editingInfoWasFinished{
     // Reload the data.
-    [self loadData];
+    //[self loadData: id];
 }
 
 
