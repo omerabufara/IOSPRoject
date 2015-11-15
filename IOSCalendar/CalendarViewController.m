@@ -16,12 +16,13 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
 
+@property NSString *senderDate;
 
 
 @property (nonatomic, strong) NSArray *eventsArray;
 
 
--(void)loadData;
+//-(void)loadData;
 
 @end
 
@@ -58,7 +59,7 @@ NSInteger thisday;
     
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
     
-    [self loadData];
+    //[self loadData];
 }
 
 
@@ -195,12 +196,10 @@ NSInteger thisday;
         [addProject addTarget:self
                        action:@selector(showEvents:)
              forControlEvents:UIControlEventTouchUpInside];
+        //[self loadData: addProject];
         
         if(currMonth == thisMonth && currYear == thisYear && currDay == [[addProject.currentTitle stringByReplacingOccurrencesOfString:@" " withString:@""] intValue]){
             addProject.backgroundColor = [UIColor blueColor];
-            //how to click current date button so events show up???????????
-            //when you do this, may be able to but blueColor in click event showEvents because will turn whichever is clicked to blue
-            [addProject sendActionsForControlEvents:UIControlEventTouchUpInside];
         }
         else{
             addProject.backgroundColor = [UIColor grayColor];
@@ -214,24 +213,7 @@ NSInteger thisday;
 }
 
 -(IBAction)showEvents:(id)sender{
-    //will have to adjust this to show different events by date when we get to it
-    //NSLog(@"Events shown");
-//    [self.eventsArray removeAllObjects];
-//    [self.eventsArray addObject:@"Event 1"];
-//    [self.eventsArray addObject:@"Event 2"];
-//    [self.eventsArray addObject:@"Event 3"];
-//    [self.eventsArray addObject:@"Event 4"];
-    
-//    NSString *query = @"select * from eventsTable";
-//    
-//    // Get the results.
-//    if (self.eventsArray != nil) {
-//        self.eventsArray = nil;
-//    }
-//    
-//    self.eventsArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-//    NSLog(@"array count is : %lu", (unsigned long)[self.eventsArray count]);
-//    [self.calendarTableView reloadData];
+    [self loadData:sender];
 }
 
 - (void)addNewEvent:(id)sender{
@@ -240,9 +222,24 @@ NSInteger thisday;
     
 }
 
--(void)loadData{
+-(void)loadData:(id)sender{
+    //will not happen for current date and need a click off function to turn back to grey
+    if([sender isKindOfClass:[UIButton class]]){
+        UIButton *senderButton = sender;
+        senderButton.backgroundColor = [UIColor greenColor];
+    }
     
-    NSString *query = @"select * from eventsTable";
+    if (sender != nil)
+    {
+        NSString *day = [sender currentTitle];
+        NSString *month = [monthly text];
+        NSString *yearString = [NSString stringWithFormat:@"%ld", (long)thisYear];
+        self.senderDate = month;
+        self.senderDate = [[self.senderDate stringByAppendingString:@"-"] stringByAppendingString:day];
+        self.senderDate = [[self.senderDate stringByAppendingString:@"-"] stringByAppendingString:yearString];
+    }
+    
+    NSString *query = [NSString stringWithFormat:@"select * from eventsTable where event_date = '%@'", self.senderDate];
     
     // Get the results.
     if (self.eventsArray != nil) {
@@ -255,9 +252,9 @@ NSInteger thisday;
     
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    AddEventViewController *AddEventViewController = [segue destinationViewController];
-    AddEventViewController.delegate = self;
+/*-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    //AddEventViewController *AddEventViewController = [segue destinationViewController];
+    //AddEventViewController.delegate = self;
     
 }
 
@@ -317,28 +314,9 @@ NSInteger thisday;
 
 -(void)editingInfoWasFinished{
     // Reload the data.
-    [self loadData];
+    [self loadData: nil];
 }
 
-- (IBAction)showEditOptions:(UIBarButtonItem *)sender {
-    
-    sender.title = @"Done";
-    //create delete option on left
-    //deletebutton.action = showDelete
-    //create edit arrow option on right
-}
-
-- (IBAction)showDelete:(id)sender{
-    //show delete box on right
-}
-
-- (IBAction)deleteEvent:(id)sender{
-    //deletes from table
-}
-
-- (IBAction)segueToEdit:(id)sender{
-    
-}
 
 
 @end
