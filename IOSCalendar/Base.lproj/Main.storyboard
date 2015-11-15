@@ -75,14 +75,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sy7-QE-mLX">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sy7-QE-mLX">
                                 <rect key="frame" x="25" y="186" width="54" height="30"/>
                                 <state key="normal" title="Prev"/>
                                 <connections>
                                     <action selector="prevAct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9WG-jf-D8P"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0e-st-HH5">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0e-st-HH5">
                                 <rect key="frame" x="233" y="186" width="55" height="30"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
@@ -171,13 +171,6 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="qLm-79-faO"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HL0-km-206">
-                                <rect key="frame" x="120" y="186" width="70" height="30"/>
-                                <state key="normal" title="Add Event"/>
-                                <connections>
-                                    <segue destination="uXq-2O-7iG" kind="show" identifier="addEventSegue" id="PV4-IU-WML"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUz-vd-u1Y">
                                 <rect key="frame" x="65" y="81" width="55" height="30"/>
                                 <state key="normal" title="Sign Up"/>
@@ -193,11 +186,9 @@
                             <constraint firstItem="dbd-X3-13i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1eK-rz-2aO"/>
                             <constraint firstItem="dbd-X3-13i" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="2A9-ra-AHd"/>
                             <constraint firstItem="59n-Tk-BOZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="412-tQ-9YU"/>
-                            <constraint firstItem="HL0-km-206" firstAttribute="leading" secondItem="sy7-QE-mLX" secondAttribute="trailing" constant="41" id="6Of-d1-kd9"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dbd-X3-13i" secondAttribute="bottom" constant="15" id="D4k-L5-J4N"/>
                             <constraint firstAttribute="leadingMargin" secondItem="dbd-X3-13i" secondAttribute="leading" id="L7I-zT-F1R"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gVR-uV-fhH" secondAttribute="trailing" constant="71" id="aNc-xj-lix"/>
-                            <constraint firstItem="n0e-st-HH5" firstAttribute="leading" secondItem="HL0-km-206" secondAttribute="trailing" constant="43" id="csb-eT-H5A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dbd-X3-13i" secondAttribute="trailing" id="h3U-hs-GJQ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dbd-X3-13i" secondAttribute="bottom" constant="15" id="org-Ma-Zq9"/>
                             <constraint firstItem="dbd-X3-13i" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="329" id="xz2-kc-hF5"/>

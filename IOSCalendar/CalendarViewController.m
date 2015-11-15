@@ -61,67 +61,6 @@ NSInteger thisday;
     [self loadData];
 }
 
-- (void)insertNewObject:(id)sender {
-  
-    if (!self.calendarTableView) {
-  self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
-    }
-    AddEventViewController *foundDVC = (AddEventViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"add"];
-    
-    if ([foundDVC respondsToSelector:@selector(setDelegate:)]) {
-        [foundDVC setDelegate:self];
-    }
-    [self.navigationController pushViewController:foundDVC animated:YES];
-    
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-  return [self.eventsArray count];
-    
-    //return self.arrEventsInfo.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    /*static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:CellIdentifier];
-    }
-    
-    NSString *cellValue = [self.eventsArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = cellValue;
-    
-    return cell;*/
-    // Dequeue the cell.
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
-    NSInteger indexOfEventName = [self.dbManager.arrColumnNames indexOfObject:@"event_name"];
-
-    NSInteger indexOfEventTime = [self.dbManager.arrColumnNames indexOfObject:@"event_time"];
-    
-    // Set the loaded data to the appropriate cell labels.
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:indexOfEventName]];
-    
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Time: %@", [[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:indexOfEventTime]];
-    
-    return cell;
-}
 
 
 - (IBAction)nextAct:(id)sender {
@@ -320,16 +259,58 @@ NSInteger thisday;
     AddEventViewController *AddEventViewController = [segue destinationViewController];
     AddEventViewController.delegate = self;
     
-    //if ([[segue identifier] isEqualToString:@"showDetail"]) {
-       // NSIndexPath *indexPath = [self.calendarTableView indexPathForSelectedRow];
-        //CalendarViewController *object = [self.calendarTableView indexPathForSelectedRow];
-       // EditEventViewController *controller = (EditEventViewController *)[[segue destinationViewController] topViewController];
-        //[controller setDetailItem:object];
-        //[controller setDelegate:self];
-//        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-//        controller.navigationItem.leftItemsSupplementBackButton = YES;
-    //}
 }
+
+- (void)insertNewObject:(id)sender {
+    
+    if (!self.calendarTableView) {
+        self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
+    }
+    AddEventViewController *foundDVC = (AddEventViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"add"];
+    
+    if ([foundDVC respondsToSelector:@selector(setDelegate:)]) {
+        [foundDVC setDelegate:self];
+    }
+    [self.navigationController pushViewController:foundDVC animated:YES];
+    
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.eventsArray count];
+    
+    //return self.arrEventsInfo.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    NSInteger indexOfEventName = [self.dbManager.arrColumnNames indexOfObject:@"event_name"];
+    
+    NSInteger indexOfEventTime = [self.dbManager.arrColumnNames indexOfObject:@"event_time"];
+    
+    // Set the loaded data to the appropriate cell labels.
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:indexOfEventName]];
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Time: %@", [[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:indexOfEventTime]];
+    
+    return cell;
+}
+
 
 
 
