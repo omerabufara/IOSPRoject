@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
 
+@property NSString *senderDate;
 
 
 @property (nonatomic, strong) NSArray *eventsArray;
@@ -284,14 +285,17 @@ NSInteger thisday;
 
 -(void)loadData:(id)sender{
     
-    NSString *day = [sender currentTitle];
-    NSString *month = [monthly text];
-    NSString *yearString = [NSString stringWithFormat:@"%ld", (long)thisYear];
-    NSString *senderDate = month;
-    senderDate = [[senderDate stringByAppendingString:@"-"] stringByAppendingString:day];
-    senderDate = [[senderDate stringByAppendingString:@"-"] stringByAppendingString:yearString];
+    if (sender != nil)
+    {
+        NSString *day = [sender currentTitle];
+        NSString *month = [monthly text];
+        NSString *yearString = [NSString stringWithFormat:@"%ld", (long)thisYear];
+        self.senderDate = month;
+        self.senderDate = [[self.senderDate stringByAppendingString:@"-"] stringByAppendingString:day];
+        self.senderDate = [[self.senderDate stringByAppendingString:@"-"] stringByAppendingString:yearString];
+    }
     
-    NSString *query = [NSString stringWithFormat:@"select * from eventsTable where event_date = '%@'", senderDate];
+    NSString *query = [NSString stringWithFormat:@"select * from eventsTable where event_date = '%@'", self.senderDate];
     
     // Get the results.
     if (self.eventsArray != nil) {
@@ -324,7 +328,7 @@ NSInteger thisday;
 
 -(void)editingInfoWasFinished{
     // Reload the data.
-    //[self loadData: id];
+    [self loadData: nil];
 }
 
 
