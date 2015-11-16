@@ -62,7 +62,7 @@ NSInteger thisday;
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
     
     //manually set, but works as long as you change the tag number
-    UIButton *button = (UIButton *)[self.view viewWithTag:15];
+    UIButton *button = (UIButton *)[self.view viewWithTag:16];
     [self loadData:button];
 
 }
