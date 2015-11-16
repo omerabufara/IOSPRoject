@@ -164,9 +164,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Pnl-Le-BPU" kind="show" identifier="idSegueEditInfo" id="HLv-ff-nsg"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

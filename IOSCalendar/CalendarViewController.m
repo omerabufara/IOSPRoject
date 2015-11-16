@@ -219,7 +219,7 @@ NSInteger thisday;
     [self loadData:sender];
 }
 
-- (void)addNewEvent:(id)sender{
+- (IBAction)addNewEvent:(id)sender{
    
     [self performSegueWithIdentifier:@"addEventSegue" sender:self];
     
@@ -263,20 +263,14 @@ NSInteger thisday;
     
 }
 
-/*-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    //AddEventViewController *AddEventViewController = [segue destinationViewController];
-    //AddEventViewController.delegate = self;
-    
-    //if ([[segue identifier] isEqualToString:@"showDetail"]) {
-       // NSIndexPath *indexPath = [self.calendarTableView indexPathForSelectedRow];
-        //CalendarViewController *object = [self.calendarTableView indexPathForSelectedRow];
-       // EditEventViewController *controller = (EditEventViewController *)[[segue destinationViewController] topViewController];
-        //[controller setDetailItem:object];
-        //[controller setDelegate:self];
-//        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-//        controller.navigationItem.leftItemsSupplementBackButton = YES;
-    //}
-}*/
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    AddEventViewController *AddEventViewController = [segue destinationViewController];
+//    AddEventViewController.delegate = self;
+//    
+//    AddEventViewController.recordIDToEdit = self.recordIDToEdit;
+//  
+//    
+//}
 
 - (void)insertNewObject:(id)sender {
     
@@ -312,13 +306,13 @@ NSInteger thisday;
     //return self.arrEventsInfo.count;
 }
 
--(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
-    // Get the record ID of the selected name and set it to the recordIDToEdit property.
-    self.recordIDToEdit = [[[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
-    
-    // Perform the segue.
-    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
-}
+//-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+//    // Get the record ID of the selected name and set it to the recordIDToEdit property.
+//    self.recordIDToEdit = [[[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
+//    
+//    // Perform the segue.
+//    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -336,6 +330,26 @@ NSInteger thisday;
     return cell;
 }
 
+/// Delete Records
+
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the selected record.
+        // Find the record ID.
+        int recordIDToDelete = [[[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
+        
+        // Prepare the query.
+        NSString *query = [NSString stringWithFormat:@"delete from eventsTable where ID=%d", recordIDToDelete];
+        
+        // Execute the query.
+        [self.dbManager executeQuery:query];
+        
+        // Reload the table view.
+        [self loadData:nil];
+    }
+}
 
 
 
