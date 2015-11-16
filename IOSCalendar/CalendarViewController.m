@@ -59,7 +59,10 @@ NSInteger thisday;
     
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
     
-    //[self loadData];
+    //manually set, but works as long as you change the tag number
+    UIButton *button = (UIButton *)[self.view viewWithTag:15];
+    [self loadData:button];
+
 }
 
 
@@ -205,8 +208,6 @@ NSInteger thisday;
             addProject.backgroundColor = [UIColor grayColor];
         }
         
-        
-        
         [self.view addSubview:addProject];
     }
     
@@ -226,7 +227,15 @@ NSInteger thisday;
     //will not happen for current date and need a click off function to turn back to grey
     if([sender isKindOfClass:[UIButton class]]){
         UIButton *senderButton = sender;
-        senderButton.backgroundColor = [UIColor greenColor];
+        // Unselect all the buttons in the parent view
+        for (UIView *button in senderButton.superview.subviews) {
+            if ([button isKindOfClass:[UIButton class]]) {
+                [(UIButton *)button setSelected:NO];
+            }
+        }
+        
+        // Set the current button as the only selected one
+        [sender setSelected:YES];
     }
     
     if (sender != nil)
