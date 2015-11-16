@@ -59,7 +59,10 @@ NSInteger thisday;
     
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
     
-    //[self loadData];
+    //manually set, but works as long as you change the tag number
+    UIButton *button = (UIButton *)[self.view viewWithTag:15];
+    [self loadData:button];
+
 }
 
 - (void)insertNewObject:(id)sender {
@@ -265,8 +268,6 @@ NSInteger thisday;
         else{
             addProject.backgroundColor = [UIColor grayColor];
         }
-        
-        
         
         [self.view addSubview:addProject];
     }
