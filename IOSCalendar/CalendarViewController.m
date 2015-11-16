@@ -256,7 +256,16 @@ NSInteger thisday;
     //AddEventViewController *AddEventViewController = [segue destinationViewController];
     //AddEventViewController.delegate = self;
     
-}
+    //if ([[segue identifier] isEqualToString:@"showDetail"]) {
+       // NSIndexPath *indexPath = [self.calendarTableView indexPathForSelectedRow];
+        //CalendarViewController *object = [self.calendarTableView indexPathForSelectedRow];
+       // EditEventViewController *controller = (EditEventViewController *)[[segue destinationViewController] topViewController];
+        //[controller setDetailItem:object];
+        //[controller setDelegate:self];
+//        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+//        controller.navigationItem.leftItemsSupplementBackButton = YES;
+    //}
+}*/
 
 - (void)insertNewObject:(id)sender {
     
