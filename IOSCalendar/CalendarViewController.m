@@ -21,6 +21,8 @@
 
 @property (nonatomic, strong) NSArray *eventsArray;
 
+@property (nonatomic) int recordIDToEdit;
+
 
 //-(void)loadData;
 
@@ -308,6 +310,14 @@ NSInteger thisday;
     return [self.eventsArray count];
     
     //return self.arrEventsInfo.count;
+}
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    // Get the record ID of the selected name and set it to the recordIDToEdit property.
+    self.recordIDToEdit = [[[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
+    
+    // Perform the segue.
+    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
