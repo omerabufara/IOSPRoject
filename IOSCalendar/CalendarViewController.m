@@ -18,6 +18,7 @@
 
 @property (nonatomic) int recordIDToEdit;
 
+//-(void)loadInfoToEdit;
 
 @property (nonatomic, strong) NSArray *eventsArray;
 
@@ -285,17 +286,6 @@ NSInteger thisday;
 //    [self.calendarTableView reloadData];
 }
 
-- (IBAction)addNewRecord:(id)sender {
-    
-    // Before performing the segue, set the -1 value to the recordIDToEdit. That way we'll indicate that we want to add a new record and not to edit an existing one.
-    self.recordIDToEdit = -1;
-    
-    // Perform the segue.
-    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
-   
-    [self performSegueWithIdentifier:@"addEventSegue" sender:self];
-    
-}
 
 -(void)loadData{
     
@@ -312,6 +302,14 @@ NSInteger thisday;
     
 }
 
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    // Get the record ID of the selected name and set it to the recordIDToEdit property.
+    self.recordIDToEdit = [[[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
+    
+    // Perform the segue.
+    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     AddEventViewController *AddEventViewController = [segue destinationViewController];
     AddEventViewController.delegate = self;
@@ -319,6 +317,17 @@ NSInteger thisday;
 
 }
 
+- (IBAction)addNewEvent:(id)sender {
+    
+    // Before performing the segue, set the -1 value to the recordIDToEdit. That way we'll indicate that we want to add a new record and not to edit an existing one.
+    self.recordIDToEdit = -1;
+    
+    // Perform the segue.
+    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
+    
+//    [self performSegueWithIdentifier:@"addEventSegue" sender:self];
+    
+}
 
 
 

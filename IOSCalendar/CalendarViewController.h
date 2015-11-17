@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DBManager.h"
 #import "AddEventViewController.h"
+#import "EditEventViewController.h"
 
 //@class AddEventViewController;
 
@@ -17,6 +18,8 @@
 
 
 @property (strong, nonatomic) AddEventViewController *addEventViewController;
+@property (strong, nonatomic) EditEventViewController *editEventViewController;
+
 - (IBAction)nextAct:(id)sender;
 
 - (IBAction)prevAct:(id)sender;
@@ -26,8 +29,6 @@
 @property (strong, nonatomic) NSDate *defaulComp;
 
 @property (nonatomic, strong) DBManager *dbManager;
-
--(void)loadData;
 
 
 

@@ -13,7 +13,8 @@
 
 @interface EditEventViewController ()
 @property (nonatomic, strong) DBManager *dbManager;
-
+@property (nonatomic) int recordIDToEdit;
+-(void)loadInfoToEdit;
 @end
 
 @implementation EditEventViewController
