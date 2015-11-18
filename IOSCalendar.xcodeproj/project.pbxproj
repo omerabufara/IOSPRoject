@@ -151,6 +151,12 @@
 				1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */,
 				1AE902441BF3DD960054596E /* DBManager.h */,
 				1AE902451BF3DD960054596E /* DBManager.m */,
+				1ABE715F1BFB76BA008FC8ED /* eventsTableViewController.h */,
+				1ABE71601BFB76BA008FC8ED /* eventsTableViewController.m */,
+				1ABE71621BFB78E0008FC8ED /* HomeModel.h */,
+				1ABE71631BFB78E0008FC8ED /* HomeModel.m */,
+				1ABE71651BFB78F0008FC8ED /* Location.h */,
+				1ABE71661BFB78F0008FC8ED /* Location.m */,
 			);
 			path = IOSCalendar;
 			sourceTree = "<group>";
@@ -317,10 +323,13 @@
 				5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */,
 				1A0BEA681BED537A0091A91A /* EditEventViewController.m in Sources */,
 				1AE902461BF3DD960054596E /* DBManager.m in Sources */,
+				1ABE71611BFB76BA008FC8ED /* eventsTableViewController.m in Sources */,
 				1A086DBA1BE6D54F00980950 /* ViewController.m in Sources */,
 				1A0BEA5F1BED12080091A91A /* LogInViewController.m in Sources */,
 				1A086DB71BE6D54F00980950 /* AppDelegate.m in Sources */,
+				1ABE71641BFB78E0008FC8ED /* HomeModel.m in Sources */,
 				1A086DB41BE6D54F00980950 /* main.m in Sources */,
+				1ABE71671BFB78F0008FC8ED /* Location.m in Sources */,
 				1A0BEA6B1BED53E60091A91A /* AddEventViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
