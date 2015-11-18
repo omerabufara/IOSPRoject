@@ -38,7 +38,7 @@
     _homeModel.delegate = self;
     
     // Call the download items method of the home model object
-    [_homeModel downloadItems];
+    //[_homeModel downloadItems];
     // Do any additional setup after loading the view.
 }
 

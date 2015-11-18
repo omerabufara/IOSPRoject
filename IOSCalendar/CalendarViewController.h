@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "DBManager.h"
 #import "AddEventViewController.h"
+#import "HomeModel.h"
 
 //@class AddEventViewController;
 
-@interface CalendarViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, EditInfoViewControllerDelegate>
+@interface CalendarViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, EditInfoViewControllerDelegate, HomeModelProtocol>
 
 
 @property (strong, nonatomic) AddEventViewController *addEventViewController;
@@ -22,6 +23,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *monthly;
 @property (weak, nonatomic) IBOutlet UILabel *year;
+@property (weak, nonatomic) NSString *currentButtonTitle;
 @property (strong, nonatomic) NSDate *defaulComp;
 
 @property (nonatomic, strong) DBManager *dbManager;

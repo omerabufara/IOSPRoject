@@ -24,9 +24,9 @@
 		1ABE71611BFB76BA008FC8ED /* eventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71601BFB76BA008FC8ED /* eventsTableViewController.m */; };
 		1ABE71641BFB78E0008FC8ED /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71631BFB78E0008FC8ED /* HomeModel.m */; };
 		1ABE71671BFB78F0008FC8ED /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71661BFB78F0008FC8ED /* Location.m */; };
-		1AC5D0A51BF80E9200CA4982 /* PSSH.sql in Resources */ = {isa = PBXBuildFile; fileRef = 1AC5D0A41BF80E9200CA4982 /* PSSH.sql */; };
 		1AE902461BF3DD960054596E /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE902451BF3DD960054596E /* DBManager.m */; };
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; };
+		BDF285181BFA59D0007BF0E9 /* PSSH.sql in Resources */ = {isa = PBXBuildFile; fileRef = BDF285171BFA59D0007BF0E9 /* PSSH.sql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,11 +79,11 @@
 		1ABE71631BFB78E0008FC8ED /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		1ABE71651BFB78F0008FC8ED /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		1ABE71661BFB78F0008FC8ED /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		1AC5D0A41BF80E9200CA4982 /* PSSH.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = PSSH.sql; path = ../PSSH.sql; sourceTree = "<group>"; };
 		1AE902441BF3DD960054596E /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		1AE902451BF3DD960054596E /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		BDF285171BFA59D0007BF0E9 /* PSSH.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = PSSH.sql; path = ../../PSSH.sql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,7 @@
 		1A086DA61BE6D54F00980950 = {
 			isa = PBXGroup;
 			children = (
-				1AC5D0A41BF80E9200CA4982 /* PSSH.sql */,
+				BDF285171BFA59D0007BF0E9 /* PSSH.sql */,
 				1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */,
 				1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */,
 				1A086DB11BE6D54F00980950 /* IOSCalendar */,
@@ -300,7 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AC5D0A51BF80E9200CA4982 /* PSSH.sql in Resources */,
+				BDF285181BFA59D0007BF0E9 /* PSSH.sql in Resources */,
 				1A086DC21BE6D54F00980950 /* LaunchScreen.storyboard in Resources */,
 				1A086DBF1BE6D54F00980950 /* Assets.xcassets in Resources */,
 				1A086DBD1BE6D54F00980950 /* Main.storyboard in Resources */,
