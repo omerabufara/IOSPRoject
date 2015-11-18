@@ -262,16 +262,6 @@ NSInteger thisday;
     [self.calendarTableView reloadData];
     
 }
-
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//    AddEventViewController *AddEventViewController = [segue destinationViewController];
-//    AddEventViewController.delegate = self;
-//    
-//    AddEventViewController.recordIDToEdit = self.recordIDToEdit;
-//  
-//    
-//}
-
 - (void)insertNewObject:(id)sender {
     
     if (!self.calendarTableView) {
