@@ -11,6 +11,7 @@
 #import "EditEventViewController.h"
 #import "DBManager.h"
 #import "AppDelegate.h"
+#import "Location.h"
 
 @interface CalendarViewController () <EditInfoViewControllerDelegate>
 
@@ -28,6 +29,13 @@
 
 @end
 
+@interface CalendarViewController()
+{
+    HomeModel *_homeModel;
+    NSArray *_feedItems;
+}
+@end
+
 NSUInteger numDays;
 NSInteger thisYear;
 NSInteger weekday;
@@ -40,6 +48,7 @@ NSInteger thisday;
 
 @synthesize monthly;
 @synthesize year;
+@synthesize currentButtonTitle;
 
 
 - (void)viewDidLoad {
@@ -59,15 +68,29 @@ NSInteger thisday;
     self.calendarTableView.delegate = self;
     self.calendarTableView.dataSource = self;
     
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
+    //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
     
     //manually set, but works as long as you change the tag number
-    UIButton *button = (UIButton *)[self.view viewWithTag:16];
+    UIButton *button = (UIButton *)[self.view viewWithTag:18];
     [self loadData:button];
+    
+//    _feedItems = [[NSArray alloc]init];
+//    _homeModel = [[HomeModel alloc]init];
+//    _homeModel.delegate = self;
+    //[_homeModel downloadItems];
 
 }
 
-
+-(void)itemsDownloaded:(NSArray *)items
+{
+    // This delegate method will get called when the items are finished downloading
+    
+    // Set the downloaded items to the array
+    _feedItems = items;
+    
+    // Reload the table view
+    [self.calendarTableView reloadData];
+}
 
 - (IBAction)nextAct:(id)sender {
     thisMonth++;
@@ -213,6 +236,7 @@ NSInteger thisday;
         [self.view addSubview:addProject];
     }
     
+    
 }
 
 -(IBAction)showEvents:(id)sender{
@@ -243,20 +267,19 @@ NSInteger thisday;
     if (sender != nil)
     {
         NSString *day = [sender currentTitle];
-        NSString *month = [monthly text];
-        NSString *yearString = [NSString stringWithFormat:@"%ld", (long)thisYear];
-        self.senderDate = month;
-        self.senderDate = [[self.senderDate stringByAppendingString:@"-"] stringByAppendingString:day];
-        self.senderDate = [[self.senderDate stringByAppendingString:@"-"] stringByAppendingString:yearString];
+        currentButtonTitle = day;
+        _feedItems = [[NSArray alloc]init];
+        _homeModel = [[HomeModel alloc]init];
+        _homeModel.delegate = self;
+        [_homeModel downloadItems:day monthly:self.monthly.text year:self.year.text];
     }
-    
-    NSString *query = [NSString stringWithFormat:@"select * from eventsTable where event_date = '%@'", self.senderDate];
+
     
     // Get the results.
     if (self.eventsArray != nil) {
         self.eventsArray = nil;
     }
-    self.eventsArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    //self.eventsArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     
     // Reload the table view.
     [self.calendarTableView reloadData];
@@ -301,7 +324,7 @@ NSInteger thisday;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.eventsArray count];
+    return _feedItems.count;
     
     //return self.arrEventsInfo.count;
 }
@@ -316,18 +339,19 @@ NSInteger thisday;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    // Retrieve cell
+    NSString *cellIdentifier = @"BasicCell";
+    UITableViewCell *myCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    NSInteger indexOfEventName = [self.dbManager.arrColumnNames indexOfObject:@"event_name"];
+    // Get the location to be shown
+    Location *item = _feedItems[indexPath.row];
     
-    NSInteger indexOfEventTime = [self.dbManager.arrColumnNames indexOfObject:@"event_time"];
+    // Get references to labels of cell
+    myCell.textLabel.text = item.event_name;
     
-    // Set the loaded data to the appropriate cell labels.
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:indexOfEventName]];
+    myCell.detailTextLabel.text = item.event_time;
     
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Time: %@", [[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:indexOfEventTime]];
-    
-    return cell;
+    return myCell;
 }
 
 /// Delete Records
