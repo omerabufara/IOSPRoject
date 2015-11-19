@@ -17,8 +17,8 @@
 
 
 
-@property (strong, nonatomic) AddEventViewController *addEventViewController;
-@property (strong, nonatomic) EditEventViewController *editEventViewController;
+//@property (strong, nonatomic) AddEventViewController *addEventViewController;
+//@property (strong, nonatomic) EditEventViewController *editEventViewController;
 
 - (IBAction)nextAct:(id)sender;
 

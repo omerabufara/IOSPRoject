@@ -21,7 +21,6 @@
 		1A0BEA6B1BED53E60091A91A /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */; };
 		1A8983DC1BF5E7C20040E791 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */; };
 		1A8983DE1BF5E7CE0040E791 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */; };
-		1A8983E01BF5E7F20040E791 /* PSSH.sql in Resources */ = {isa = PBXBuildFile; fileRef = 1A8983DF1BF5E7F20040E791 /* PSSH.sql */; };
 		1AE902461BF3DD960054596E /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE902451BF3DD960054596E /* DBManager.m */; };
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; };
 /* End PBXBuildFile section */
@@ -70,7 +69,6 @@
 		1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
 		1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		1A8983DF1BF5E7F20040E791 /* PSSH.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = PSSH.sql; path = ../PSSH.sql; sourceTree = "<group>"; };
 		1AE902441BF3DD960054596E /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		1AE902451BF3DD960054596E /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 		1A086DA61BE6D54F00980950 = {
 			isa = PBXGroup;
 			children = (
-				1A8983DF1BF5E7F20040E791 /* PSSH.sql */,
 				1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */,
 				1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */,
 				1A086DB11BE6D54F00980950 /* IOSCalendar */,
@@ -285,7 +282,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A8983E01BF5E7F20040E791 /* PSSH.sql in Resources */,
 				1A086DC21BE6D54F00980950 /* LaunchScreen.storyboard in Resources */,
 				1A086DBF1BE6D54F00980950 /* Assets.xcassets in Resources */,
 				1A086DBD1BE6D54F00980950 /* Main.storyboard in Resources */,

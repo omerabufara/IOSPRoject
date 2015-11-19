@@ -313,7 +313,7 @@ NSInteger thisday;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     AddEventViewController *AddEventViewController = [segue destinationViewController];
     AddEventViewController.delegate = self;
-    EditEventViewController.recordIDToEdit = self.recordIDToEdit;
+//    EditEventViewController.recordIDToEdit = self.recordIDToEdit;
 
 }
 

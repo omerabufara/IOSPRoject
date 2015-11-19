@@ -395,6 +395,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbJ-PE-gEF">
                                 <rect key="frame" x="400" y="487" width="120" height="30"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveInfo:" destination="Pnl-Le-BPU" eventType="touchUpInside" id="lWB-Vc-RUI"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="EventVisiblity" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mkR-uN-K7d">
                                 <rect key="frame" x="196" y="420" width="319" height="30"/>
@@ -653,6 +656,9 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmO-e3-5BR">
                                 <rect key="frame" x="221" y="391" width="157" height="30"/>
                                 <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="login:" destination="44n-fg-QtB" eventType="touchUpInside" id="N10-b3-pK6"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iRu-7q-Dyv">
                                 <rect key="frame" x="195" y="121" width="210" height="30"/>
@@ -673,6 +679,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Log In" id="ZTx-Zq-Fta"/>
+                    <connections>
+                        <outlet property="password" destination="mKR-j9-iJS" id="foV-PT-3Dx"/>
+                        <outlet property="userName" destination="iRu-7q-Dyv" id="Tw2-2V-5l2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCy-mI-29N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
