@@ -33,12 +33,16 @@ NSInteger thisday;
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
+    
+    
+    
+    
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
- //   self.eventdetailViewController = (EventDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
     
     self.eventsArray = [NSMutableArray array];
-  //  [self loadSample];
+  
     
     
     [self myCalView];
@@ -79,6 +83,9 @@ NSInteger thisday;
     
     return cell;
 }
+
+
+
 
 - (IBAction)nextAct:(id)sender {
     thisMonth++;
@@ -243,6 +250,8 @@ NSInteger thisday;
 -(IBAction)showEvents:(id)sender{
     //will have to adjust this to show different events by date when we get to it
     NSLog(@"Events shown");
+    
+    
     [self.eventsArray removeAllObjects];
     [self.eventsArray addObject:@"Event 1"];
     [self.eventsArray addObject:@"Event 2"];
@@ -252,5 +261,12 @@ NSInteger thisday;
     [self.calendarTableView reloadData];
 }
 
-
+- (void)calendarTableView:(UITableView *)calendarTableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.eventsArray removeObjectAtIndex:indexPath.row];
+        [calendarTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    }
+}
 @end

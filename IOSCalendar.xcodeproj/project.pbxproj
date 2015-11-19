@@ -20,6 +20,8 @@
 		1A0BEA651BED53610091A91A /* ManageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA641BED53610091A91A /* ManageTableViewController.m */; };
 		1A0BEA681BED537A0091A91A /* EditEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA671BED537A0091A91A /* EditEventViewController.m */; };
 		1A0BEA6B1BED53E60091A91A /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */; };
+		4714B4561BFD5C2F0008415C /* Mil-Vet-PSSH-centered-cmyk.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4714B4551BFD5C2F0008415C /* Mil-Vet-PSSH-centered-cmyk.jpg */; };
+		47E9E5861BFB72E300AC1FCF /* img038.preview.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47E9E5851BFB72E300AC1FCF /* img038.preview.jpg */; };
 		47FEEFF81BF105A200A0FCE7 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FEEFF71BF105A200A0FCE7 /* EventDetailViewController.m */; };
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; };
 /* End PBXBuildFile section */
@@ -68,6 +70,8 @@
 		1A0BEA671BED537A0091A91A /* EditEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditEventViewController.m; sourceTree = "<group>"; };
 		1A0BEA691BED53E60091A91A /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
 		1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
+		4714B4551BFD5C2F0008415C /* Mil-Vet-PSSH-centered-cmyk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Mil-Vet-PSSH-centered-cmyk.jpg"; sourceTree = "<group>"; };
+		47E9E5851BFB72E300AC1FCF /* img038.preview.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img038.preview.jpg; sourceTree = "<group>"; };
 		47FEEFF61BF105A200A0FCE7 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
 		47FEEFF71BF105A200A0FCE7 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 		1A086DB21BE6D54F00980950 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4714B4551BFD5C2F0008415C /* Mil-Vet-PSSH-centered-cmyk.jpg */,
+				47E9E5851BFB72E300AC1FCF /* img038.preview.jpg */,
 				1A086DB31BE6D54F00980950 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -279,6 +285,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A086DC21BE6D54F00980950 /* LaunchScreen.storyboard in Resources */,
+				47E9E5861BFB72E300AC1FCF /* img038.preview.jpg in Resources */,
+				4714B4561BFD5C2F0008415C /* Mil-Vet-PSSH-centered-cmyk.jpg in Resources */,
 				1A086DBF1BE6D54F00980950 /* Assets.xcassets in Resources */,
 				1A086DBD1BE6D54F00980950 /* Main.storyboard in Resources */,
 			);
