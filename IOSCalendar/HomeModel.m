@@ -26,6 +26,8 @@
     NSString* eventLocation;
     NSString* eventDescription;
     
+    NSInteger* rid;
+    
 }
 @end
 
@@ -76,6 +78,22 @@
 
 }
 
+- (void)deleteItems: (NSInteger*)recordid{
+    
+    rid = recordid;
+    
+    NSString *delete = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/delete.php?eventId=%ld",*rid];
+    
+    NSURL *jsonFileUrl = [ NSURL URLWithString:delete];
+    
+    //    // Create the request
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
+    ////
+    // Create the NSURLConnection
+    [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+    
+}
+
 #pragma mark NSURLConnectionDataProtocol Methods
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -116,6 +134,7 @@
             
                 // Create a new location object and set its props to JsonElement properties
                 Location *newLocation = [[Location alloc] init];
+                newLocation.eventId = jsonElement[@"ID"];
                 newLocation.event_name = jsonElement[@"event_name"];
                 newLocation.event_date = jsonElement[@"event_date"];
                 newLocation.event_time = jsonElement[@"event_time"];

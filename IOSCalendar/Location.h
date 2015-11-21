@@ -10,6 +10,7 @@
 
 @interface Location : NSObject
 
+@property (nonatomic, strong) NSString *eventId;
 @property (nonatomic, strong) NSString *event_name;
 @property (nonatomic, strong) NSString *event_date;
 @property (nonatomic, strong) NSString *event_time;

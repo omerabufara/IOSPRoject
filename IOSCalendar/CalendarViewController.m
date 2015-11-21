@@ -33,6 +33,8 @@
 {
     HomeModel *_homeModel;
     NSArray *_feedItems;
+    
+    //NSInteger *recordIDToDelete;
 }
 @end
 
@@ -331,6 +333,7 @@ NSInteger thisday;
 {
     // Retrieve cell
     NSString *cellIdentifier = @"BasicCell";
+    
     UITableViewCell *myCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     // Get the location to be shown
@@ -352,15 +355,25 @@ NSInteger thisday;
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the selected record.
         // Find the record ID.
-        int recordIDToDelete = [[[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
         
-        // Prepare the query.
-        NSString *query = [NSString stringWithFormat:@"delete from eventsTable where ID=%d", recordIDToDelete];
+        Location *item = _feedItems[indexPath.row];
         
-        // Execute the query.
-        [self.dbManager executeQuery:query];
         
-        // Reload the table view.
+        
+        NSInteger recordIDToDelete = [[item.eventId stringByReplacingOccurrencesOfString:@" " withString:@""] intValue];
+        
+//        // Prepare the query.
+//        NSString *query = [NSString stringWithFormat:@"delete from eventsTable where ID=%d", recordIDToDelete];
+//        
+//        // Execute the query.
+//        [self.dbManager executeQuery:query];
+
+        
+        HomeModel *delete = [[HomeModel alloc]init];
+        
+        [delete deleteItems:&recordIDToDelete];
+      
+         //Reload the table view.
         [self loadData:nil];
     }
 }

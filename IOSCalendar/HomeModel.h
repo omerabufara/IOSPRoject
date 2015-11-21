@@ -23,6 +23,7 @@
 
 
 - (void)downloadItems: (NSString*) day monthly:(NSString*)month year:(NSString*)currYear;
+- (void)deleteItems: (NSInteger*) recordid;
 
 - (void)addItems: (NSString*) evName date:(NSString*)evDate time:(NSString*)evTime location:(NSString*)evLocation description:(NSString*)evDescription;
 
