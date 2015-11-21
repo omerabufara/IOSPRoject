@@ -9,10 +9,20 @@
 #import "AddEventViewController.h"
 #import "CalendarViewController.h"
 #import "DBManager.h"
+#import "HomeModel.h"
+#import "Location.h"
 
 @interface AddEventViewController ()
 
 @property (nonatomic, strong) DBManager *dbManager;
+
+@end
+
+@interface AddEventViewController ()
+{
+    HomeModel *_homeModel;
+    NSArray *_feedItems;
+}
 
 @end
 
@@ -33,7 +43,12 @@
     self.txtEventVisible.delegate = self;
     
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
+
+//    _feedItems = [[NSArray alloc]init];
+//    _homeModel = [[HomeModel alloc]init];
+    //HomeModel.delegate = self;
     
+   // [_homeModel downloadItems:day monthly:self.monthly.text year:self.year.text];
     
 //    // Check if should load specific record for editing.
 //    if (self.recordIDToEdit != -1) {
@@ -72,24 +87,40 @@
 
 
 - (IBAction)saveInfo:(id)sender{
-        NSMutableString *query = [NSMutableString stringWithFormat:@"insert into eventsTable values (null ,'%@' , '%@' , '%@' , '%@' , '%@' , '%@' )", self.txtEventName.text, self.txtEventDate.text, self.txtEventTime.text, self.txtEventLocation.text, self.txtEventDescription.text, self.txtEventVisible.text];
+//        NSMutableString *query = [NSMutableString stringWithFormat:@"insert into events values (null ,'%@' , '%@' , '%@' , '%@' , '%@'  )", self.txtEventName.text, self.txtEventDate.text, self.txtEventTime.text, self.txtEventLocation.text, self.txtEventDescription.text];
+//    
+//    // Execute the query.
+//    [self.dbManager executeQuery:query];
     
-    // Execute the query.
-    [self.dbManager executeQuery:query];
+    HomeModel *add = [[HomeModel alloc]init];
     
-    // If the query was successfully executed then pop the view controller.
-    if (self.dbManager.affectedRows != 0) {
-        NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
-        
-       
-         [self.delegate editingInfoWasFinished];
-        [self.navigationController popViewControllerAnimated:YES];
-        //[self dismissViewControllerAnimated:YES completion:nil];
-      
-    }
-    else{
-        NSLog(@"Could not execute the query.");
-    }
+    NSString *eventName = self.txtEventName.text;
+    
+    NSString *eventDate = self.txtEventDate.text;
+    
+    NSString *eventTime = self.txtEventTime.text;
+    
+    NSString *eventLocation = self.txtEventLocation.text;
+    
+    NSString *eventDescription = self.txtEventDescription.text;
+    
+    [add addItems:eventName date:eventDate time:eventTime location:eventLocation description:eventDescription ];
+    
+    [self.delegate editingInfoWasFinished];
+    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+//    // If the query was successfully executed then pop the view controller.
+//    if (self.dbManager.affectedRows != 0) {
+//        NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+//        
+//       
+//
+//      
+//    }
+//    else{
+//        NSLog(@"Could not execute the query.");
+//    }
 }
 
 @end

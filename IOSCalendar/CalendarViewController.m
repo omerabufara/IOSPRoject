@@ -288,7 +288,7 @@ NSInteger thisday;
 - (void)insertNewObject:(id)sender {
     
     if (!self.calendarTableView) {
-        self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
+        _homeModel= [[HomeModel alloc]init];
     }
     AddEventViewController *foundDVC = (AddEventViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"add"];
     
@@ -364,9 +364,6 @@ NSInteger thisday;
         [self loadData:nil];
     }
 }
-
-
-
 
 -(void)editingInfoWasFinished{
     // Reload the data.

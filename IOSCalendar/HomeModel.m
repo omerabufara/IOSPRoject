@@ -19,6 +19,13 @@
     NSString* daily;
     NSString* monthly;
     NSString* yearly;
+    
+    NSString* eventName;
+    NSString* eventDate;
+    NSString* eventTime;
+    NSString* eventLocation;
+    NSString* eventDescription;
+    
 }
 @end
 
@@ -48,6 +55,27 @@
 //    }]resume];                                                         *error){
 }
 
+- (void)addItems: (NSString*) evName date:(NSString*)evDate time:(NSString*)evTime location:(NSString*)evLocation description:(NSString*)evDescription
+{
+    
+    eventName = evName;
+    eventDate = evDate;
+    eventTime = evTime;
+    eventLocation = evLocation;
+    eventDescription = evDescription;
+    
+    NSString *add = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/add.php?event_name=%@&event_date=%@&event_time=%@&event_location=%@&event_description=%@",eventName ,eventDate ,eventTime ,eventLocation ,eventDescription];
+    
+    NSURL *jsonFileUrl = [ NSURL URLWithString:add];
+    
+    //    // Create the request
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
+    ////
+    // Create the NSURLConnection
+    [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+
+}
+
 #pragma mark NSURLConnectionDataProtocol Methods
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -64,7 +92,7 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    CalendarViewController *calController = [[CalendarViewController alloc]init];
+    //CalendarViewController *calController = [[CalendarViewController alloc]init];
     // Create an array to store the locations
     NSMutableArray *_locations = [[NSMutableArray alloc] init];
     
