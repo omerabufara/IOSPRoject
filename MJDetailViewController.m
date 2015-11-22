@@ -8,11 +8,12 @@
 
 #import "MJDetailViewController.h"
 #import "CalendarViewController.h"
+#import "HomeModel.h"
 
 @interface MJDetailViewController ()
 
 @end
-
+NSInteger storedRecordId;
 @implementation MJDetailViewController
 @synthesize eventTime;
 @synthesize eventLocation;
@@ -20,13 +21,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    eventTime.text=parseSpot3[2];
-//    eventLocation.text=parseSpot3[3];
-//    eventDescription.text=parseSpot3[4];
-    eventTime.text=@"3:00 pm";
-        eventLocation.text=@"4100 Fleetwood Drive West Mifflin, PA 15122";
-     //[eventDescription setLineBreakMode:NSLineBreakByWordWrapping];
-        eventDescription.text=@"This is a test of how much I can type within this box before it starts to run over. This needs to be word wrapped so it doesn't go off of the screen. Or it would look stupid";
+    eventTime.text=parseSpot3[2];
+    eventLocation.text=parseSpot3[3];
+    eventDescription.text=parseSpot3[4];
+//    eventTime.text=@"3:00 pm";
+//        eventLocation.text=@"4100 Fleetwood Drive West Mifflin, PA 15122";
+//     //[eventDescription setLineBreakMode:NSLineBreakByWordWrapping];
+//        eventDescription.text=@"This is a test of how much I can type within this box before it starts to run over. This needs to be word wrapped so it doesn't go off of the screen. Or it would look stupid";
     
     // Do any additional setup after loading the view.
 }
@@ -34,6 +35,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)storeRecordId:(NSInteger)recordId{
+    storedRecordId = recordId;
+}
+
+- (IBAction)deletePressed:(id)sender{
+    [self deleteEvent:storedRecordId];
+}
+
+-(void)deleteEvent:(NSInteger)recordId{
+    HomeModel *delete = [[HomeModel alloc]init];
+    
+    [delete deleteItems:&recordId];
 }
 
 /*

@@ -14,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *eventLocation;
 @property (weak, nonatomic) IBOutlet UILabel *eventDescription;
 
+- (void)storeRecordId:(NSInteger)recordId;
 @end

@@ -59,7 +59,6 @@ NSArray * parseSpot3;
     [super viewDidLoad];
     
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:
         
     UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
@@ -364,8 +363,12 @@ NSArray * parseSpot3;
     return myCell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    MJDetailViewController *detailVC =[[MJDetailViewController alloc]init];
     Location *item = _feedItems[indexPath.row];
     NSLog(@"here");
+    
+    [detailVC storeRecordId:[[item.eventId stringByReplacingOccurrencesOfString:@" " withString:@""] intValue]];
+    
     [self popupInfo:item.event_name date:item.event_date time:item.event_time location:item.event_location description:item.event_description];
 }
 
@@ -383,13 +386,6 @@ NSArray * parseSpot3;
         
         
         NSInteger recordIDToDelete = [[item.eventId stringByReplacingOccurrencesOfString:@" " withString:@""] intValue];
-        
-//        // Prepare the query.
-//        NSString *query = [NSString stringWithFormat:@"delete from eventsTable where ID=%d", recordIDToDelete];
-//        
-//        // Execute the query.
-//        [self.dbManager executeQuery:query];
-
         
         HomeModel *delete = [[HomeModel alloc]init];
         
