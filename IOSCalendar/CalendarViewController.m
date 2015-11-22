@@ -408,19 +408,8 @@ NSArray * parseSpot3;
 
 -(void) popupInfo: (NSString*) evName date:(NSString*)evDate time:(NSString*)evTime location:(NSString*)evLocation description:(NSString*)evDescription {
     NSLog(@"POPUPINFO");
-    /*UIButton* btn = (UIButton *) sender;
     
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [[NSDateComponents alloc] init];
-    [components setDay:[btn.currentTitle integerValue]];
-    [components setMonth:thisMonth];
-    [components setYear:thisYear];
-    NSDate * newDate = [calendar dateFromComponents:components];
-    //Formats date to YYYY-MM-DD
-    NSDateFormatter * dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd"];*/
-    
-    parseSpot3=@[@"event name", evName];
+    parseSpot3=@[evName,evDate,evTime,evLocation,evDescription];
     //compare above date to parse database. See if current user has an entry
     
     

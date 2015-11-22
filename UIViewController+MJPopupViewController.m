@@ -12,7 +12,7 @@
 #import "MJPopupBackgroundView.h"
 #import <objc/runtime.h>
 
-#define kPopupModalAnimationDuration 0.35
+#define kPopupModalAnimationDuration 0.25
 #define kMJPopupViewController @"kMJPopupViewController"
 #define kMJPopupBackgroundView @"kMJPopupBackgroundView"
 #define kMJSourceViewTag 23941

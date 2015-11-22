@@ -22,7 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    eventName.text=parseSpot3[1];
+    eventTime.text=parseSpot3[2];
+    eventLocation.text=parseSpot3[3];
+    eventDescription.text=parseSpot3[4];
     
     // Do any additional setup after loading the view.
 }

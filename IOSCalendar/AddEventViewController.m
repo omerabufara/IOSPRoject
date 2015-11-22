@@ -42,7 +42,7 @@
     self.txtEventDescription.delegate = self;
     self.txtEventVisible.delegate = self;
     
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
+    //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
 
 //    _feedItems = [[NSArray alloc]init];
 //    _homeModel = [[HomeModel alloc]init];
