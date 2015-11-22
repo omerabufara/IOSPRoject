@@ -21,11 +21,15 @@
 		1A0BEA6B1BED53E60091A91A /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */; };
 		1A8983DC1BF5E7C20040E791 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */; };
 		1A8983DE1BF5E7CE0040E791 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */; };
-		1AAB72E61BFD46590041DAC3 /* PSSH.sql in Resources */ = {isa = PBXBuildFile; fileRef = 1AAB72E51BFD46590041DAC3 /* PSSH.sql */; };
 		1ABE71611BFB76BA008FC8ED /* eventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71601BFB76BA008FC8ED /* eventsTableViewController.m */; };
 		1ABE71641BFB78E0008FC8ED /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71631BFB78E0008FC8ED /* HomeModel.m */; };
 		1ABE71671BFB78F0008FC8ED /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71661BFB78F0008FC8ED /* Location.m */; };
 		1AE902461BF3DD960054596E /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE902451BF3DD960054596E /* DBManager.m */; };
+		1AF8ED351C013C4F00DD777B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8ED341C013C4F00DD777B /* QuartzCore.framework */; };
+		1AF8ED391C0140C900DD777B /* MJDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF8ED381C0140C900DD777B /* MJDetailViewController.xib */; };
+		1AF8ED3C1C0140FE00DD777B /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED3B1C0140FE00DD777B /* UIViewController+MJPopupViewController.m */; };
+		1AF8ED3F1C01411A00DD777B /* MJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED3E1C01411A00DD777B /* MJDetailViewController.m */; };
+		1AF8ED421C01413400DD777B /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */; };
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +77,6 @@
 		1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
 		1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		1AAB72E51BFD46590041DAC3 /* PSSH.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = PSSH.sql; path = ../PSSH.sql; sourceTree = "<group>"; };
 		1ABE715F1BFB76BA008FC8ED /* eventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsTableViewController.h; sourceTree = "<group>"; };
 		1ABE71601BFB76BA008FC8ED /* eventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsTableViewController.m; sourceTree = "<group>"; };
 		1ABE71621BFB78E0008FC8ED /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
@@ -82,6 +85,14 @@
 		1ABE71661BFB78F0008FC8ED /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		1AE902441BF3DD960054596E /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		1AE902451BF3DD960054596E /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		1AF8ED341C013C4F00DD777B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1AF8ED381C0140C900DD777B /* MJDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MJDetailViewController.xib; path = ../MJDetailViewController.xib; sourceTree = "<group>"; };
+		1AF8ED3A1C0140FE00DD777B /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MJPopupViewController.h"; path = "../UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
+		1AF8ED3B1C0140FE00DD777B /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MJPopupViewController.m"; path = "../UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
+		1AF8ED3D1C01411A00DD777B /* MJDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJDetailViewController.h; path = ../MJDetailViewController.h; sourceTree = "<group>"; };
+		1AF8ED3E1C01411A00DD777B /* MJDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJDetailViewController.m; path = ../MJDetailViewController.m; sourceTree = "<group>"; };
+		1AF8ED401C01413400DD777B /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJPopupBackgroundView.h; path = ../MJPopupBackgroundView.h; sourceTree = "<group>"; };
+		1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJPopupBackgroundView.m; path = ../MJPopupBackgroundView.m; sourceTree = "<group>"; };
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AF8ED351C013C4F00DD777B /* QuartzCore.framework in Frameworks */,
 				1A8983DE1BF5E7CE0040E791 /* libsqlite3.tbd in Frameworks */,
 				1A8983DC1BF5E7C20040E791 /* libsqlite3.0.tbd in Frameworks */,
 			);
@@ -116,7 +128,7 @@
 		1A086DA61BE6D54F00980950 = {
 			isa = PBXGroup;
 			children = (
-				1AAB72E51BFD46590041DAC3 /* PSSH.sql */,
+				1AF8ED341C013C4F00DD777B /* QuartzCore.framework */,
 				1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */,
 				1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */,
 				1A086DB11BE6D54F00980950 /* IOSCalendar */,
@@ -173,6 +185,13 @@
 		1A086DB21BE6D54F00980950 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1AF8ED381C0140C900DD777B /* MJDetailViewController.xib */,
+				1AF8ED3A1C0140FE00DD777B /* UIViewController+MJPopupViewController.h */,
+				1AF8ED3B1C0140FE00DD777B /* UIViewController+MJPopupViewController.m */,
+				1AF8ED3D1C01411A00DD777B /* MJDetailViewController.h */,
+				1AF8ED3E1C01411A00DD777B /* MJDetailViewController.m */,
+				1AF8ED401C01413400DD777B /* MJPopupBackgroundView.h */,
+				1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */,
 				1A086DB31BE6D54F00980950 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -300,7 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AAB72E61BFD46590041DAC3 /* PSSH.sql in Resources */,
+				1AF8ED391C0140C900DD777B /* MJDetailViewController.xib in Resources */,
 				1A086DC21BE6D54F00980950 /* LaunchScreen.storyboard in Resources */,
 				1A086DBF1BE6D54F00980950 /* Assets.xcassets in Resources */,
 				1A086DBD1BE6D54F00980950 /* Main.storyboard in Resources */,
@@ -328,6 +347,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AF8ED3F1C01411A00DD777B /* MJDetailViewController.m in Sources */,
+				1AF8ED3C1C0140FE00DD777B /* UIViewController+MJPopupViewController.m in Sources */,
 				1A0BEA621BED12560091A91A /* signUpViewController.m in Sources */,
 				5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */,
 				1A0BEA681BED537A0091A91A /* EditEventViewController.m in Sources */,
@@ -340,6 +361,7 @@
 				1A086DB41BE6D54F00980950 /* main.m in Sources */,
 				1ABE71671BFB78F0008FC8ED /* Location.m in Sources */,
 				1A0BEA6B1BED53E60091A91A /* AddEventViewController.m in Sources */,
+				1AF8ED421C01413400DD777B /* MJPopupBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

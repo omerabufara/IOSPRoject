@@ -184,9 +184,6 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <connections>
-                                            <segue destination="b4x-kb-clA" kind="show" id="N7J-Zi-17v"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

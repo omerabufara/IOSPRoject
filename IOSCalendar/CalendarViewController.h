@@ -13,7 +13,9 @@
 
 //@class AddEventViewController;
 
-@interface CalendarViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, EditInfoViewControllerDelegate, HomeModelProtocol>
+extern NSArray * parseSpot3;
+
+@interface CalendarViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, EditInfoViewControllerDelegate, HomeModelProtocol,UIGestureRecognizerDelegate>
 
 
 @property (strong, nonatomic) AddEventViewController *addEventViewController;

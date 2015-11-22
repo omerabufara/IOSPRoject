@@ -44,7 +44,7 @@ NSInteger weekday;
 NSInteger thisMonth;
 NSInteger thisday;
 
-
+NSArray * parseSpot3;
 
 @implementation CalendarViewController
 
@@ -241,6 +241,9 @@ NSInteger thisday;
     
 }
 
+
+
+
 -(IBAction)showEvents:(id)sender{
     [self loadData:sender];
 }
@@ -343,8 +346,25 @@ NSInteger thisday;
     myCell.textLabel.text = item.event_name;
     
     myCell.detailTextLabel.text = item.event_time;
+//    myCell.tag = 1111;
+//    
+//    UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc]initWithTarget:myCell action:@selector(popupInfo:)];
+//    [singleFingerTap setNumberOfTapsRequired:1];
+//    [singleFingerTap setDelegate:self];
+//    self.calendarTableView.userInteractionEnabled = YES;
+//    [self.calendarTableView addGestureRecognizer:singleFingerTap];
     
+//    UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self.mySmileFace action:@selector(tap:)];
+//    doubleTapGestureRecognizer.numberOfTapsRequired = 2;
+//    doubleTapGestureRecognizer.numberOfTouchesRequired = 2;
+//    [self.mySmileFace addGestureRecognizer:doubleTapGestureRecognizer];
+
     return myCell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Location *item = _feedItems[indexPath.row];
+    NSLog(@"here");
+    [self popupInfo:item.event_name date:item.event_date time:item.event_time location:item.event_location description:item.event_description];
 }
 
 /// Delete Records
@@ -381,6 +401,37 @@ NSInteger thisday;
 -(void)editingInfoWasFinished{
     // Reload the data.
     [self loadData: nil];
+}
+
+
+-(void) popupInfo: (NSString*) evName date:(NSString*)evDate time:(NSString*)evTime location:(NSString*)evLocation description:(NSString*)evDescription {
+    NSLog(@"POPUPINFO");
+    /*UIButton* btn = (UIButton *) sender;
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setDay:[btn.currentTitle integerValue]];
+    [components setMonth:thisMonth];
+    [components setYear:thisYear];
+    NSDate * newDate = [calendar dateFromComponents:components];
+    //Formats date to YYYY-MM-DD
+    NSDateFormatter * dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    
+    parseSpot3=@[@"p",[dateFormat stringFromDate:newDate]];
+    //compare above date to parse database. See if current user has an entry
+    
+    
+    //   ----- Launch a  POPUP SCREEN -----------
+    
+    
+    MJDetailViewController *detailViewController = [[MJDetailViewController alloc] initWithNibName:@"MJDetailViewController" bundle:nil];
+    
+    [self presentPopupViewController:detailViewController animationType:MJPopupViewAnimationFade];*/
+    
+    
+    
+    
 }
 
 
