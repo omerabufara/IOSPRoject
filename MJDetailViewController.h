@@ -10,8 +10,6 @@
 
 
 @interface MJDetailViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *eventName;
-@property (weak, nonatomic) IBOutlet UILabel *eventDate;
 @property (weak, nonatomic) IBOutlet UILabel *eventTime;
 @property (weak, nonatomic) IBOutlet UILabel *eventLocation;
 @property (weak, nonatomic) IBOutlet UILabel *eventDescription;

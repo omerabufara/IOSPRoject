@@ -14,17 +14,19 @@
 @end
 
 @implementation MJDetailViewController
-@synthesize eventName;
-@synthesize eventDate;
 @synthesize eventTime;
 @synthesize eventLocation;
 @synthesize eventDescription;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    eventTime.text=parseSpot3[2];
-    eventLocation.text=parseSpot3[3];
-    eventDescription.text=parseSpot3[4];
+//    eventTime.text=parseSpot3[2];
+//    eventLocation.text=parseSpot3[3];
+//    eventDescription.text=parseSpot3[4];
+    eventTime.text=@"3:00 pm";
+        eventLocation.text=@"4100 Fleetwood Drive West Mifflin, PA 15122";
+     //[eventDescription setLineBreakMode:NSLineBreakByWordWrapping];
+        eventDescription.text=@"This is a test of how much I can type within this box before it starts to run over. This needs to be word wrapped so it doesn't go off of the screen. Or it would look stupid";
     
     // Do any additional setup after loading the view.
 }
