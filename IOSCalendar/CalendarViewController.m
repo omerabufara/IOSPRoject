@@ -12,6 +12,8 @@
 #import "DBManager.h"
 #import "AppDelegate.h"
 #import "Location.h"
+#import "UIViewController+MJPopupViewController.h"
+#import "MJDetailViewController.h"
 
 @interface CalendarViewController () <EditInfoViewControllerDelegate>
 
@@ -416,9 +418,9 @@ NSArray * parseSpot3;
     NSDate * newDate = [calendar dateFromComponents:components];
     //Formats date to YYYY-MM-DD
     NSDateFormatter * dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];*/
     
-    parseSpot3=@[@"p",[dateFormat stringFromDate:newDate]];
+    parseSpot3=@[@"event name", evName];
     //compare above date to parse database. See if current user has an entry
     
     
@@ -427,9 +429,7 @@ NSArray * parseSpot3;
     
     MJDetailViewController *detailViewController = [[MJDetailViewController alloc] initWithNibName:@"MJDetailViewController" bundle:nil];
     
-    [self presentPopupViewController:detailViewController animationType:MJPopupViewAnimationFade];*/
-    
-    
+    [self presentPopupViewController:detailViewController animationType:MJPopupViewAnimationFade];
     
     
 }

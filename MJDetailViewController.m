@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //popDate.text=parseSpot3[1];
+    eventName.text=parseSpot3[1];
     
     // Do any additional setup after loading the view.
 }
