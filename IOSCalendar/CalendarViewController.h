@@ -13,7 +13,9 @@
 
 //@class AddEventViewController;
 
-@interface CalendarViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, EditInfoViewControllerDelegate>
+extern NSArray * parseSpot3;
+
+@interface CalendarViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, EditInfoViewControllerDelegate, HomeModelProtocol,UIGestureRecognizerDelegate>
 
 
 
@@ -26,6 +28,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *monthly;
 @property (weak, nonatomic) IBOutlet UILabel *year;
+@property (weak, nonatomic) NSString *currentButtonTitle;
 @property (strong, nonatomic) NSDate *defaulComp;
 
 @property (nonatomic, strong) DBManager *dbManager;

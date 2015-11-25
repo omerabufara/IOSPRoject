@@ -11,6 +11,9 @@
 #import "EditEventViewController.h"
 #import "DBManager.h"
 #import "AppDelegate.h"
+#import "Location.h"
+#import "UIViewController+MJPopupViewController.h"
+#import "MJDetailViewController.h"
 
 @interface CalendarViewController () <EditInfoViewControllerDelegate>
 
@@ -22,9 +25,20 @@
 
 @property (nonatomic, strong) NSArray *eventsArray;
 
+@property (nonatomic) int recordIDToEdit;
 
--(void)loadData;
 
+//-(void)loadData;
+
+@end
+
+@interface CalendarViewController()
+{
+    HomeModel *_homeModel;
+    NSArray *_feedItems;
+    
+    //NSInteger *recordIDToDelete;
+}
 @end
 
 NSUInteger numDays;
@@ -33,23 +47,32 @@ NSInteger weekday;
 NSInteger thisMonth;
 NSInteger thisday;
 
-
+NSArray * parseSpot3;
 
 @implementation CalendarViewController
 
 @synthesize monthly;
 @synthesize year;
+@synthesize currentButtonTitle;
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:
+        
+    UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    
+    self.navigationItem.rightBarButtonItem = addButton;
+    self.addEventViewController = (AddEventViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     [self myCalView];
     
     self.calendarTableView.delegate = self;
     self.calendarTableView.dataSource = self;
     
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
+    //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
     
     [self loadData];
     
@@ -62,22 +85,14 @@ NSInteger thisday;
 }
 
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(void)itemsDownloaded:(NSArray *)items
 {
-  return [self.eventsArray count];
+    // This delegate method will get called when the items are finished downloading
     
-    //return self.arrEventsInfo.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    /*static NSString *CellIdentifier = @"Cell";
+    // Set the downloaded items to the array
+    _feedItems = items;
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -110,7 +125,6 @@ NSInteger thisday;
     return cell;
 }
 
-
 - (IBAction)nextAct:(id)sender {
     thisMonth++;
     [self removeTags];
@@ -141,8 +155,6 @@ NSInteger thisday;
 }
 
 -(void)myCalView{
-    
-    
     thisYear = [[[NSCalendar currentCalendar]
                  components:NSCalendarUnitYear fromDate:[NSDate date]]
                 year];
@@ -154,8 +166,6 @@ NSInteger thisday;
     thisday = [[[NSCalendar currentCalendar]
                 components:NSCalendarUnitDay fromDate:[NSDate date]]
                day];
-    
-    
     [self moreDateInfo];
     
 }
@@ -247,59 +257,97 @@ NSInteger thisday;
         [addProject addTarget:self
                        action:@selector(showEvents:)
              forControlEvents:UIControlEventTouchUpInside];
+        //[self loadData: addProject];
         
         if(currMonth == thisMonth && currYear == thisYear && currDay == [[addProject.currentTitle stringByReplacingOccurrencesOfString:@" " withString:@""] intValue]){
             addProject.backgroundColor = [UIColor blueColor];
-            //how to click current date button so events show up???????????
-            //when you do this, may be able to but blueColor in click event showEvents because will turn whichever is clicked to blue
-            [addProject sendActionsForControlEvents:UIControlEventTouchUpInside];
         }
         else{
             addProject.backgroundColor = [UIColor grayColor];
         }
         
-        
-        
         [self.view addSubview:addProject];
     }
     
+    
 }
+
+
+
 
 -(IBAction)showEvents:(id)sender{
-    //will have to adjust this to show different events by date when we get to it
-    //NSLog(@"Events shown");
-//    [self.eventsArray removeAllObjects];
-//    [self.eventsArray addObject:@"Event 1"];
-//    [self.eventsArray addObject:@"Event 2"];
-//    [self.eventsArray addObject:@"Event 3"];
-//    [self.eventsArray addObject:@"Event 4"];
-    
-//    NSString *query = @"select * from eventsTable";
-//    
-//    // Get the results.
-//    if (self.eventsArray != nil) {
-//        self.eventsArray = nil;
-//    }
-//    
-//    self.eventsArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-//    NSLog(@"array count is : %lu", (unsigned long)[self.eventsArray count]);
-//    [self.calendarTableView reloadData];
+    [self loadData:sender];
 }
 
 
--(void)loadData{
+-(void)loadData:(id)sender{
+    //will not happen for current date and need a click off function to turn back to grey
+    if([sender isKindOfClass:[UIButton class]]){
+        UIButton *senderButton = sender;
+        // Unselect all the buttons in the parent view
+        for (UIView *button in senderButton.superview.subviews) {
+            if ([button isKindOfClass:[UIButton class]]) {
+                [(UIButton *)button setSelected:NO];
+            }
+        }
+        
+        // Set the current button as the only selected one
+        [sender setSelected:YES];
+    }
     
-    NSString *query = @"select * from eventsTable";
+    if (sender != nil)
+    {
+        NSString *day = [sender currentTitle];
+        currentButtonTitle = day;
+        _feedItems = [[NSArray alloc]init];
+        _homeModel = [[HomeModel alloc]init];
+        _homeModel.delegate = self;
+        [_homeModel downloadItems:day monthly:self.monthly.text year:self.year.text];
+    }
+
     
     // Get the results.
     if (self.eventsArray != nil) {
         self.eventsArray = nil;
     }
-    self.eventsArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    //self.eventsArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     
     // Reload the table view.
     [self.calendarTableView reloadData];
     
+}
+- (void)insertNewObject:(id)sender {
+    
+    if (!self.calendarTableView) {
+        _homeModel= [[HomeModel alloc]init];
+    }
+    AddEventViewController *foundDVC = (AddEventViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"add"];
+    
+    if ([foundDVC respondsToSelector:@selector(setDelegate:)]) {
+        [foundDVC setDelegate:self];
+    }
+    [self.navigationController pushViewController:foundDVC animated:YES];
+    
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _feedItems.count;
+    
+    //return self.arrEventsInfo.count;
 }
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
@@ -330,10 +378,48 @@ NSInteger thisday;
 }
 
 
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the selected record.
+        // Find the record ID.
+        
+        Location *item = _feedItems[indexPath.row];
+        
+        
+        
+        NSInteger recordIDToDelete = [[item.eventId stringByReplacingOccurrencesOfString:@" " withString:@""] intValue];
+        
+        HomeModel *delete = [[HomeModel alloc]init];
+        
+        [delete deleteItems:&recordIDToDelete];
+      
+         //Reload the table view.
+        [self loadData:nil];
+    }
+}
 
 -(void)editingInfoWasFinished{
     // Reload the data.
-    [self loadData];
+    [self loadData: nil];
+}
+
+
+-(void) popupInfo: (NSString*) evName date:(NSString*)evDate time:(NSString*)evTime location:(NSString*)evLocation description:(NSString*)evDescription {
+    NSLog(@"POPUPINFO");
+    
+    parseSpot3=@[evName,evDate,evTime,evLocation,evDescription];
+    //compare above date to parse database. See if current user has an entry
+    
+    
+    //   ----- Launch a  POPUP SCREEN -----------
+    
+    
+    MJDetailViewController *detailViewController = [[MJDetailViewController alloc] initWithNibName:@"MJDetailViewController" bundle:nil];
+    
+    [self presentPopupViewController:detailViewController animationType:MJPopupViewAnimationFade];
+    
+    
 }
 
 

@@ -12,6 +12,8 @@
 
 @interface AddEventViewController : UIViewController <UITextFieldDelegate>
 
+//@property (nonatomic) int recordIDToEdit;
+
 @property (nonatomic, strong) id <EditInfoViewControllerDelegate> delegate;
 
 @property (strong, nonatomic) AddEventViewController *detailItem;
@@ -29,6 +31,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtEventVisible;
 
 - (IBAction)saveInfo:(id)sender;
+
+//-(void)loadInfoToEdit;
 
 @end
 
