@@ -19,7 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
 
-@property (nonatomic) int recordIDToEdit;
+@property NSString *senderDate;
 
 //-(void)loadInfoToEdit;
 
@@ -74,16 +74,14 @@ NSArray * parseSpot3;
     
     //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
     
-    [self loadData];
+    //manually set, but works as long as you change the tag number
+    UIButton *button = (UIButton *)[self.view viewWithTag:18];
+    [self loadData:button];
     
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+//    _feedItems = [[NSArray alloc]init];
+//    _homeModel = [[HomeModel alloc]init];
+//    _homeModel.delegate = self;
+    //[_homeModel downloadItems];
 
 }
 
@@ -94,35 +92,8 @@ NSArray * parseSpot3;
     // Set the downloaded items to the array
     _feedItems = items;
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:CellIdentifier];
-    }
-    
-    NSString *cellValue = [self.eventsArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = cellValue;
-    
-    return cell;*/
-    // Dequeue the cell.
-    // Get the record ID of the selected name and set it to the recordIDToEdit property.
-    
-    self.recordIDToEdit = [[[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
-    
-    // Perform the segue.
-    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
-    NSInteger indexOfEventName = [self.dbManager.arrColumnNames indexOfObject:@"event_name"];
-
-    NSInteger indexOfEventTime = [self.dbManager.arrColumnNames indexOfObject:@"event_time"];
-    
-    // Set the loaded data to the appropriate cell labels.
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:indexOfEventName]];
-    
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Time: %@", [[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:indexOfEventTime]];
-    
-    return cell;
+    // Reload the table view
+    [self.calendarTableView reloadData];
 }
 
 - (IBAction)nextAct:(id)sender {
@@ -279,6 +250,11 @@ NSArray * parseSpot3;
     [self loadData:sender];
 }
 
+- (IBAction)addNewEvent:(id)sender{
+   
+    [self performSegueWithIdentifier:@"addEventSegue" sender:self];
+    
+}
 
 -(void)loadData:(id)sender{
     //will not happen for current date and need a click off function to turn back to grey
@@ -330,12 +306,30 @@ NSArray * parseSpot3;
     
 }
 
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    // Get the record ID of the selected name and set it to the recordIDToEdit property.
+    self.recordIDToEdit = [[[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
+    
+    // Perform the segue.
+    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+//- (IBAction)addNewEvent:(id)sender {
+//    
+//    // Before performing the segue, set the -1 value to the recordIDToEdit. That way we'll indicate that we want to add a new record and not to edit an existing one.
+//    self.recordIDToEdit = -1;
+//    
+//    // Perform the segue.
+//    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
+//    
+////    [self performSegueWithIdentifier:@"addEventSegue" sender:self];
+//    
+//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -350,32 +344,54 @@ NSArray * parseSpot3;
     //return self.arrEventsInfo.count;
 }
 
--(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
-    // Get the record ID of the selected name and set it to the recordIDToEdit property.
-    self.recordIDToEdit = [[[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
+//-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+//    // Get the record ID of the selected name and set it to the recordIDToEdit property.
+//    self.recordIDToEdit = [[[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
+//    
+//    // Perform the segue.
+//    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
+//}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Retrieve cell
+    NSString *cellIdentifier = @"BasicCell";
     
-    // Perform the segue.
-    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
+    UITableViewCell *myCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    // Get the location to be shown
+    Location *item = _feedItems[indexPath.row];
+    
+    // Get references to labels of cell
+    myCell.textLabel.text = item.event_name;
+    
+    myCell.detailTextLabel.text = item.event_time;
+//    myCell.tag = 1111;
+//    
+//    UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc]initWithTarget:myCell action:@selector(popupInfo:)];
+//    [singleFingerTap setNumberOfTapsRequired:1];
+//    [singleFingerTap setDelegate:self];
+//    self.calendarTableView.userInteractionEnabled = YES;
+//    [self.calendarTableView addGestureRecognizer:singleFingerTap];
+    
+//    UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self.mySmileFace action:@selector(tap:)];
+//    doubleTapGestureRecognizer.numberOfTapsRequired = 2;
+//    doubleTapGestureRecognizer.numberOfTouchesRequired = 2;
+//    [self.mySmileFace addGestureRecognizer:doubleTapGestureRecognizer];
+
+    return myCell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    MJDetailViewController *detailVC =[[MJDetailViewController alloc]init];
+    Location *item = _feedItems[indexPath.row];
+    NSLog(@"here");
+    
+    [detailVC storeRecordId:[[item.eventId stringByReplacingOccurrencesOfString:@" " withString:@""] intValue]];
+    
+    [self popupInfo:item.event_name date:item.event_date time:item.event_time location:item.event_location description:item.event_description];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    AddEventViewController *AddEventViewController = [segue destinationViewController];
-    AddEventViewController.delegate = self;
-//    EditEventViewController.recordIDToEdit = self.recordIDToEdit;
-
-}
-
-- (IBAction)addNewEvent:(id)sender {
-    
-    // Before performing the segue, set the -1 value to the recordIDToEdit. That way we'll indicate that we want to add a new record and not to edit an existing one.
-    self.recordIDToEdit = -1;
-    
-    // Perform the segue.
-    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
-    
-//    [self performSegueWithIdentifier:@"addEventSegue" sender:self];
-    
-}
+/// Delete Records
 
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{

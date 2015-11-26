@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DBManager.h"
 #import "AddEventViewController.h"
-#import "EditEventViewController.h"
+#import "HomeModel.h"
 
 //@class AddEventViewController;
 
@@ -18,10 +18,7 @@ extern NSArray * parseSpot3;
 @interface CalendarViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, EditInfoViewControllerDelegate, HomeModelProtocol,UIGestureRecognizerDelegate>
 
 
-
-//@property (strong, nonatomic) AddEventViewController *addEventViewController;
-//@property (strong, nonatomic) EditEventViewController *editEventViewController;
-
+@property (strong, nonatomic) AddEventViewController *addEventViewController;
 - (IBAction)nextAct:(id)sender;
 
 - (IBAction)prevAct:(id)sender;
@@ -33,6 +30,7 @@ extern NSArray * parseSpot3;
 
 @property (nonatomic, strong) DBManager *dbManager;
 
+-(void)loadData:(id)sender;
 
 
 

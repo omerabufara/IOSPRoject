@@ -21,6 +21,9 @@
 		1A0BEA6B1BED53E60091A91A /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */; };
 		1A8983DC1BF5E7C20040E791 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */; };
 		1A8983DE1BF5E7CE0040E791 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */; };
+		1ABE71611BFB76BA008FC8ED /* eventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71601BFB76BA008FC8ED /* eventsTableViewController.m */; };
+		1ABE71641BFB78E0008FC8ED /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71631BFB78E0008FC8ED /* HomeModel.m */; };
+		1ABE71671BFB78F0008FC8ED /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71661BFB78F0008FC8ED /* Location.m */; };
 		1AE902461BF3DD960054596E /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE902451BF3DD960054596E /* DBManager.m */; };
 		1AF8ED351C013C4F00DD777B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8ED341C013C4F00DD777B /* QuartzCore.framework */; };
 		1AF8ED391C0140C900DD777B /* MJDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF8ED381C0140C900DD777B /* MJDetailViewController.xib */; };
@@ -74,6 +77,12 @@
 		1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
 		1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1ABE715F1BFB76BA008FC8ED /* eventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsTableViewController.h; sourceTree = "<group>"; };
+		1ABE71601BFB76BA008FC8ED /* eventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsTableViewController.m; sourceTree = "<group>"; };
+		1ABE71621BFB78E0008FC8ED /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
+		1ABE71631BFB78E0008FC8ED /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
+		1ABE71651BFB78F0008FC8ED /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		1ABE71661BFB78F0008FC8ED /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		1AE902441BF3DD960054596E /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		1AE902451BF3DD960054596E /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		1AF8ED341C013C4F00DD777B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -119,6 +128,7 @@
 		1A086DA61BE6D54F00980950 = {
 			isa = PBXGroup;
 			children = (
+				1AF8ED341C013C4F00DD777B /* QuartzCore.framework */,
 				1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */,
 				1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */,
 				1A086DB11BE6D54F00980950 /* IOSCalendar */,
@@ -272,7 +282,7 @@
 				TargetAttributes = {
 					1A086DAE1BE6D54F00980950 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = APSMXULQM3;
+						DevelopmentTeam = 6VAE6ZBNG4;
 					};
 					1A086DC71BE6D54F00980950 = {
 						CreatedOnToolsVersion = 7.0;
@@ -309,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AF8ED391C0140C900DD777B /* MJDetailViewController.xib in Resources */,
 				1A086DC21BE6D54F00980950 /* LaunchScreen.storyboard in Resources */,
 				1A086DBF1BE6D54F00980950 /* Assets.xcassets in Resources */,
 				1A086DBD1BE6D54F00980950 /* Main.storyboard in Resources */,

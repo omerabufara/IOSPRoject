@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yal-wa-6pd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yal-wa-6pd">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -38,7 +38,7 @@
                                 <animations/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
-                                    <segue destination="dRb-TR-IKf" kind="show" id="UPd-GT-Igu"/>
+                                    <segue destination="dRb-TR-IKf" kind="show" id="eg4-xa-Wq4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -183,9 +183,7 @@
                                             </subviews>
                                             <animations/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Pnl-Le-BPU" kind="show" identifier="idSegueEditInfo" id="7fR-Hm-PTS"/>
-                                        </connections>
+                                        <animations/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -197,9 +195,6 @@
                                 <rect key="frame" x="70" y="79" width="55" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Sign Up"/>
-                                <connections>
-                                    <segue destination="dRb-TR-IKf" kind="show" id="sK3-sF-sAC"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVR-uV-fhH">
                                 <rect key="frame" x="483" y="79" width="47" height="30"/>
@@ -336,7 +331,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CzX-SH-pFF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1842" y="1026"/>
+            <point key="canvasLocation" x="1151" y="1026"/>
+        </scene>
+        <!--Events Table View Controller-->
+        <scene sceneID="Ouv-R9-8lB">
+            <objects>
+                <viewController id="rlE-47-K32" customClass="eventsTableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x4s-Xr-xcW"/>
+                        <viewControllerLayoutGuide type="bottom" id="5TS-R0-Zyf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dF1-1I-m1F">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l61-JG-VjL">
+                                <rect key="frame" x="11" y="20" width="569" height="560"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SoH-QL-IDK">
+                                        <rect key="frame" x="0.0" y="92" width="569" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SoH-QL-IDK" id="Smh-JH-rB1">
+                                            <rect key="frame" x="0.0" y="0.0" width="569" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="listTableView" destination="l61-JG-VjL" id="4GJ-XE-bKg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FDp-Xl-jdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1852" y="254"/>
         </scene>
         <!--Edit Event-->
         <scene sceneID="rRb-l9-ueW">
@@ -415,18 +451,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZU-g3-t2U">
-                                <rect key="frame" x="136" y="487" width="112" height="30"/>
-                                <state key="normal" title="Cancel"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbJ-PE-gEF">
-                                <rect key="frame" x="400" y="487" width="120" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveInfo:" destination="Pnl-Le-BPU" eventType="touchUpInside" id="lWB-Vc-RUI"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="EventVisiblity" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mkR-uN-K7d">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mkR-uN-K7d">
                                 <rect key="frame" x="196" y="420" width="319" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -452,17 +477,17 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="txtEventDate" destination="BD8-51-hMl" id="HSP-Gt-BV9"/>
-                        <outlet property="txtEventDescription" destination="rUx-PK-6gt" id="7SY-qa-iWq"/>
-                        <outlet property="txtEventLocation" destination="2JS-DD-Oga" id="unt-nl-nit"/>
-                        <outlet property="txtEventName" destination="LNu-12-nDJ" id="jAL-oz-YjA"/>
-                        <outlet property="txtEventTime" destination="HTD-5x-q2s" id="oKP-E6-USK"/>
-                        <outlet property="txtEventVisible" destination="mkR-uN-K7d" id="kss-pn-WKN"/>
+                        <outlet property="txtEventDate" destination="BD8-51-hMl" id="pB9-VO-kST"/>
+                        <outlet property="txtEventDescription" destination="rUx-PK-6gt" id="5vQ-zs-EtY"/>
+                        <outlet property="txtEventLocation" destination="2JS-DD-Oga" id="PIO-b4-ias"/>
+                        <outlet property="txtEventName" destination="LNu-12-nDJ" id="fBf-df-WIn"/>
+                        <outlet property="txtEventTime" destination="HTD-5x-q2s" id="aJg-gQ-DMj"/>
+                        <outlet property="txtEventVisible" destination="mkR-uN-K7d" id="402-VP-7mt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74U-Cl-sd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1834" y="227"/>
+            <point key="canvasLocation" x="1954" y="-420"/>
         </scene>
         <!--Add Event-->
         <scene sceneID="1c5-d2-jz8">
@@ -666,17 +691,20 @@
                                     <segment title="Volunteer"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaq-9Z-XKg">
-                                <rect key="frame" x="195" y="526" width="210" height="30"/>
-                                <animations/>
-                                <state key="normal" title="SignUp"/>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="FirstName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mJ2-zI-Kao">
                                 <rect key="frame" x="195" y="114" width="210" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaq-9Z-XKg">
+                                <rect key="frame" x="195" y="526" width="210" height="30"/>
+                                <animations/>
+                                <state key="normal" title="SignUp"/>
+                                <connections>
+                                    <action selector="signup:" destination="dRb-TR-IKf" eventType="touchUpInside" id="m3v-Sb-ZuX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -692,10 +720,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SignUp" id="GiI-Bf-J72"/>
+                    <connections>
+                        <outlet property="cellPhone" destination="U6M-gV-hra" id="IZQ-4C-6uH"/>
+                        <outlet property="email_address" destination="Jm2-mO-2BH" id="pWP-Wb-vqC"/>
+                        <outlet property="first_name" destination="mJ2-zI-Kao" id="3Yu-96-z38"/>
+                        <outlet property="last_name" destination="nhy-T7-6ur" id="NMt-m3-Wob"/>
+                        <outlet property="password" destination="ZtS-z0-GpX" id="rmo-FT-M9y"/>
+                        <outlet property="user_name" destination="BFy-Te-GNh" id="n76-C9-j53"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5T-6L-E7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="1026"/>
+            <point key="canvasLocation" x="208" y="1026"/>
         </scene>
         <!--Log In-->
         <scene sceneID="JIu-C8-ElR">
@@ -787,7 +823,4 @@
             <point key="canvasLocation" x="-1068" y="227"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="sK3-sF-sAC"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -28,6 +28,13 @@
     
     NSInteger* rid;
     
+    NSString* firstName;
+    NSString* lastName;
+    NSString* email;
+    NSString* phone;
+    NSString* userName;
+    NSString* password;
+    
 }
 @end
 
@@ -85,6 +92,28 @@
     NSString *delete = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/delete.php?eventId=%ld",*rid];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:delete];
+    
+    //    // Create the request
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
+    ////
+    // Create the NSURLConnection
+    [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+    
+}
+
+- (void)addUsers: (NSString*) fName lName:(NSString*)lName mail:(NSString*)mail cell:(NSString*)phoneNo Uname:(NSString*)Uname psw:(NSString*)psw
+{
+    
+    firstName = fName;
+    lastName = lName;
+    email = mail;
+    phone = phoneNo;
+    userName = Uname;
+    password = psw;
+    
+    NSString *addUser = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/add-users.php?firstname=%@&lastname=%@&mail=%@&cell=%@&usernme=%@&paassword=%@",firstName ,lastName ,email ,phone ,userName ,password];
+    
+    NSURL *jsonFileUrl = [ NSURL URLWithString:addUser];
     
     //    // Create the request
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
