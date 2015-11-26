@@ -9,11 +9,16 @@
 #import "MJDetailViewController.h"
 #import "CalendarViewController.h"
 #import "HomeModel.h"
+#import "EditEventViewController.h"
 
 @interface MJDetailViewController ()
 
 @end
 NSInteger storedRecordId;
+NSString *storeEventName;
+NSString *storeEventTime;
+NSString *storeEventLocation;
+NSString *storeEventDescribe;
 @implementation MJDetailViewController
 @synthesize eventTime;
 @synthesize eventLocation;
@@ -37,12 +42,30 @@ NSInteger storedRecordId;
     // Dispose of any resources that can be recreated.
 }
 
-- (void)storeRecordId:(NSInteger)recordId{
+- (void)storeRecordId:(NSInteger)recordId name: (NSString*)eventName time:(NSString*)eventtime location:(NSString*)eventLoc description:(NSString*)eventDes {
     storedRecordId = recordId;
+    storeEventName = eventName;
+    storeEventTime = eventtime;
+    storeEventLocation = eventLoc;
+    storeEventDescribe = eventDes;
 }
 
 - (IBAction)deletePressed:(id)sender{
     [self deleteEvent:storedRecordId];
+}
+
+-(IBAction)editPressed:(NSInteger)sender{
+    
+    EditEventViewController *edit = [[EditEventViewController alloc]init];
+       [edit loadInfoToEdit:&storedRecordId name:storeEventName time:storeEventTime location:storeEventLocation description:storeEventDescribe];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    EditEventViewController *yourViewController = (EditEventViewController *)[storyboard instantiateViewControllerWithIdentifier:@"editPage"];
+    [self.navigationController pushViewController:yourViewController animated:YES];
+    
+    
+ 
+
 }
 
 -(void)deleteEvent:(NSInteger)recordId{

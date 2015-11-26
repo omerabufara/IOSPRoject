@@ -203,9 +203,6 @@
                                 <rect key="frame" x="483" y="79" width="47" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Sign In"/>
-                                <connections>
-                                    <segue destination="rlE-47-K32" kind="show" id="VZE-vU-VX6"/>
-                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -243,99 +240,6 @@
             </objects>
             <point key="canvasLocation" x="1151" y="227"/>
         </scene>
-        <!--Event Details-->
-        <scene sceneID="gac-e9-oqv">
-            <objects>
-                <viewController id="b4x-kb-clA" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Frz-bN-WbU"/>
-                        <viewControllerLayoutGuide type="bottom" id="9xF-8L-YKb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GKD-kp-nDz">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JX-bp-aPs">
-                                <rect key="frame" x="216" y="546" width="168" height="34"/>
-                                <animations/>
-                                <state key="normal" title="Register"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Volunteers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUM-1e-Ibj">
-                                <rect key="frame" x="358" y="398" width="168" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Attendees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhq-uc-iya">
-                                <rect key="frame" x="70" y="398" width="164" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XNY-5L-c8Q">
-                                <rect key="frame" x="104" y="427" width="97" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tad-jk-7oi">
-                                <rect key="frame" x="394" y="427" width="97" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ch-TF-Vv0">
-                                <rect key="frame" x="216" y="516" width="168" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Edit"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMr-lX-EvU">
-                                <rect key="frame" x="216" y="486" width="168" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Delete"/>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o4o-2t-nAJ">
-                                <rect key="frame" x="216" y="180" width="168" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YwM-QX-rKn">
-                                <rect key="frame" x="216" y="237" width="168" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Szh-3g-GbT">
-                                <rect key="frame" x="216" y="127" width="168" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vBD-NX-xiu">
-                                <rect key="frame" x="180" y="288" width="240" height="90"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VYv-wO-ngd">
-                                <rect key="frame" x="216" y="83" width="168" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Event Details" id="HQi-qC-fXF"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CzX-SH-pFF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1151" y="1026"/>
-        </scene>
         <!--Events Table View Controller-->
         <scene sceneID="Ouv-R9-8lB">
             <objects>
@@ -354,7 +258,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SoH-QL-IDK">
-                                        <rect key="frame" x="0.0" y="92" width="569" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="569" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SoH-QL-IDK" id="Smh-JH-rB1">
                                             <rect key="frame" x="0.0" y="0.0" width="569" height="43"/>
@@ -375,12 +279,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FDp-Xl-jdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1852" y="254"/>
+            <point key="canvasLocation" x="1130" y="1006"/>
         </scene>
         <!--Edit Event-->
         <scene sceneID="rRb-l9-ueW">
             <objects>
-                <viewController id="Pnl-Le-BPU" customClass="EditEventViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editPage" id="Pnl-Le-BPU" customClass="EditEventViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="A3e-tp-cSc"/>
                         <viewControllerLayoutGuide type="bottom" id="AfG-8Y-A4P"/>
@@ -454,12 +358,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mkR-uN-K7d">
-                                <rect key="frame" x="196" y="420" width="319" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -479,12 +377,11 @@
                         <outlet property="txtEventLocation" destination="2JS-DD-Oga" id="PIO-b4-ias"/>
                         <outlet property="txtEventName" destination="LNu-12-nDJ" id="fBf-df-WIn"/>
                         <outlet property="txtEventTime" destination="HTD-5x-q2s" id="aJg-gQ-DMj"/>
-                        <outlet property="txtEventVisible" destination="mkR-uN-K7d" id="402-VP-7mt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74U-Cl-sd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1954" y="-420"/>
+            <point key="canvasLocation" x="1791" y="239"/>
         </scene>
         <!--Add Event-->
         <scene sceneID="1c5-d2-jz8">

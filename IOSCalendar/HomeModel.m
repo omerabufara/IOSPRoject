@@ -28,6 +28,15 @@
     
     NSInteger* rid;
     
+    NSInteger* editID;
+    
+    
+    NSString* eventNameToEdit;
+    NSString* eventDateToEdit;
+    NSString* eventTimeToEdit;
+    NSString* eventLocationToEdit;
+    NSString* eventDescriptionToEdit;
+    
 }
 @end
 
@@ -56,6 +65,48 @@
 //[[session dataTaskWithURL:jsonFileUrl completionHandler:^ (NSData *data, NSURLResponse *response, NSError
 //    }]resume];                                                         *error){
 }
+
+- (void)downloadItemsToEdit: (NSInteger*) recordID
+{
+    
+    editID = recordID;
+    
+    // Download the json file
+    
+    NSString *editData = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/IOS-database-edit.php?eventId=%ld",*editID];
+    
+    NSURL *jsonFileUrl = [ NSURL URLWithString:editData];
+    
+    //    // Create the request
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
+    ////
+    // Create the NSURLConnection
+    [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+    
+}
+
+-(void)edit:(NSInteger*) recordIDtoEdit name:(NSString*) editevName date:(NSString*)editevDate time:(NSString*)editevTime location:(NSString*)editevLocation description:(NSString*)editevDescription{
+    
+    editID = recordIDtoEdit;
+    eventNameToEdit = editevName;
+    eventDateToEdit = editevDate;
+    eventTimeToEdit = editevTime;
+    eventLocationToEdit = editevLocation;
+    eventDescriptionToEdit = editevDescription;
+    
+    //NSString *inStr = [NSString stringWithFormat: @"%ld", (long)editID];
+    
+    NSString *edit = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/edit.php?eventId=%ld&event_name=%@&event_date=%@&event_time=%@&event_location=%@&event_description=%@",*editID,eventNameToEdit,eventDateToEdit,eventTimeToEdit,eventLocationToEdit,eventDescriptionToEdit];
+    
+    NSURL *jsonFileUrl = [ NSURL URLWithString:edit];
+    
+    //    // Create the request
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
+    ////
+    // Create the NSURLConnection
+    [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+}
+
 
 - (void)addItems: (NSString*) evName date:(NSString*)evDate time:(NSString*)evTime location:(NSString*)evLocation description:(NSString*)evDescription
 {
