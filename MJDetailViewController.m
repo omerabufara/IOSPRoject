@@ -9,6 +9,7 @@
 #import "MJDetailViewController.h"
 #import "CalendarViewController.h"
 #import "HomeModel.h"
+#import "UIViewController+MJPopupViewController.h"
 
 @interface MJDetailViewController ()
 
@@ -43,6 +44,8 @@ NSInteger storedRecordId;
 
 - (IBAction)deletePressed:(id)sender{
     [self deleteEvent:storedRecordId];
+    //[self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+    [self dismissPopupViewControllerWithanimation:sender];
 }
 
 -(void)deleteEvent:(NSInteger)recordId{
