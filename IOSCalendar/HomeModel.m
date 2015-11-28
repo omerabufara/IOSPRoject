@@ -94,6 +94,8 @@
 }
 
 - (void)postEventsByMonth:(NSString *)evMonth year:(NSString*)evYear{
+    NSLog(evMonth);
+    NSLog(evYear);
     //have to maket these changes in the php
     NSString *post = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/postEventsMonth.php?event_month=%@&event_year=%@", evMonth, evYear];
     

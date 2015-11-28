@@ -131,6 +131,7 @@
 }
 
 - (void)postEventsMonth:(NSString *)date{
+    NSLog(date);
     NSArray *dateComponentArray = [date componentsSeparatedByString:@"-"];
     NSString *eventMonth = dateComponentArray[0];
     NSString *eventYear = dateComponentArray[2];
