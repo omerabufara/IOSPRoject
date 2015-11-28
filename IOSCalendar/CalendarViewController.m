@@ -428,13 +428,11 @@ NSArray * parseSpot3;
 
 -(IBAction)postEventsDay:(id)sender{
     AddEventViewController *addVC = [[AddEventViewController alloc]init];
-    NSLog(self.senderDate);
     [addVC postEventsDay:self.senderDate];
 }
 
 -(IBAction)postEventsMonth:(id)sender{
     AddEventViewController *addVC = [[AddEventViewController alloc]init];
-    NSLog(self.senderDate);
     [addVC postEventsMonth:self.senderDate];
 }
 

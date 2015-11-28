@@ -126,12 +126,10 @@
 - (void)postEventsDay:(NSString *)date{
     
     HomeModel *add = [[HomeModel alloc]init];
-    NSLog(date);
     [add postEventsByDay:date];
 }
 
 - (void)postEventsMonth:(NSString *)date{
-    NSLog(date);
     NSArray *dateComponentArray = [date componentsSeparatedByString:@"-"];
     NSString *eventMonth = dateComponentArray[0];
     NSString *eventYear = dateComponentArray[2];
