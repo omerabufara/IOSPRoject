@@ -123,6 +123,31 @@
     
 }
 
+-(BOOL)checkUser:(NSString*) user_name pass:(NSString*)pass {
+    
+    BOOL match = NO;
+    
+    userName = user_name;
+    password = pass;
+
+    
+    NSString *check = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/signInCheck.php?usernme=%@&paassword=%@",userName,password];
+    
+    NSURL *jsonFileUrl = [ NSURL URLWithString:check];
+    
+    //    // Create the request
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
+    ////
+    // Create the NSURLConnection
+    [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+    
+    
+    return match;
+    
+}
+
+
+
 #pragma mark NSURLConnectionDataProtocol Methods
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response

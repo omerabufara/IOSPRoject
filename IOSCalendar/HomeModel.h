@@ -30,6 +30,8 @@
 - (void)addUsers: (NSString*) fName lName:(NSString*)lName mail:(NSString*)mail cell:(NSString*)phoneNo Uname:(NSString*)Uname psw:(NSString*)psw;
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection;
+
+-(BOOL)checkUser:(NSString*) user_name pass:(NSString*)pass;
 @end
 
 
