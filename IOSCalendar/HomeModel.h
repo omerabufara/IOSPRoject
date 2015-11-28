@@ -28,6 +28,9 @@
 - (void)addItems: (NSString*) evName date:(NSString*)evDate time:(NSString*)evTime location:(NSString*)evLocation description:(NSString*)evDescription;
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection;
+
+- (void)postEventsByDay:(NSString *)date;
+- (void)postEventsByMonth:(NSString *)evMonth year:(NSString*)evYear;
 @end
 
 

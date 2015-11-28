@@ -123,4 +123,19 @@
 //    }
 }
 
+- (void)postEventsDay:(NSString *)date{
+    
+    HomeModel *add = [[HomeModel alloc]init];
+    NSLog(date);
+    [add postEventsByDay:date];
+}
+
+- (void)postEventsMonth:(NSString *)date{
+    NSArray *dateComponentArray = [date componentsSeparatedByString:@"-"];
+    NSString *eventMonth = dateComponentArray[0];
+    NSString *eventYear = dateComponentArray[2];
+    HomeModel *add = [[HomeModel alloc]init];
+    [add postEventsByMonth:eventMonth year:eventYear];
+}
+
 @end

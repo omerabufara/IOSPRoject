@@ -32,6 +32,10 @@
 
 - (IBAction)saveInfo:(id)sender;
 
+- (void)postEventsDay:(NSString *)date;
+
+- (void)postEventsMonth:(NSString *)date;
+
 //-(void)loadInfoToEdit;
 
 @end
