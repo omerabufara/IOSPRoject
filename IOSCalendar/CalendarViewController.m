@@ -377,25 +377,15 @@ NSArray * parseSpot3;
     
     myCell.detailTextLabel.text = item.event_time;
     
-    /* need to use to show posted if the event is posted
-    if(item.posted == 't'){
+    //need to use to show posted if the event is posted
+    //doesn't currently work
+/*   if(item.posted == 't'){
         UILabel *postedLabel = [[UILabel alloc]init];
+        postedLabel.text = @"posted";
+        UIColor *color = [UIColor greenColor];
+        [postedLabel setTextColor:color];
         [myCell addSubview:postedLabel];
     }*/
-    
-    
-//    myCell.tag = 1111;
-//    
-//    UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc]initWithTarget:myCell action:@selector(popupInfo:)];
-//    [singleFingerTap setNumberOfTapsRequired:1];
-//    [singleFingerTap setDelegate:self];
-//    self.calendarTableView.userInteractionEnabled = YES;
-//    [self.calendarTableView addGestureRecognizer:singleFingerTap];
-    
-//    UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self.mySmileFace action:@selector(tap:)];
-//    doubleTapGestureRecognizer.numberOfTapsRequired = 2;
-//    doubleTapGestureRecognizer.numberOfTouchesRequired = 2;
-//    [self.mySmileFace addGestureRecognizer:doubleTapGestureRecognizer];
 
     return myCell;
 }
