@@ -7,12 +7,23 @@
 //
 
 #import "LogInViewController.h"
+#import "EditEventViewController.h"
+#import "CalendarViewController.h"
 
-@interface LogInViewController ()
+
+@interface LogInViewController (){
+
+
+}
 
 @end
 
 @implementation LogInViewController
+
+bool usernameExist;
+bool passwordcorrect;
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,4 +45,31 @@
 }
 */
 
+-(IBAction)login:(id)sender{
+
+    
+    HomeModel *logIn = [[HomeModel alloc]init];
+    [logIn checkUser:self.userName.text pass:self.password.text];
+    
+    
+}
+
 @end
+
+
+
+
+//    if([[self.userName text] isEqualToString:@"Admin"] || [[self.password text] isEqualToString:@"12345"] ) {
+//        NSLog(@"admin login make the sign in sign up button desaper , make the add manage edit button appear");
+//        [self performSegueWithIdentifier:@"" sender:self];
+//    }else{
+//        //alert message should go here
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+//                                                        message:@"User Name or password not correct"
+//                                                       delegate:self
+//                                              cancelButtonTitle:@"OK"
+//                                              otherButtonTitles:nil];
+//        [alert show];
+
+
+//    }

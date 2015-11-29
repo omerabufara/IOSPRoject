@@ -7,7 +7,8 @@
 //
 
 #import "signUpViewController.h"
-
+#import "DBManager.h"
+#import "HomeModel.h"
 @interface signUpViewController ()
 
 @end
@@ -34,4 +35,32 @@
 }
 */
 
+- (IBAction)signup:(id)sender {
+    
+    HomeModel *addUser = [[HomeModel alloc]init];
+    
+    NSString *firstName = self.first_name.text;
+    
+    NSString *lastName = self.last_name.text;
+    
+    NSString *email = self.email_address.text;
+    
+    NSString *phoneNo = self.cellPhone.text;
+    
+    NSString *userName = self.user_name.text;
+    
+    NSString *password = self.password.text;
+    
+    
+    
+    
+    
+    [addUser addUsers:firstName lName:lastName mail:email cell:phoneNo Uname:userName psw:password ];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    NSLog(@"users successfully signed up");
+    
+    
+}
 @end

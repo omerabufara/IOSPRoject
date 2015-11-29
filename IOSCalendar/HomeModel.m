@@ -28,6 +28,13 @@
     
     NSInteger* rid;
     
+    NSString* firstName;
+    NSString* lastName;
+    NSString* email;
+    NSString* phone;
+    NSString* userName;
+    NSString* password;
+    
 }
 @end
 
@@ -118,6 +125,53 @@
     [NSURLConnection connectionWithRequest:urlRequest delegate:self];
     
 }
+
+- (void)addUsers: (NSString*) fName lName:(NSString*)lName mail:(NSString*)mail cell:(NSString*)phoneNo Uname:(NSString*)Uname psw:(NSString*)psw
+{
+    
+    firstName = fName;
+    lastName = lName;
+    email = mail;
+    phone = phoneNo;
+    userName = Uname;
+    password = psw;
+    
+    NSString *addUser = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/add-users.php?firstname=%@&lastname=%@&mail=%@&cell=%@&usernme=%@&paassword=%@",firstName ,lastName ,email ,phone ,userName ,password];
+    
+    NSURL *jsonFileUrl = [ NSURL URLWithString:addUser];
+    
+    //    // Create the request
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
+    ////
+    // Create the NSURLConnection
+    [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+    
+}
+
+-(BOOL)checkUser:(NSString*) user_name pass:(NSString*)pass {
+    
+    BOOL match = NO;
+    
+    userName = user_name;
+    password = pass;
+
+    
+    NSString *check = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/signInCheck.php?usernme=%@&paassword=%@",userName,password];
+    
+    NSURL *jsonFileUrl = [ NSURL URLWithString:check];
+    
+    //    // Create the request
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
+    ////
+    // Create the NSURLConnection
+    [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+    
+    
+    return match;
+    
+}
+
+
 
 #pragma mark NSURLConnectionDataProtocol Methods
 

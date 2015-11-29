@@ -34,7 +34,6 @@ extern NSArray * parseSpot3;
 
 
 
-
 - (IBAction)addNewEvent:(id)sender;
 
 @end

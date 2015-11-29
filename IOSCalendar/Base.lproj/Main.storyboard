@@ -38,7 +38,7 @@
                                 <animations/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
-                                    <segue destination="dRb-TR-IKf" kind="show" id="UPd-GT-Igu"/>
+                                    <segue destination="dRb-TR-IKf" kind="show" id="eg4-xa-Wq4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -195,9 +195,6 @@
                                 <rect key="frame" x="70" y="79" width="55" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Sign Up"/>
-                                <connections>
-                                    <segue destination="dRb-TR-IKf" kind="show" id="sK3-sF-sAC"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVR-uV-fhH">
                                 <rect key="frame" x="483" y="79" width="47" height="30"/>
@@ -440,31 +437,31 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HTD-5x-q2s">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="EventTime" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HTD-5x-q2s">
                                 <rect key="frame" x="196" y="209" width="319" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BD8-51-hMl">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="EvenDate" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BD8-51-hMl">
                                 <rect key="frame" x="196" y="146" width="319" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2JS-DD-Oga">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="EventLocation" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2JS-DD-Oga">
                                 <rect key="frame" x="196" y="280" width="319" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rUx-PK-6gt">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="EventDescrition" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rUx-PK-6gt">
                                 <rect key="frame" x="196" y="357" width="319" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LNu-12-nDJ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="EventName" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LNu-12-nDJ">
                                 <rect key="frame" x="196" y="82" width="319" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -476,6 +473,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Visiblity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGQ-vm-MAf">
+                                <rect key="frame" x="73" y="429" width="60" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -704,17 +707,20 @@
                                     <segment title="Volunteer"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaq-9Z-XKg">
-                                <rect key="frame" x="195" y="526" width="210" height="30"/>
-                                <animations/>
-                                <state key="normal" title="SignUp"/>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="FirstName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mJ2-zI-Kao">
                                 <rect key="frame" x="195" y="114" width="210" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaq-9Z-XKg">
+                                <rect key="frame" x="195" y="526" width="210" height="30"/>
+                                <animations/>
+                                <state key="normal" title="SignUp"/>
+                                <connections>
+                                    <action selector="signup:" destination="dRb-TR-IKf" eventType="touchUpInside" id="m3v-Sb-ZuX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -730,10 +736,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SignUp" id="GiI-Bf-J72"/>
+                    <connections>
+                        <outlet property="cellPhone" destination="U6M-gV-hra" id="IZQ-4C-6uH"/>
+                        <outlet property="email_address" destination="Jm2-mO-2BH" id="pWP-Wb-vqC"/>
+                        <outlet property="first_name" destination="mJ2-zI-Kao" id="3Yu-96-z38"/>
+                        <outlet property="last_name" destination="nhy-T7-6ur" id="NMt-m3-Wob"/>
+                        <outlet property="password" destination="ZtS-z0-GpX" id="rmo-FT-M9y"/>
+                        <outlet property="user_name" destination="BFy-Te-GNh" id="n76-C9-j53"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5T-6L-E7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="1026"/>
+            <point key="canvasLocation" x="208" y="1026"/>
         </scene>
         <!--Log In-->
         <scene sceneID="JIu-C8-ElR">
@@ -751,6 +765,9 @@
                                 <rect key="frame" x="221" y="391" width="157" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="login:" destination="44n-fg-QtB" eventType="touchUpInside" id="N10-b3-pK6"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iRu-7q-Dyv">
                                 <rect key="frame" x="195" y="121" width="210" height="30"/>
@@ -774,6 +791,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Log In" id="ZTx-Zq-Fta"/>
+                    <connections>
+                        <outlet property="password" destination="mKR-j9-iJS" id="foV-PT-3Dx"/>
+                        <outlet property="userName" destination="iRu-7q-Dyv" id="Tw2-2V-5l2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCy-mI-29N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -818,7 +839,4 @@
             <point key="canvasLocation" x="-1068" y="227"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="sK3-sF-sAC"/>
-    </inferredMetricsTieBreakers>
 </document>

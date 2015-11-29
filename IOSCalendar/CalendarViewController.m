@@ -21,6 +21,7 @@
 
 @property NSString *senderDate;
 
+//-(void)loadInfoToEdit;
 
 @property (nonatomic, strong) NSArray *eventsArray;
 
@@ -312,12 +313,30 @@ NSArray * parseSpot3;
     
 }
 
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    // Get the record ID of the selected name and set it to the recordIDToEdit property.
+    self.recordIDToEdit = [[[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
+    
+    // Perform the segue.
+    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+//- (IBAction)addNewEvent:(id)sender {
+//    
+//    // Before performing the segue, set the -1 value to the recordIDToEdit. That way we'll indicate that we want to add a new record and not to edit an existing one.
+//    self.recordIDToEdit = -1;
+//    
+//    // Perform the segue.
+//    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
+//    
+////    [self performSegueWithIdentifier:@"addEventSegue" sender:self];
+//    
+//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
