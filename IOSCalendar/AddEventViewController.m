@@ -40,7 +40,6 @@
     self.txtEventTime.delegate = self;
     self.txtEventLocation.delegate = self;
     self.txtEventDescription.delegate = self;
-    self.txtEventVisible.delegate = self;
     
     //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
 

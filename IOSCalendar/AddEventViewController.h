@@ -28,8 +28,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *txtEventDescription;
 
-@property (weak, nonatomic) IBOutlet UITextField *txtEventVisible;
-
 - (IBAction)saveInfo:(id)sender;
 
 - (void)postEventsDay:(NSString *)date;
