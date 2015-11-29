@@ -52,6 +52,8 @@ NSString *storeEventDescribe;
 
 - (IBAction)deletePressed:(id)sender{
     [self deleteEvent:storedRecordId];
+    //[self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+    [self dismissPopupViewControllerWithanimation:sender];
 }
 
 -(IBAction)editPressed:(NSInteger)sender{

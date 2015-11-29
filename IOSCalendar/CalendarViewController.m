@@ -272,8 +272,15 @@ NSArray * parseSpot3;
     
     if (sender != nil)
     {
+        
+
         NSString *day = [sender currentTitle];
         currentButtonTitle = day;
+        self.senderDate = self.monthly.text;
+        self.senderDate = [self.senderDate stringByAppendingString:@"-"];
+        self.senderDate = [self.senderDate stringByAppendingString:day];
+        self.senderDate = [self.senderDate stringByAppendingString:@"-"];
+        self.senderDate = [self.senderDate stringByAppendingString:self.year.text];
         _feedItems = [[NSArray alloc]init];
         _homeModel = [[HomeModel alloc]init];
         _homeModel.delegate = self;
@@ -423,6 +430,14 @@ NSArray * parseSpot3;
     
 }
 
+-(IBAction)postEventsDay:(id)sender{
+    AddEventViewController *addVC = [[AddEventViewController alloc]init];
+    [addVC postEventsDay:self.senderDate];
+}
 
+-(IBAction)postEventsMonth:(id)sender{
+    AddEventViewController *addVC = [[AddEventViewController alloc]init];
+    [addVC postEventsMonth:self.senderDate];
+}
 
 @end
