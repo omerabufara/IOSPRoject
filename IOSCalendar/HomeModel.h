@@ -33,6 +33,7 @@
 
 - (void)postEventsByDay:(NSString *)date;
 - (void)postEventsByMonth:(NSString *)evMonth year:(NSString*)evYear;
+-(BOOL)checkUser:(NSString*) user_name pass:(NSString*)pass;
 @end
 
 
