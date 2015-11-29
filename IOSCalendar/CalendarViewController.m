@@ -376,6 +376,14 @@ NSArray * parseSpot3;
     myCell.textLabel.text = item.event_name;
     
     myCell.detailTextLabel.text = item.event_time;
+    
+    /* need to use to show posted if the event is posted
+    if(item.posted == 't'){
+        UILabel *postedLabel = [[UILabel alloc]init];
+        [myCell addSubview:postedLabel];
+    }*/
+    
+    
 //    myCell.tag = 1111;
 //    
 //    UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc]initWithTarget:myCell action:@selector(popupInfo:)];
