@@ -31,7 +31,8 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection;
 
-- (void)downloadItemsToEdit: (NSInteger*) recordID;
+- (void)postEventsByDay:(NSString *)date;
+- (void)postEventsByMonth:(NSString *)evMonth year:(NSString*)evYear;
 @end
 
 

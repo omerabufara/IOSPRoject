@@ -9,6 +9,7 @@
 #import "MJDetailViewController.h"
 #import "CalendarViewController.h"
 #import "HomeModel.h"
+#import "UIViewController+MJPopupViewController.h"
 #import "EditEventViewController.h"
 
 @interface MJDetailViewController ()
@@ -58,15 +59,17 @@ NSString *storeEventDescribe;
 
 -(IBAction)editPressed:(NSInteger)sender{
     
-    EditEventViewController *edit = [[EditEventViewController alloc]init];
-       [edit loadInfoToEdit:&storedRecordId name:storeEventName time:storeEventTime location:storeEventLocation description:storeEventDescribe];
+    //EditEventViewController *edit = [[EditEventViewController alloc]init];
+//       [edit loadInfoToEdit:&storedRecordId name:storeEventName time:storeEventTime location:storeEventLocation description:storeEventDescribe];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
     EditEventViewController *yourViewController = (EditEventViewController *)[storyboard instantiateViewControllerWithIdentifier:@"editPage"];
-    [self.navigationController pushViewController:yourViewController animated:YES];
     
+    [self presentViewController:yourViewController animated:YES completion:nil];
     
- 
+    [yourViewController loadInfoToEdit:&storedRecordId name:storeEventName time:storeEventTime location:storeEventLocation description:storeEventDescribe];
+
 
 }
 

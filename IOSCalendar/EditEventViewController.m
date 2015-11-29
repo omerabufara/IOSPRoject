@@ -27,6 +27,7 @@
    
     [super viewDidLoad];
     
+    NSLog(@"here again");
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.tintColor = self.navigationItem.rightBarButtonItem.tintColor;
     
@@ -39,6 +40,8 @@
 ////
 
 -(void)loadInfoToEdit: (NSInteger*)recordid  name: (NSString*)eventName time:(NSString*)eventtime location:(NSString*)eventLoc description:(NSString*)eventDes {
+    
+    NSLog(@"here edit ");
     
     self.txtEventName.text = eventName;
     
