@@ -75,7 +75,10 @@ NSArray * parseSpot3;
     //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
     
     //manually set, but works as long as you change the tag number
-    UIButton *button = (UIButton *)[self.view viewWithTag:18];
+    
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
+    NSInteger day = [components day];
+    UIButton *button = (UIButton *)[self.view viewWithTag:day];
     [self loadData:button];
     
 //    _feedItems = [[NSArray alloc]init];
