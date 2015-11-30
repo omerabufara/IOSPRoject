@@ -30,6 +30,7 @@
 		1AF8ED3C1C0140FE00DD777B /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED3B1C0140FE00DD777B /* UIViewController+MJPopupViewController.m */; };
 		1AF8ED3F1C01411A00DD777B /* MJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED3E1C01411A00DD777B /* MJDetailViewController.m */; };
 		1AF8ED421C01413400DD777B /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */; };
+		47E689391C0CC3C00004CDE3 /* ThankYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E689381C0CC3C00004CDE3 /* ThankYouViewController.m */; };
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,8 @@
 		1AF8ED3E1C01411A00DD777B /* MJDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJDetailViewController.m; path = ../MJDetailViewController.m; sourceTree = "<group>"; };
 		1AF8ED401C01413400DD777B /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJPopupBackgroundView.h; path = ../MJPopupBackgroundView.h; sourceTree = "<group>"; };
 		1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJPopupBackgroundView.m; path = ../MJPopupBackgroundView.m; sourceTree = "<group>"; };
+		47E689371C0CC3C00004CDE3 /* ThankYouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThankYouViewController.h; sourceTree = "<group>"; };
+		47E689381C0CC3C00004CDE3 /* ThankYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThankYouViewController.m; sourceTree = "<group>"; };
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +181,8 @@
 				1ABE71631BFB78E0008FC8ED /* HomeModel.m */,
 				1ABE71651BFB78F0008FC8ED /* Location.h */,
 				1ABE71661BFB78F0008FC8ED /* Location.m */,
+				47E689371C0CC3C00004CDE3 /* ThankYouViewController.h */,
+				47E689381C0CC3C00004CDE3 /* ThankYouViewController.m */,
 			);
 			path = IOSCalendar;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 				1A0BEA621BED12560091A91A /* signUpViewController.m in Sources */,
 				5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */,
 				1A0BEA681BED537A0091A91A /* EditEventViewController.m in Sources */,
+				47E689391C0CC3C00004CDE3 /* ThankYouViewController.m in Sources */,
 				1AE902461BF3DD960054596E /* DBManager.m in Sources */,
 				1ABE71611BFB76BA008FC8ED /* eventsTableViewController.m in Sources */,
 				1A086DBA1BE6D54F00980950 /* ViewController.m in Sources */,

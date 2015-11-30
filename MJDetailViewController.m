@@ -11,6 +11,7 @@
 #import "HomeModel.h"
 #import "UIViewController+MJPopupViewController.h"
 #import "EditEventViewController.h"
+#import "ThankYouViewController.h"
 
 @interface MJDetailViewController ()
 
@@ -85,6 +86,13 @@ NSString *storeEventDescribe;
     HomeModel * registration = [[HomeModel alloc]init];
     
     [registration registration:&storedRecordId];
+    
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    ThankYouViewController *myViewController = (ThankYouViewController *) [story instantiateViewControllerWithIdentifier:@"thankyou"];
+    [self presentViewController:myViewController animated:YES completion:Nil];
+    
+    
     
 }
 
