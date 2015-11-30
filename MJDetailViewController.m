@@ -79,6 +79,16 @@ NSString *storeEventDescribe;
     [delete deleteItems:&recordId];
 }
 
+- (IBAction)registerPressed:(id)sender {
+    
+    
+    HomeModel * registration = [[HomeModel alloc]init];
+    
+    [registration registration:&storedRecordId];
+    
+}
+
+
 /*
 #pragma mark - Navigation
 

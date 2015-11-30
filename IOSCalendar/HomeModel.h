@@ -33,6 +33,8 @@
 
 - (void)postEventsByDay:(NSString *)date;
 - (void)postEventsByMonth:(NSString *)evMonth year:(NSString*)evYear;
+
+-(void) registration: (NSInteger*)recdid;
 @end
 
 
