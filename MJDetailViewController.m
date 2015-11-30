@@ -57,10 +57,14 @@ NSString *storeEventDescribe;
     [self dismissPopupViewControllerWithanimation:sender];
 }
 
--(IBAction)editPressed:(NSInteger)sender{
+-(IBAction)editPressed:(id)sender{
     
     //EditEventViewController *edit = [[EditEventViewController alloc]init];
 //       [edit loadInfoToEdit:&storedRecordId name:storeEventName time:storeEventTime location:storeEventLocation description:storeEventDescribe];
+//    CalendarViewController *vc = [[CalendarViewController alloc]init];
+//    [vc showEditPage];
+    //[self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+    //[self dismissPopupViewControllerWithanimation:sender];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     

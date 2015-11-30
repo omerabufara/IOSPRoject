@@ -254,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1151" y="227"/>
+            <point key="canvasLocation" x="1136" y="256"/>
         </scene>
         <!--Events Table View Controller-->
         <scene sceneID="Ouv-R9-8lB">
@@ -407,6 +407,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74U-Cl-sd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1791" y="239"/>
+        </scene>
+        <!--Edit Finish View Controller-->
+        <scene sceneID="TXM-m4-HOs">
+            <objects>
+                <viewController storyboardIdentifier="editFinish" id="t4C-tq-7mG" customClass="editFinishViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fgP-kU-dCo"/>
+                        <viewControllerLayoutGuide type="bottom" id="OPd-ZW-rTc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6qg-EB-tou">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Edit finish sucssefully " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlr-5l-imX">
+                                <rect key="frame" x="161" y="238" width="279" height="123"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbA-9R-VRI">
+                                <rect key="frame" x="190" y="425" width="220" height="52"/>
+                                <state key="normal" title="Calendar"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="WAT-g8-q3g"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mlr-5l-imX" firstAttribute="centerY" secondItem="6qg-EB-tou" secondAttribute="centerY" id="Dtt-2b-29v"/>
+                            <constraint firstItem="Mlr-5l-imX" firstAttribute="centerX" secondItem="6qg-EB-tou" secondAttribute="centerX" id="kkO-oY-loJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fF6-qq-0An" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1791" y="942"/>
         </scene>
         <!--Add Event-->
         <scene sceneID="1c5-d2-jz8">
@@ -725,6 +762,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="WAT-g8-q3g"/>
         <segue reference="sK3-sF-sAC"/>
     </inferredMetricsTieBreakers>
 </document>
