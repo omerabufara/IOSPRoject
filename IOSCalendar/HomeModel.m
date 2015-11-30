@@ -85,18 +85,17 @@
     
 }
 
--(void)edit:(NSInteger*) recordIDtoEdit name:(NSString*) editevName date:(NSString*)editevDate time:(NSString*)editevTime location:(NSString*)editevLocation description:(NSString*)editevDescription{
+-(void)edit: (NSInteger*) recordIDtoEdit name:(NSString*) editevName time:(NSString*)editevTime location:(NSString*)editevLocation description:(NSString*)editevDescription{
     
     editID = recordIDtoEdit;
     eventNameToEdit = editevName;
-    eventDateToEdit = editevDate;
     eventTimeToEdit = editevTime;
     eventLocationToEdit = editevLocation;
     eventDescriptionToEdit = editevDescription;
     
     //NSString *inStr = [NSString stringWithFormat: @"%ld", (long)editID];
     
-    NSString *edit = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/edit.php?eventId=%ld&event_name=%@&event_date=%@&event_time=%@&event_location=%@&event_description=%@",*editID,eventNameToEdit,eventDateToEdit,eventTimeToEdit,eventLocationToEdit,eventDescriptionToEdit];
+    NSString *edit = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/edit.php?eventId=%ld&event_name=%@&event_time=%@&event_location=%@&event_description=%@",*editID,eventNameToEdit,eventTimeToEdit,eventLocationToEdit,eventDescriptionToEdit];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:edit];
     
@@ -105,6 +104,8 @@
     ////
     // Create the NSURLConnection
     [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+    
+    NSLog(@"edit Finished");
 }
 
 

@@ -361,6 +361,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhl-bC-Bsm">
+                                <rect key="frame" x="226" y="428" width="148" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveEdit:" destination="Pnl-Le-BPU" eventType="touchUpInside" id="grU-jL-LSD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -371,6 +378,7 @@
                             <constraint firstItem="rUx-PK-6gt" firstAttribute="leading" secondItem="Z4J-cv-Tb1" secondAttribute="trailing" constant="49" id="aby-C8-CxK"/>
                             <constraint firstItem="LNu-12-nDJ" firstAttribute="leading" secondItem="I81-Mf-BZY" secondAttribute="trailing" constant="47" id="ekZ-FQ-bRZ"/>
                             <constraint firstItem="LNu-12-nDJ" firstAttribute="top" secondItem="A3e-tp-cSc" secondAttribute="bottom" constant="78" id="jHF-oL-Vrn"/>
+                            <constraint firstItem="Vhl-bC-Bsm" firstAttribute="centerX" secondItem="Z1M-Dc-u0B" secondAttribute="centerX" id="kDr-4j-DCW"/>
                             <constraint firstItem="HTD-5x-q2s" firstAttribute="leading" secondItem="SXX-In-xb6" secondAttribute="trailing" constant="74" id="lxY-9R-y1m"/>
                             <constraint firstItem="2JS-DD-Oga" firstAttribute="leading" secondItem="l1I-9U-2v2" secondAttribute="trailing" constant="60" id="qZk-na-2xy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HTD-5x-q2s" secondAttribute="trailing" constant="65" id="rlL-qx-osQ"/>
