@@ -194,6 +194,8 @@
     NSMutableArray *_locations = [[NSMutableArray alloc] init];
     
     // Parse the JSON that came in
+    //if the downloadedData contains more than one object treat as array
+    //if only one, treat as variable
     NSError *error;
     NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:_downloadedData options:NSJSONReadingAllowFragments error:&error];
     
