@@ -53,7 +53,7 @@ NSString *storeEventDescribe;
 
 - (IBAction)deletePressed:(id)sender{
     [self deleteEvent:storedRecordId];
-    //[self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
     [self dismissPopupViewControllerWithanimation:sender];
 }
 
