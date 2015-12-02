@@ -10,11 +10,16 @@
 #import "CalendarViewController.h"
 #import "HomeModel.h"
 #import "UIViewController+MJPopupViewController.h"
+#import "EditEventViewController.h"
 
 @interface MJDetailViewController ()
 
 @end
 NSInteger storedRecordId;
+NSString *storeEventName;
+NSString *storeEventTime;
+NSString *storeEventLocation;
+NSString *storeEventDescribe;
 @implementation MJDetailViewController
 @synthesize eventTime;
 @synthesize eventLocation;
@@ -38,14 +43,38 @@ NSInteger storedRecordId;
     // Dispose of any resources that can be recreated.
 }
 
-- (void)storeRecordId:(NSInteger)recordId{
+- (void)storeRecordId:(NSInteger)recordId name: (NSString*)eventName time:(NSString*)eventtime location:(NSString*)eventLoc description:(NSString*)eventDes {
     storedRecordId = recordId;
+    storeEventName = eventName;
+    storeEventTime = eventtime;
+    storeEventLocation = eventLoc;
+    storeEventDescribe = eventDes;
 }
 
 - (IBAction)deletePressed:(id)sender{
     [self deleteEvent:storedRecordId];
-    //[self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
     [self dismissPopupViewControllerWithanimation:sender];
+}
+
+-(IBAction)editPressed:(id)sender{
+    
+    //EditEventViewController *edit = [[EditEventViewController alloc]init];
+//       [edit loadInfoToEdit:&storedRecordId name:storeEventName time:storeEventTime location:storeEventLocation description:storeEventDescribe];
+//    CalendarViewController *vc = [[CalendarViewController alloc]init];
+//    [vc showEditPage];
+    //[self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+    //[self dismissPopupViewControllerWithanimation:sender];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    EditEventViewController *yourViewController = (EditEventViewController *)[storyboard instantiateViewControllerWithIdentifier:@"editPage"];
+    
+    [self presentViewController:yourViewController animated:YES completion:nil];
+    
+    [yourViewController loadInfoToEdit:&storedRecordId name:storeEventName time:storeEventTime location:storeEventLocation description:storeEventDescribe];
+
+
 }
 
 -(void)deleteEvent:(NSInteger)recordId{

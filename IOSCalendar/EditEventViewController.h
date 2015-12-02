@@ -13,29 +13,31 @@
 
 //@protocol EditInfoViewControllerDelegate;
 //
-//@interface EditEventViewController : UIViewController <UITextFieldDelegate>
-//
+@interface EditEventViewController : UIViewController <UITextFieldDelegate>
+
 //@property (nonatomic) int recordIDToEdit;
-//
-//@property (nonatomic, strong) id <EditInfoViewControllerDelegate> delegate;
-//
-//
-//@property (weak, nonatomic) IBOutlet UITextField *txtEventName;
-//
-//@property (weak, nonatomic) IBOutlet UITextField *txtEventDate;
-//
-//@property (weak, nonatomic) IBOutlet UITextField *txtEventTime;
-//
-//@property (weak, nonatomic) IBOutlet UITextField *txtEventLocation;
-//
-//@property (weak, nonatomic) IBOutlet UITextField *txtEventDescription;
-//
-//@property (weak, nonatomic) IBOutlet UITextField *txtEventVisible;
-//
-//-(void)loadInfoToEdit;
-//
-//
-//@end
+
+@property (nonatomic, strong) id <addInfoViewControllerDelegate> delegating;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtEventName;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtEventTime;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtEventLocation;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtEventDescription;
+
+-(void)loadInfoToEdit: (NSInteger*)recordid name: (NSString*)eventName time:(NSString*)eventtime location:(NSString*)eventLoc description:(NSString*)eventDes;
+
+@end
+
+
+@protocol addInfoViewControllerDelegate
+
+-(void)addingInfoWasFinished;
+
+@end
+
 //
 //
 //@protocol EditInfoViewControllerDelegate

@@ -64,6 +64,49 @@
 //    }]resume];                                                         *error){
 }
 
+- (void)downloadItemsToEdit: (NSInteger*) recordID
+{
+    
+    editID = recordID;
+    
+    // Download the json file
+    
+    NSString *editData = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/IOS-database-edit.php?eventId=%ld",*editID];
+    
+    NSURL *jsonFileUrl = [ NSURL URLWithString:editData];
+    
+    //    // Create the request
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
+    ////
+    // Create the NSURLConnection
+    [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+    
+}
+
+-(void)edit: (NSInteger*) recordIDtoEdit name:(NSString*) editevName time:(NSString*)editevTime location:(NSString*)editevLocation description:(NSString*)editevDescription{
+    
+    editID = recordIDtoEdit;
+    eventNameToEdit = editevName;
+    eventTimeToEdit = editevTime;
+    eventLocationToEdit = editevLocation;
+    eventDescriptionToEdit = editevDescription;
+    
+    //NSString *inStr = [NSString stringWithFormat: @"%ld", (long)editID];
+    
+    NSString *edit = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/edit.php?eventId=%ld&event_name=%@&event_time=%@&event_location=%@&event_description=%@",*editID,eventNameToEdit,eventTimeToEdit,eventLocationToEdit,eventDescriptionToEdit];
+    
+    NSURL *jsonFileUrl = [ NSURL URLWithString:edit];
+    
+    //    // Create the request
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
+    ////
+    // Create the NSURLConnection
+    [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+    
+    NSLog(@"edit Finished");
+}
+
+
 - (void)addItems: (NSString*) evName date:(NSString*)evDate time:(NSString*)evTime location:(NSString*)evLocation description:(NSString*)evDescription
 {
     
