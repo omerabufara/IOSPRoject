@@ -8,9 +8,10 @@
 //
 #import "EditEventViewController.h"
 #import "CalendarViewController.h"
-#import "AddEventViewController.h"
-#import "DBManager.h"
-#import "CalendarViewController.h"
+#import "editFinishViewController.h"
+#import "HomeModel.h"
+#import "Location.h"
+#import "MJDetailViewController.h"
 
 
 

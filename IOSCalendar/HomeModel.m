@@ -34,6 +34,14 @@
     NSString* phone;
     NSString* userName;
     NSString* password;
+    NSInteger* editID;
+    
+    
+    NSString* eventNameToEdit;
+    NSString* eventDateToEdit;
+    NSString* eventTimeToEdit;
+    NSString* eventLocationToEdit;
+    NSString* eventDescriptionToEdit;
     
 }
 @end
