@@ -40,6 +40,8 @@
 
 @implementation HomeModel
 
+@synthesize eventFoundInt;
+
 - (void)downloadItems: (NSString*) day monthly:(NSString*)month year:(NSString*)currYear
 {
     
@@ -197,7 +199,7 @@
     //if the downloadedData contains more than one object treat as array
     //if only one, treat as variable
     NSError *error;
-    if(_downloadedData.length > 1){
+    //if(_downloadedData.length > 1){
         NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:_downloadedData options:NSJSONReadingAllowFragments error:&error];
     
     
@@ -222,7 +224,6 @@
                     newLocation.event_time = jsonElement[@"event_time"];
                     newLocation.event_location = jsonElement[@"event_location"];
                     newLocation.event_description = jsonElement[@"event_description"];
-                    newLocation.posted = jsonElement[@"posted"];
         
                     // Add this question to the locations array
                     [_locations addObject:newLocation];
@@ -233,11 +234,10 @@
         {
             [self.delegate itemsDownloaded:_locations];
         }
-    }
-    else{
-        //where to pull in the result from sign up logic php
+//    }
+//    else{
 //       self.eventFoundInt = [NSJSONSerialization JSONObjectWithData:_downloadedData options:NSJSONReadingAllowFragments error:&error];
-    }
+//    }
 
 }
 
