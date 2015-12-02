@@ -377,6 +377,12 @@ NSArray * parseSpot3;
     
     myCell.detailTextLabel.text = item.event_time;
     
+    //only if the admin is signed in && it's found in the posted events table
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 21)];
+    label.text = @"Posted";
+    label.textColor = [UIColor greenColor];
+    [myCell addSubview:label];
+    
     //need to use to show posted if the event is posted
     //doesn't currently work
 /*   if(item.posted == 't'){

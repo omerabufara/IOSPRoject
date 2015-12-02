@@ -16,7 +16,7 @@
 
 @end
 
-NSInteger eventFoundInt;
+//NSInteger eventFoundInt;
 
 @interface HomeModel : NSObject  <NSURLConnectionDataDelegate>
 
