@@ -381,6 +381,7 @@ NSArray * parseSpot3;
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 21)];
     label.text = @"Posted";
     label.textColor = [UIColor greenColor];
+    [label setCenter:myCell.center];
     [myCell addSubview:label];
     
     //need to use to show posted if the event is posted
