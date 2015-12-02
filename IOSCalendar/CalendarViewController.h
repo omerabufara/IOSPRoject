@@ -7,17 +7,34 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DBManager.h"
+#import "AddEventViewController.h"
+#import "HomeModel.h"
 
-@interface CalendarViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+//@class AddEventViewController;
 
+extern NSArray * parseSpot3;
+
+@interface CalendarViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, EditInfoViewControllerDelegate, HomeModelProtocol,UIGestureRecognizerDelegate>
+
+
+@property (strong, nonatomic) AddEventViewController *addEventViewController;
 - (IBAction)nextAct:(id)sender;
 
 - (IBAction)prevAct:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *monthly;
 @property (weak, nonatomic) IBOutlet UILabel *year;
+@property (weak, nonatomic) NSString *currentButtonTitle;
 @property (strong, nonatomic) NSDate *defaulComp;
 
-@property (strong, nonatomic) NSMutableArray *eventsArray;
+@property (nonatomic, strong) DBManager *dbManager;
+
+-(void)loadData:(id)sender;
+
+
+
+- (IBAction)addNewEvent:(id)sender;
 
 @end
+
