@@ -16,13 +16,9 @@
 
 @end
 
-//NSInteger eventFoundInt;
-
 @interface HomeModel : NSObject  <NSURLConnectionDataDelegate>
 
 @property (nonatomic, weak) id<HomeModelProtocol> delegate;
-
-@property NSInteger eventFoundInt;
 
 - (void)downloadItems: (NSString*) day monthly:(NSString*)month year:(NSString*)currYear;
 - (void)deleteItems: (NSInteger*) recordid;
