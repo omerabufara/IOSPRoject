@@ -4,7 +4,7 @@
 //
 //  Created by Moran, Jennifer on 11/3/15.
 //  Copyright © 2015 Omer Abufara. All rights reserved.
-//
+// commit to merge
 
 #import <UIKit/UIKit.h>
 #import "DBManager.h"
