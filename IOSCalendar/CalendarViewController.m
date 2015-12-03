@@ -375,34 +375,20 @@ NSArray * parseSpot3;
     Location *item = _feedItems[indexPath.row];
     
     // Get references to labels of cell
-    myCell.textLabel.text = item.event_name;
+    UILabel *title = [myCell.contentView viewWithTag:2];
+    title.text = item.event_name;
     
-    myCell.detailTextLabel.text = item.event_time;
+    UILabel *subtitle = [myCell.contentView viewWithTag:3];
+    subtitle.text = item.event_time;
+    
+    //self.cellSubtitle.text = item.event_time;
+     UILabel *posted = [myCell.contentView viewWithTag:1];
     
     if([item.posted  isEqual: @"t"]){
-        
-        
-            if(![myCell.contentView viewWithTag:1]){
-    
-                    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 21)];
-                   label.text = @"Posted";
-                   label.textColor = [UIColor greenColor];
-                   label.tag = 1;
-                   [label setCenter:myCell.center];
-                   //[label setHidden:YES];
-                   //[myCell addSubview:label];
-                   [myCell.contentView addSubview:label];
-            }
+        posted.hidden = NO;
     }
     else{
-        for(UILabel *labelpoint in [myCell.contentView subviews])
-        {
-            if(labelpoint.tag == 1)
-            {
-                [labelpoint removeFromSuperview];
-            } 
-            
-        }
+        posted.hidden = YES;
     }
 
     return myCell;
