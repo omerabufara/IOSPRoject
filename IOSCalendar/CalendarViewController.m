@@ -234,6 +234,8 @@ NSArray * parseSpot3;
         //[self loadData: addProject];
         
         if(currMonth == thisMonth && currYear == thisYear && currDay == [[addProject.currentTitle stringByReplacingOccurrencesOfString:@" " withString:@""] intValue]){
+            
+            
             addProject.backgroundColor = [UIColor blueColor];
         }
         else{
