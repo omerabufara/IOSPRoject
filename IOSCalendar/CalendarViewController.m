@@ -21,6 +21,7 @@
 
 @property NSString *senderDate;
 
+//-(void)loadInfoToEdit;
 
 @property (nonatomic, strong) NSArray *eventsArray;
 
@@ -74,7 +75,10 @@ NSArray * parseSpot3;
     //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
     
     //manually set, but works as long as you change the tag number
-    UIButton *button = (UIButton *)[self.view viewWithTag:18];
+    
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
+    NSInteger day = [components day];
+    UIButton *button = (UIButton *)[self.view viewWithTag:day];
     [self loadData:button];
     
 //    _feedItems = [[NSArray alloc]init];
@@ -230,6 +234,8 @@ NSArray * parseSpot3;
         //[self loadData: addProject];
         
         if(currMonth == thisMonth && currYear == thisYear && currDay == [[addProject.currentTitle stringByReplacingOccurrencesOfString:@" " withString:@""] intValue]){
+            
+            
             addProject.backgroundColor = [UIColor blueColor];
         }
         else{
@@ -312,12 +318,30 @@ NSArray * parseSpot3;
     
 }
 
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    // Get the record ID of the selected name and set it to the recordIDToEdit property.
+    self.recordIDToEdit = [[[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
+    
+    // Perform the segue.
+    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+//- (IBAction)addNewEvent:(id)sender {
+//    
+//    // Before performing the segue, set the -1 value to the recordIDToEdit. That way we'll indicate that we want to add a new record and not to edit an existing one.
+//    self.recordIDToEdit = -1;
+//    
+//    // Perform the segue.
+//    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
+//    
+////    [self performSegueWithIdentifier:@"addEventSegue" sender:self];
+//    
+//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -354,18 +378,33 @@ NSArray * parseSpot3;
     myCell.textLabel.text = item.event_name;
     
     myCell.detailTextLabel.text = item.event_time;
-//    myCell.tag = 1111;
-//    
-//    UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc]initWithTarget:myCell action:@selector(popupInfo:)];
-//    [singleFingerTap setNumberOfTapsRequired:1];
-//    [singleFingerTap setDelegate:self];
-//    self.calendarTableView.userInteractionEnabled = YES;
-//    [self.calendarTableView addGestureRecognizer:singleFingerTap];
     
-//    UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self.mySmileFace action:@selector(tap:)];
-//    doubleTapGestureRecognizer.numberOfTapsRequired = 2;
-//    doubleTapGestureRecognizer.numberOfTouchesRequired = 2;
-//    [self.mySmileFace addGestureRecognizer:doubleTapGestureRecognizer];
+//    if(myCell.subviews){
+//        
+//    }
+//    else{
+//        
+//    }
+    
+    
+    //only if the admin is signed in && its posted value is true
+        if([item.posted  isEqualToString: @"t"]){
+            UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 21)];
+            label.text = @"Posted";
+            label.textColor = [UIColor greenColor];
+            label.tag = 1;
+            [label setCenter:myCell.center];
+            //[label setHidden:YES];
+            //[myCell addSubview:label];
+            [myCell.contentView addSubview:label];
+        }
+        else{
+            UILabel *labelExist = [myCell.contentView viewWithTag:1];
+            [labelExist removeFromSuperview];
+            //[labelExist setHidden:YES];
+        }
+
+    
 
     return myCell;
 }

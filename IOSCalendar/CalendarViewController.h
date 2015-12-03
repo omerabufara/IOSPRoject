@@ -30,8 +30,8 @@ extern NSArray * parseSpot3;
 
 @property (nonatomic, strong) DBManager *dbManager;
 
--(void)loadData:(id)sender;
 
+-(void)loadData:(id)sender;
 
 
 

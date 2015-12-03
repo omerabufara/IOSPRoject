@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString *event_time;
 @property (nonatomic, strong) NSString *event_location;
 @property (nonatomic, strong) NSString *event_description;
+@property (nonatomic, strong) NSString *posted;
 
 
 @end

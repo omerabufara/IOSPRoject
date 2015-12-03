@@ -1,8 +1,8 @@
 //
-//  AddEventViewController.h
+//  AddEditEvintViewController.h
 //  IOSCalendar
 //
-//  Created by Omer Abufara on 11/6/15.
+//  Created by Hamzah Arishi on 11/17/15.
 //  Copyright © 2015 Omer Abufara. All rights reserved.
 //
 
@@ -10,13 +10,13 @@
 
 @protocol EditInfoViewControllerDelegate;
 
-@interface AddEventViewController : UIViewController <UITextFieldDelegate>
-
-//@property (nonatomic) int recordIDToEdit;
+@interface AddEditEvintViewController : UIViewController
 
 @property (nonatomic, strong) id <EditInfoViewControllerDelegate> delegate;
 
-@property (strong, nonatomic) AddEventViewController *detailItem;
+@property (strong, nonatomic) AddEditEvintViewController *detailItem;
+
+@property (nonatomic) int recordIDToEdit;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtEventName;
 
@@ -28,18 +28,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *txtEventDescription;
 
+@property (weak, nonatomic) IBOutlet UITextField *txtEventVisible;
+
 - (IBAction)saveInfo:(id)sender;
-
-- (void)postEventsDay:(NSString *)date;
-
-- (void)postEventsMonth:(NSString *)date;
-
-//-(void)loadInfoToEdit;
-
-@end
-
-@protocol EditInfoViewControllerDelegate
-
--(void)editingInfoWasFinished;
-
 @end

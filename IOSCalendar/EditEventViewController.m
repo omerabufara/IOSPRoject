@@ -8,8 +8,10 @@
 //
 #import "EditEventViewController.h"
 #import "CalendarViewController.h"
+#import "editFinishViewController.h"
 #import "HomeModel.h"
 #import "Location.h"
+#import "MJDetailViewController.h"
 
 
 
@@ -79,10 +81,23 @@
     
     [editRecord edit:&idEdit name:saveName time:saveTime location:saveLocation description:saveDescribtion];
     
-    [self.delegating addingInfoWasFinished];
-    [self.navigationController popViewControllerAnimated:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
+  [self.delegating addingInfoWasFinished];
+    
+//    editFinishViewController *edf = [[editFinishViewController alloc]init];
+//    [self presentViewController:edf animated:YES completion:nil];
 
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    editFinishViewController *yourViewController = (editFinishViewController *)[storyboard instantiateViewControllerWithIdentifier:@"editFinish"];
+    
+    [self presentViewController:yourViewController animated:YES completion:nil];
+   // CalendarViewController *editF = [[CalendarViewController alloc]init];
+    
+    //[self.navigationController pushViewController:editF animated:YES];
+//    [self.navigationController presentViewController:editF animated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+
+    
 }
 
 @end
