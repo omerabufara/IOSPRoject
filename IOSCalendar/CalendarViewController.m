@@ -234,6 +234,8 @@ NSArray * parseSpot3;
         //[self loadData: addProject];
         
         if(currMonth == thisMonth && currYear == thisYear && currDay == [[addProject.currentTitle stringByReplacingOccurrencesOfString:@" " withString:@""] intValue]){
+            
+            
             addProject.backgroundColor = [UIColor blueColor];
         }
         else{
@@ -397,11 +399,15 @@ NSArray * parseSpot3;
     return myCell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     MJDetailViewController *detailVC =[[MJDetailViewController alloc]init];
     Location *item = _feedItems[indexPath.row];
     NSLog(@"here");
     
-    [detailVC storeRecordId:[[item.eventId stringByReplacingOccurrencesOfString:@" " withString:@""] intValue]];
+//    [[detailVC storeRecordId:[[item.eventId stringByReplacingOccurrencesOfString:@" " withString:@""] intValue] name:item.event_name time:item.event_time location:item.event_location description:item.event_description];
+    
+     [detailVC storeRecordId:[[item.eventId stringByReplacingOccurrencesOfString:@" " withString:@""]intValue] name:item.event_name time:item.event_time location:item.event_location description:item
+      .event_description];
     
     [self popupInfo:item.event_name date:item.event_date time:item.event_time location:item.event_location description:item.event_description];
 }

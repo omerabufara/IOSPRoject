@@ -10,7 +10,6 @@
 		1A086DB41BE6D54F00980950 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A086DB31BE6D54F00980950 /* main.m */; };
 		1A086DB71BE6D54F00980950 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A086DB61BE6D54F00980950 /* AppDelegate.m */; };
 		1A086DBA1BE6D54F00980950 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A086DB91BE6D54F00980950 /* ViewController.m */; };
-		1A086DBD1BE6D54F00980950 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A086DBB1BE6D54F00980950 /* Main.storyboard */; };
 		1A086DBF1BE6D54F00980950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A086DBE1BE6D54F00980950 /* Assets.xcassets */; };
 		1A086DC21BE6D54F00980950 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A086DC01BE6D54F00980950 /* LaunchScreen.storyboard */; };
 		1A086DCD1BE6D54F00980950 /* IOSCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A086DCC1BE6D54F00980950 /* IOSCalendarTests.m */; };
@@ -19,8 +18,10 @@
 		1A0BEA621BED12560091A91A /* signUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA611BED12560091A91A /* signUpViewController.m */; };
 		1A0BEA681BED537A0091A91A /* EditEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA671BED537A0091A91A /* EditEventViewController.m */; };
 		1A0BEA6B1BED53E60091A91A /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */; };
+		1A659AB51C0CBA6700B509D6 /* editFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A659AB41C0CBA6700B509D6 /* editFinishViewController.m */; };
 		1A8983DC1BF5E7C20040E791 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */; };
 		1A8983DE1BF5E7CE0040E791 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */; };
+		1A9A50311C0FC891008305F0 /* ThankYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A50301C0FC891008305F0 /* ThankYouViewController.m */; };
 		1ABE71611BFB76BA008FC8ED /* eventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71601BFB76BA008FC8ED /* eventsTableViewController.m */; };
 		1ABE71641BFB78E0008FC8ED /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71631BFB78E0008FC8ED /* HomeModel.m */; };
 		1ABE71671BFB78F0008FC8ED /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71661BFB78F0008FC8ED /* Location.m */; };
@@ -30,6 +31,7 @@
 		1AF8ED3C1C0140FE00DD777B /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED3B1C0140FE00DD777B /* UIViewController+MJPopupViewController.m */; };
 		1AF8ED3F1C01411A00DD777B /* MJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED3E1C01411A00DD777B /* MJDetailViewController.m */; };
 		1AF8ED421C01413400DD777B /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */; };
+		47B14BE61C0FAE150006B0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B14BE51C0FAE150006B0A5 /* Main.storyboard */; };
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +59,6 @@
 		1A086DB61BE6D54F00980950 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1A086DB81BE6D54F00980950 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1A086DB91BE6D54F00980950 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1A086DBC1BE6D54F00980950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A086DBE1BE6D54F00980950 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A086DC11BE6D54F00980950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A086DC31BE6D54F00980950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,8 +76,12 @@
 		1A0BEA671BED537A0091A91A /* EditEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditEventViewController.m; sourceTree = "<group>"; };
 		1A0BEA691BED53E60091A91A /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
 		1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
+		1A659AB31C0CBA6700B509D6 /* editFinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = editFinishViewController.h; sourceTree = "<group>"; };
+		1A659AB41C0CBA6700B509D6 /* editFinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = editFinishViewController.m; sourceTree = "<group>"; };
 		1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1A9A502F1C0FC891008305F0 /* ThankYouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThankYouViewController.h; sourceTree = "<group>"; };
+		1A9A50301C0FC891008305F0 /* ThankYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThankYouViewController.m; sourceTree = "<group>"; };
 		1ABE715F1BFB76BA008FC8ED /* eventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsTableViewController.h; sourceTree = "<group>"; };
 		1ABE71601BFB76BA008FC8ED /* eventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsTableViewController.m; sourceTree = "<group>"; };
 		1ABE71621BFB78E0008FC8ED /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
@@ -93,6 +98,7 @@
 		1AF8ED3E1C01411A00DD777B /* MJDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJDetailViewController.m; path = ../MJDetailViewController.m; sourceTree = "<group>"; };
 		1AF8ED401C01413400DD777B /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJPopupBackgroundView.h; path = ../MJPopupBackgroundView.h; sourceTree = "<group>"; };
 		1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJPopupBackgroundView.m; path = ../MJPopupBackgroundView.m; sourceTree = "<group>"; };
+		47B14BE51C0FAE150006B0A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,7 +161,7 @@
 				1A086DB61BE6D54F00980950 /* AppDelegate.m */,
 				1A086DB81BE6D54F00980950 /* ViewController.h */,
 				1A086DB91BE6D54F00980950 /* ViewController.m */,
-				1A086DBB1BE6D54F00980950 /* Main.storyboard */,
+				47B14BE51C0FAE150006B0A5 /* Main.storyboard */,
 				1A086DBE1BE6D54F00980950 /* Assets.xcassets */,
 				1A086DC01BE6D54F00980950 /* LaunchScreen.storyboard */,
 				1A086DC31BE6D54F00980950 /* Info.plist */,
@@ -178,6 +184,8 @@
 				1ABE71631BFB78E0008FC8ED /* HomeModel.m */,
 				1ABE71651BFB78F0008FC8ED /* Location.h */,
 				1ABE71661BFB78F0008FC8ED /* Location.m */,
+				1A9A502F1C0FC891008305F0 /* ThankYouViewController.h */,
+				1A9A50301C0FC891008305F0 /* ThankYouViewController.m */,
 			);
 			path = IOSCalendar;
 			sourceTree = "<group>";
@@ -193,6 +201,8 @@
 				1AF8ED401C01413400DD777B /* MJPopupBackgroundView.h */,
 				1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */,
 				1A086DB31BE6D54F00980950 /* main.m */,
+				1A659AB31C0CBA6700B509D6 /* editFinishViewController.h */,
+				1A659AB41C0CBA6700B509D6 /* editFinishViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -322,7 +332,7 @@
 				1AF8ED391C0140C900DD777B /* MJDetailViewController.xib in Resources */,
 				1A086DC21BE6D54F00980950 /* LaunchScreen.storyboard in Resources */,
 				1A086DBF1BE6D54F00980950 /* Assets.xcassets in Resources */,
-				1A086DBD1BE6D54F00980950 /* Main.storyboard in Resources */,
+				47B14BE61C0FAE150006B0A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,8 +366,10 @@
 				1ABE71611BFB76BA008FC8ED /* eventsTableViewController.m in Sources */,
 				1A086DBA1BE6D54F00980950 /* ViewController.m in Sources */,
 				1A0BEA5F1BED12080091A91A /* LogInViewController.m in Sources */,
+				1A9A50311C0FC891008305F0 /* ThankYouViewController.m in Sources */,
 				1A086DB71BE6D54F00980950 /* AppDelegate.m in Sources */,
 				1ABE71641BFB78E0008FC8ED /* HomeModel.m in Sources */,
+				1A659AB51C0CBA6700B509D6 /* editFinishViewController.m in Sources */,
 				1A086DB41BE6D54F00980950 /* main.m in Sources */,
 				1ABE71671BFB78F0008FC8ED /* Location.m in Sources */,
 				1A0BEA6B1BED53E60091A91A /* AddEventViewController.m in Sources */,
@@ -397,14 +409,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1A086DBB1BE6D54F00980950 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1A086DBC1BE6D54F00980950 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1A086DC01BE6D54F00980950 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
