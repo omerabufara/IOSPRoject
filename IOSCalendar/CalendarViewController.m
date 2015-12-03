@@ -75,7 +75,10 @@ NSArray * parseSpot3;
     //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
     
     //manually set, but works as long as you change the tag number
-    UIButton *button = (UIButton *)[self.view viewWithTag:18];
+    
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
+    NSInteger day = [components day];
+    UIButton *button = (UIButton *)[self.view viewWithTag:day];
     [self loadData:button];
     
 //    _feedItems = [[NSArray alloc]init];
@@ -231,6 +234,8 @@ NSArray * parseSpot3;
         //[self loadData: addProject];
         
         if(currMonth == thisMonth && currYear == thisYear && currDay == [[addProject.currentTitle stringByReplacingOccurrencesOfString:@" " withString:@""] intValue]){
+            
+            
             addProject.backgroundColor = [UIColor blueColor];
         }
         else{
@@ -273,8 +278,15 @@ NSArray * parseSpot3;
     
     if (sender != nil)
     {
+        
+
         NSString *day = [sender currentTitle];
         currentButtonTitle = day;
+        self.senderDate = self.monthly.text;
+        self.senderDate = [self.senderDate stringByAppendingString:@"-"];
+        self.senderDate = [self.senderDate stringByAppendingString:day];
+        self.senderDate = [self.senderDate stringByAppendingString:@"-"];
+        self.senderDate = [self.senderDate stringByAppendingString:self.year.text];
         _feedItems = [[NSArray alloc]init];
         _homeModel = [[HomeModel alloc]init];
         _homeModel.delegate = self;
@@ -366,27 +378,46 @@ NSArray * parseSpot3;
     myCell.textLabel.text = item.event_name;
     
     myCell.detailTextLabel.text = item.event_time;
-//    myCell.tag = 1111;
-//    
-//    UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc]initWithTarget:myCell action:@selector(popupInfo:)];
-//    [singleFingerTap setNumberOfTapsRequired:1];
-//    [singleFingerTap setDelegate:self];
-//    self.calendarTableView.userInteractionEnabled = YES;
-//    [self.calendarTableView addGestureRecognizer:singleFingerTap];
     
-//    UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self.mySmileFace action:@selector(tap:)];
-//    doubleTapGestureRecognizer.numberOfTapsRequired = 2;
-//    doubleTapGestureRecognizer.numberOfTouchesRequired = 2;
-//    [self.mySmileFace addGestureRecognizer:doubleTapGestureRecognizer];
+//    if(myCell.subviews){
+//        
+//    }
+//    else{
+//        
+//    }
+    
+    
+    //only if the admin is signed in && its posted value is true
+        if([item.posted  isEqualToString: @"t"]){
+            UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 21)];
+            label.text = @"Posted";
+            label.textColor = [UIColor greenColor];
+            label.tag = 1;
+            [label setCenter:myCell.center];
+            //[label setHidden:YES];
+            //[myCell addSubview:label];
+            [myCell.contentView addSubview:label];
+        }
+        else{
+            UILabel *labelExist = [myCell.contentView viewWithTag:1];
+            [labelExist removeFromSuperview];
+            //[labelExist setHidden:YES];
+        }
+
+    
 
     return myCell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     MJDetailViewController *detailVC =[[MJDetailViewController alloc]init];
     Location *item = _feedItems[indexPath.row];
     NSLog(@"here");
     
-    [detailVC storeRecordId:[[item.eventId stringByReplacingOccurrencesOfString:@" " withString:@""] intValue]];
+//    [[detailVC storeRecordId:[[item.eventId stringByReplacingOccurrencesOfString:@" " withString:@""] intValue] name:item.event_name time:item.event_time location:item.event_location description:item.event_description];
+    
+     [detailVC storeRecordId:[[item.eventId stringByReplacingOccurrencesOfString:@" " withString:@""]intValue] name:item.event_name time:item.event_time location:item.event_location description:item
+      .event_description];
     
     [self popupInfo:item.event_name date:item.event_date time:item.event_time location:item.event_location description:item.event_description];
 }
@@ -438,6 +469,14 @@ NSArray * parseSpot3;
     
 }
 
+-(IBAction)postEventsDay:(id)sender{
+    AddEventViewController *addVC = [[AddEventViewController alloc]init];
+    [addVC postEventsDay:self.senderDate];
+}
 
+-(IBAction)postEventsMonth:(id)sender{
+    AddEventViewController *addVC = [[AddEventViewController alloc]init];
+    [addVC postEventsMonth:self.senderDate];
+}
 
 @end

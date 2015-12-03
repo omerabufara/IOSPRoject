@@ -40,7 +40,6 @@
     self.txtEventTime.delegate = self;
     self.txtEventLocation.delegate = self;
     self.txtEventDescription.delegate = self;
-    self.txtEventVisible.delegate = self;
     
     //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
 
@@ -121,6 +120,20 @@
 //    else{
 //        NSLog(@"Could not execute the query.");
 //    }
+}
+
+- (void)postEventsDay:(NSString *)date{
+    
+    HomeModel *add = [[HomeModel alloc]init];
+    [add postEventsByDay:date];
+}
+
+- (void)postEventsMonth:(NSString *)date{
+    NSArray *dateComponentArray = [date componentsSeparatedByString:@"-"];
+    NSString *eventMonth = dateComponentArray[0];
+    NSString *eventYear = dateComponentArray[2];
+    HomeModel *add = [[HomeModel alloc]init];
+    [add postEventsByMonth:eventMonth year:eventYear];
 }
 
 @end
