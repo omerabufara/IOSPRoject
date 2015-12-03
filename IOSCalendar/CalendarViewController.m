@@ -425,26 +425,26 @@ NSArray * parseSpot3;
 /// Delete Records
 
 
--(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the selected record.
-        // Find the record ID.
-        
-        Location *item = _feedItems[indexPath.row];
-        
-        
-        
-        NSInteger recordIDToDelete = [[item.eventId stringByReplacingOccurrencesOfString:@" " withString:@""] intValue];
-        
-        HomeModel *delete = [[HomeModel alloc]init];
-        
-        [delete deleteItems:&recordIDToDelete];
-      
-         //Reload the table view.
-        [self loadData:nil];
-    }
-}
+//-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        // Delete the selected record.
+//        // Find the record ID.
+//        
+//        Location *item = _feedItems[indexPath.row];
+//        
+//        
+//        
+//        NSInteger recordIDToDelete = [[item.eventId stringByReplacingOccurrencesOfString:@" " withString:@""] intValue];
+//        
+//        HomeModel *delete = [[HomeModel alloc]init];
+//        
+//        [delete deleteItems:&recordIDToDelete];
+//      
+//         //Reload the table view.
+//        [self loadData:nil];
+//    }
+//}
 
 -(void)editingInfoWasFinished{
     // Reload the data.
