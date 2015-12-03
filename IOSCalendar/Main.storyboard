@@ -444,7 +444,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74U-Cl-sd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1791" y="239"/>
+            <point key="canvasLocation" x="1937" y="351"/>
         </scene>
         <!--Add Event-->
         <scene sceneID="1c5-d2-jz8">
@@ -598,10 +598,10 @@
             </objects>
             <point key="canvasLocation" x="1156" y="-450"/>
         </scene>
-        <!--View Controller-->
+        <!--Thank You View Controller-->
         <scene sceneID="odP-55-HnP">
             <objects>
-                <viewController storyboardIdentifier="thankyou" id="Ecz-Z4-6oN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="thankyou" id="Ecz-Z4-6oN" customClass="ThankYouViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hNq-OU-9As"/>
                         <viewControllerLayoutGuide type="bottom" id="NU6-M2-w9g"/>
@@ -636,7 +636,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uz-hr-Ilz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1814" y="-456"/>
+            <point key="canvasLocation" x="-956" y="-538"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="klE-Ru-c01">
@@ -803,7 +803,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pol-hR-n4k"/>
+        <segue reference="0r5-7x-jjb"/>
         <segue reference="sK3-sF-sAC"/>
     </inferredMetricsTieBreakers>
 </document>

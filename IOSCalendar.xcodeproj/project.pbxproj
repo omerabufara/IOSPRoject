@@ -21,6 +21,7 @@
 		1A659AB51C0CBA6700B509D6 /* editFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A659AB41C0CBA6700B509D6 /* editFinishViewController.m */; };
 		1A8983DC1BF5E7C20040E791 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */; };
 		1A8983DE1BF5E7CE0040E791 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */; };
+		1A9A50311C0FC891008305F0 /* ThankYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A50301C0FC891008305F0 /* ThankYouViewController.m */; };
 		1ABE71611BFB76BA008FC8ED /* eventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71601BFB76BA008FC8ED /* eventsTableViewController.m */; };
 		1ABE71641BFB78E0008FC8ED /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71631BFB78E0008FC8ED /* HomeModel.m */; };
 		1ABE71671BFB78F0008FC8ED /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71661BFB78F0008FC8ED /* Location.m */; };
@@ -79,6 +80,8 @@
 		1A659AB41C0CBA6700B509D6 /* editFinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = editFinishViewController.m; sourceTree = "<group>"; };
 		1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1A9A502F1C0FC891008305F0 /* ThankYouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThankYouViewController.h; sourceTree = "<group>"; };
+		1A9A50301C0FC891008305F0 /* ThankYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThankYouViewController.m; sourceTree = "<group>"; };
 		1ABE715F1BFB76BA008FC8ED /* eventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsTableViewController.h; sourceTree = "<group>"; };
 		1ABE71601BFB76BA008FC8ED /* eventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsTableViewController.m; sourceTree = "<group>"; };
 		1ABE71621BFB78E0008FC8ED /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 				1ABE71631BFB78E0008FC8ED /* HomeModel.m */,
 				1ABE71651BFB78F0008FC8ED /* Location.h */,
 				1ABE71661BFB78F0008FC8ED /* Location.m */,
+				1A9A502F1C0FC891008305F0 /* ThankYouViewController.h */,
+				1A9A50301C0FC891008305F0 /* ThankYouViewController.m */,
 			);
 			path = IOSCalendar;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				1ABE71611BFB76BA008FC8ED /* eventsTableViewController.m in Sources */,
 				1A086DBA1BE6D54F00980950 /* ViewController.m in Sources */,
 				1A0BEA5F1BED12080091A91A /* LogInViewController.m in Sources */,
+				1A9A50311C0FC891008305F0 /* ThankYouViewController.m in Sources */,
 				1A086DB71BE6D54F00980950 /* AppDelegate.m in Sources */,
 				1ABE71641BFB78E0008FC8ED /* HomeModel.m in Sources */,
 				1A659AB51C0CBA6700B509D6 /* editFinishViewController.m in Sources */,
