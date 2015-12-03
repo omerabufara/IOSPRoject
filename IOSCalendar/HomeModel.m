@@ -28,6 +28,8 @@
     
     NSInteger* rid;
     
+    NSInteger *regId;
+    
     NSString* firstName;
     NSString* lastName;
     NSString* email;
@@ -174,6 +176,25 @@
     ////
     // Create the NSURLConnection
     [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+    
+}
+
+-(void) registration: (NSInteger*)recdid {
+    
+    regId = recdid;
+    
+    NSString *reg = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/registration.php?eventId=%ld",*regId];
+    
+    
+    NSURL *jsonFileUrl = [ NSURL URLWithString:reg];
+    
+    //    // Create the request
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
+    ////
+    // Create the NSURLConnection
+    [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+    
+    
     
 }
 

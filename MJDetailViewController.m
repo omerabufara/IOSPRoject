@@ -11,6 +11,7 @@
 #import "HomeModel.h"
 #import "UIViewController+MJPopupViewController.h"
 #import "EditEventViewController.h"
+#import "ThankYouViewController.h"
 
 @interface MJDetailViewController ()
 
@@ -82,6 +83,23 @@ NSString *storeEventDescribe;
     
     [delete deleteItems:&recordId];
 }
+
+- (IBAction)registerPressed:(id)sender {
+    
+    
+    HomeModel * registration = [[HomeModel alloc]init];
+    
+    [registration registration:&storedRecordId];
+    
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    ThankYouViewController *myViewController = (ThankYouViewController *) [story instantiateViewControllerWithIdentifier:@"thankyou"];
+    [self presentViewController:myViewController animated:YES completion:Nil];
+    
+    
+    
+}
+
 
 /*
 #pragma mark - Navigation
