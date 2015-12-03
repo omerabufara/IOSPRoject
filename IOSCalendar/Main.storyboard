@@ -335,7 +335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1lo-Xd-GeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-319" y="946"/>
+            <point key="canvasLocation" x="-347" y="898"/>
         </scene>
         <!--Edit Event-->
         <scene sceneID="rRb-l9-ueW">
@@ -617,7 +617,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEj-5C-eGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="927"/>
+            <point key="canvasLocation" x="389" y="933"/>
         </scene>
         <!--Thank You View Controller-->
         <scene sceneID="odP-55-HnP">
@@ -657,7 +657,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uz-hr-Ilz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-404" y="-608"/>
+            <point key="canvasLocation" x="409" y="-548"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="klE-Ru-c01">
@@ -782,7 +782,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCy-mI-29N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="-509"/>
+            <point key="canvasLocation" x="-933" y="-541"/>
+        </scene>
+        <!--Delete Finish View Controller-->
+        <scene sceneID="CDz-XR-pxW">
+            <objects>
+                <viewController storyboardIdentifier="deleteFinish" id="K3P-TS-pB5" customClass="deleteFinishViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="njc-cz-Fhc"/>
+                        <viewControllerLayoutGuide type="bottom" id="EaM-P6-bK6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jb7-7i-XUI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Deleted Successfully" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zk-Ox-0s3">
+                                <rect key="frame" x="172" y="123" width="256" height="67"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9v-uD-PPO">
+                                <rect key="frame" x="193" y="316" width="214" height="74"/>
+                                <state key="normal" title="Calendar"/>
+                                <connections>
+                                    <segue destination="NiC-uC-W4U" kind="show" id="mTV-Lt-X2X"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E9v-uD-PPO" firstAttribute="centerX" secondItem="jb7-7i-XUI" secondAttribute="centerX" id="4Nt-Mt-1Xo"/>
+                            <constraint firstItem="9zk-Ox-0s3" firstAttribute="centerX" secondItem="jb7-7i-XUI" secondAttribute="centerX" id="4jG-oH-OZo"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ICA-57-Spe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-231" y="-548"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YVm-Pq-Wpg">
@@ -825,6 +862,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="UPd-GT-Igu"/>
-        <segue reference="Sv6-Md-GKE"/>
+        <segue reference="mTV-Lt-X2X"/>
     </inferredMetricsTieBreakers>
 </document>
