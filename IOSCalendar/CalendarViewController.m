@@ -379,22 +379,31 @@ NSArray * parseSpot3;
     
     myCell.detailTextLabel.text = item.event_time;
     
-    //only if the admin is signed in && it's found in the posted events table
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 21)];
-    label.text = @"Posted";
-    label.textColor = [UIColor greenColor];
-    [label setCenter:myCell.center];
-    [myCell addSubview:label];
+    if([item.posted  isEqual: @"t"]){
+        
+        
+            if(![myCell.contentView viewWithTag:1]){
     
-    //need to use to show posted if the event is posted
-    //doesn't currently work
-/*   if(item.posted == 't'){
-        UILabel *postedLabel = [[UILabel alloc]init];
-        postedLabel.text = @"posted";
-        UIColor *color = [UIColor greenColor];
-        [postedLabel setTextColor:color];
-        [myCell addSubview:postedLabel];
-    }*/
+                    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 21)];
+                   label.text = @"Posted";
+                   label.textColor = [UIColor greenColor];
+                   label.tag = 1;
+                   [label setCenter:myCell.center];
+                   //[label setHidden:YES];
+                   //[myCell addSubview:label];
+                   [myCell.contentView addSubview:label];
+            }
+    }
+    else{
+        for(UILabel *labelpoint in [myCell.contentView subviews])
+        {
+            if(labelpoint.tag == 1)
+            {
+                [labelpoint removeFromSuperview];
+            } 
+            
+        }
+    }
 
     return myCell;
 }

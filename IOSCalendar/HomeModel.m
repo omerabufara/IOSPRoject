@@ -25,6 +25,7 @@
     NSString* eventTime;
     NSString* eventLocation;
     NSString* eventDescription;
+    NSString* posted;
     
     NSInteger* rid;
     
@@ -102,6 +103,7 @@
     eventTimeToEdit = editevTime;
     eventLocationToEdit = editevLocation;
     eventDescriptionToEdit = editevDescription;
+    
     
     //NSString *inStr = [NSString stringWithFormat: @"%ld", (long)editID];
     
@@ -296,6 +298,7 @@
                     newLocation.event_time = jsonElement[@"event_time"];
                     newLocation.event_location = jsonElement[@"event_location"];
                     newLocation.event_description = jsonElement[@"event_description"];
+                    newLocation.posted = jsonElement[@"posted"];
         
                     // Add this question to the locations array
                     [_locations addObject:newLocation];
