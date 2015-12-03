@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yal-wa-6pd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yal-wa-6pd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -161,11 +161,11 @@
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q90-BS-iCf" id="yGY-Sk-BzD">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WOD-vj-e56">
-                                                    <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                                    <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -173,7 +173,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="raa-sV-Riv">
-                                                    <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                                    <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -277,7 +277,7 @@
                                         <rect key="frame" x="0.0" y="28" width="569" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SoH-QL-IDK" id="Smh-JH-rB1">
-                                            <rect key="frame" x="0.0" y="0.0" width="569" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="569" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -671,33 +671,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BFy-Te-GNh">
-                                <rect key="frame" x="195" y="339" width="210" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZtS-z0-GpX">
                                 <rect key="frame" x="195" y="400" width="210" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wOW-fx-jgd">
-                                <rect key="frame" x="196" y="465" width="209" height="29"/>
-                                <animations/>
-                                <segments>
-                                    <segment title="Sodier &amp; Sailor"/>
-                                    <segment title="Volunteer"/>
-                                </segments>
-                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaq-9Z-XKg">
                                 <rect key="frame" x="195" y="526" width="210" height="30"/>
                                 <animations/>
                                 <state key="normal" title="SignUp"/>
+                                <connections>
+                                    <action selector="signup:" destination="dRb-TR-IKf" eventType="touchUpInside" id="H5J-r8-LN9"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="FirstName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mJ2-zI-Kao">
                                 <rect key="frame" x="195" y="114" width="210" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BFy-Te-GNh">
+                                <rect key="frame" x="195" y="339" width="210" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -709,7 +704,6 @@
                             <constraint firstItem="BFy-Te-GNh" firstAttribute="centerX" secondItem="27x-rv-hKJ" secondAttribute="centerX" id="HFy-FP-9aO"/>
                             <constraint firstItem="nhy-T7-6ur" firstAttribute="centerX" secondItem="27x-rv-hKJ" secondAttribute="centerX" id="Nvw-Vb-qfV"/>
                             <constraint firstItem="ZtS-z0-GpX" firstAttribute="centerX" secondItem="27x-rv-hKJ" secondAttribute="centerX" id="VIb-d7-kL2"/>
-                            <constraint firstItem="wOW-fx-jgd" firstAttribute="centerX" secondItem="27x-rv-hKJ" secondAttribute="centerX" id="aCm-AF-CR9"/>
                             <constraint firstItem="mJ2-zI-Kao" firstAttribute="centerX" secondItem="27x-rv-hKJ" secondAttribute="centerX" id="tyj-S4-YJ2"/>
                             <constraint firstItem="aaq-9Z-XKg" firstAttribute="centerX" secondItem="27x-rv-hKJ" secondAttribute="centerX" id="xbt-ds-LO2"/>
                             <constraint firstItem="Jm2-mO-2BH" firstAttribute="centerX" secondItem="27x-rv-hKJ" secondAttribute="centerX" id="xuD-4L-2EF"/>
@@ -717,6 +711,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SignUp" id="GiI-Bf-J72"/>
+                    <connections>
+                        <outlet property="cellPhone" destination="U6M-gV-hra" id="0oc-hB-IcX"/>
+                        <outlet property="email_address" destination="Jm2-mO-2BH" id="B4Y-KH-QSK"/>
+                        <outlet property="first_name" destination="mJ2-zI-Kao" id="8cw-ee-FNt"/>
+                        <outlet property="last_name" destination="nhy-T7-6ur" id="Uof-2S-Tk7"/>
+                        <outlet property="password" destination="ZtS-z0-GpX" id="gmZ-eD-w9B"/>
+                        <outlet property="user_name" destination="BFy-Te-GNh" id="hhX-ep-ckQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5T-6L-E7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -738,6 +740,9 @@
                                 <rect key="frame" x="221" y="391" width="157" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="login:" destination="44n-fg-QtB" eventType="touchUpInside" id="VaS-57-nFk"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iRu-7q-Dyv">
                                 <rect key="frame" x="195" y="121" width="210" height="30"/>
@@ -761,6 +766,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Log In" id="ZTx-Zq-Fta"/>
+                    <connections>
+                        <outlet property="password" destination="mKR-j9-iJS" id="iGL-zW-5wr"/>
+                        <outlet property="userName" destination="iRu-7q-Dyv" id="nk7-gi-bTT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCy-mI-29N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
