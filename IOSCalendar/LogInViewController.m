@@ -48,8 +48,8 @@ bool passwordcorrect;
 -(IBAction)login:(id)sender{
 
     
-    HomeModel *logIn = [[HomeModel alloc]init];
-    [logIn checkUser:self.userName.text pass:self.password.text];
+   // HomeModel *logIn = [[HomeModel alloc]init];
+    //[logIn checkUser:self.userName.text pass:self.password.text];
     
     
 }

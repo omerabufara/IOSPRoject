@@ -38,7 +38,7 @@
     NSString* password;
     NSInteger* editID;
     
-    NSInteger *regId;
+    
     
     
     NSString* eventNameToEdit;
