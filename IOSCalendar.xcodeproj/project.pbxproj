@@ -31,6 +31,9 @@
 		1AF8ED3C1C0140FE00DD777B /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED3B1C0140FE00DD777B /* UIViewController+MJPopupViewController.m */; };
 		1AF8ED3F1C01411A00DD777B /* MJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED3E1C01411A00DD777B /* MJDetailViewController.m */; };
 		1AF8ED421C01413400DD777B /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */; };
+		472F0B751C13BE3300A599DA /* icon 58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 472F0B721C13BE3300A599DA /* icon 58x58.png */; };
+		472F0B761C13BE3300A599DA /* icon 80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 472F0B731C13BE3300A599DA /* icon 80x80.png */; };
+		472F0B771C13BE3300A599DA /* icon 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 472F0B741C13BE3300A599DA /* icon 120x120.png */; };
 		47B14BE61C0FAE150006B0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B14BE51C0FAE150006B0A5 /* Main.storyboard */; };
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; };
 /* End PBXBuildFile section */
@@ -98,6 +101,9 @@
 		1AF8ED3E1C01411A00DD777B /* MJDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJDetailViewController.m; path = ../MJDetailViewController.m; sourceTree = "<group>"; };
 		1AF8ED401C01413400DD777B /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJPopupBackgroundView.h; path = ../MJPopupBackgroundView.h; sourceTree = "<group>"; };
 		1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJPopupBackgroundView.m; path = ../MJPopupBackgroundView.m; sourceTree = "<group>"; };
+		472F0B721C13BE3300A599DA /* icon 58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon 58x58.png"; sourceTree = "<group>"; };
+		472F0B731C13BE3300A599DA /* icon 80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon 80x80.png"; sourceTree = "<group>"; };
+		472F0B741C13BE3300A599DA /* icon 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon 120x120.png"; sourceTree = "<group>"; };
 		47B14BE51C0FAE150006B0A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
@@ -193,6 +199,9 @@
 		1A086DB21BE6D54F00980950 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				472F0B721C13BE3300A599DA /* icon 58x58.png */,
+				472F0B731C13BE3300A599DA /* icon 80x80.png */,
+				472F0B741C13BE3300A599DA /* icon 120x120.png */,
 				1AF8ED381C0140C900DD777B /* MJDetailViewController.xib */,
 				1AF8ED3A1C0140FE00DD777B /* UIViewController+MJPopupViewController.h */,
 				1AF8ED3B1C0140FE00DD777B /* UIViewController+MJPopupViewController.m */,
@@ -329,10 +338,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				472F0B761C13BE3300A599DA /* icon 80x80.png in Resources */,
 				1AF8ED391C0140C900DD777B /* MJDetailViewController.xib in Resources */,
+				472F0B771C13BE3300A599DA /* icon 120x120.png in Resources */,
 				1A086DC21BE6D54F00980950 /* LaunchScreen.storyboard in Resources */,
 				1A086DBF1BE6D54F00980950 /* Assets.xcassets in Resources */,
 				47B14BE61C0FAE150006B0A5 /* Main.storyboard in Resources */,
+				472F0B751C13BE3300A599DA /* icon 58x58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
