@@ -253,6 +253,7 @@ NSArray * parseSpot3;
 
 -(IBAction)showEvents:(id)sender{
     [self loadData:sender];
+    self.dayPressed = sender;
 }
 
 - (IBAction)addNewEvent:(id)sender{
@@ -457,11 +458,14 @@ NSArray * parseSpot3;
 -(IBAction)postEventsDay:(id)sender{
     AddEventViewController *addVC = [[AddEventViewController alloc]init];
     [addVC postEventsDay:self.senderDate];
+    [self loadData:self.dayPressed];
 }
 
 -(IBAction)postEventsMonth:(id)sender{
     AddEventViewController *addVC = [[AddEventViewController alloc]init];
     [addVC postEventsMonth:self.senderDate];
+    //not working for by month
+    [self loadData:self.dayPressed];
 }
 
 @end
