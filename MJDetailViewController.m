@@ -94,6 +94,7 @@ NSString *storeEventDescribe;
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     ThankYouViewController *myViewController = (ThankYouViewController *) [story instantiateViewControllerWithIdentifier:@"thankyou"];
+    
     [self presentViewController:myViewController animated:YES completion:Nil];
     
     

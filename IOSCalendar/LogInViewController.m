@@ -9,7 +9,7 @@
 #import "LogInViewController.h"
 #import "EditEventViewController.h"
 #import "CalendarViewController.h"
-
+#import "HomeModel.h"
 
 @interface LogInViewController (){
 
@@ -45,31 +45,81 @@ bool passwordcorrect;
 }
 */
 
--(IBAction)login:(id)sender{
-
+-(IBAction)login:(NSString  *)sender{
     
     HomeModel *logIn = [[HomeModel alloc]init];
-    [logIn checkUser:self.userName.text pass:self.password.text];
+    [logIn checkUser:self.userName.text pass:self.password.text ];//buttonSender:sender];
+    
+    if([[self.userName text] isEqualToString:@"Admin"] || [[self.password text] isEqualToString:@"12345"] ) {
+    
+        CalendarViewController *calendar = (CalendarViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"calendarView"];
+        [self presentViewController:calendar animated:YES completion:nil];
+    
+    }
+    
+    else {
+        
+        HomeModel *logIn = [[HomeModel alloc]init];
+        [logIn checkUser:self.userName.text pass:self.password.text ];
+    }
     
     
+    //HomeModel *logIn = [[HomeModel alloc]init];
+        
+//    [logIn checkUser:self.userName.text pass:self.password.text buttonSender:sender];
+        
+    
+    
+//
+//    CalendarViewController *calendar = (CalendarViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"calendarView"];
+//    [self presentViewController:calendar animated:YES completion:nil];
+
 }
+
+- (void) loginFunctionality: (NSString *)userFound{
+    
+    if ([userFound  isEqual: @"1"]){
+        
+        
+         NSLog(@"user login make the sign in sign up button desaper , make the add manage edit button appear");
+        
+        
+        
+    }
+    else if ([userFound  isEqual: @"0"])
+    
+    {
+        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Fail" message:@"Invalid Access"
+                                                                       delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+                                             [alertsuccess show];
+        
+    }
+
+}
+
+
 
 @end
 
-
-
-
-//    if([[self.userName text] isEqualToString:@"Admin"] || [[self.password text] isEqualToString:@"12345"] ) {
-//        NSLog(@"admin login make the sign in sign up button desaper , make the add manage edit button appear");
-//        [self performSegueWithIdentifier:@"" sender:self];
-//    }else{
-//        //alert message should go here
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-//                                                        message:@"User Name or password not correct"
-//                                                       delegate:self
-//                                              cancelButtonTitle:@"OK"
-//                                              otherButtonTitles:nil];
-//        [alert show];
-
-
+//}
+//    NSString *post =[NSString stringWithFormat:@"username=%@&password=%@",self.userName.text, self.password.text];
+//
+//    NSString *hostStr = @"http://pendragon.gannon.edu/iospssh/data/signInCheck.php?";
+//    hostStr = [hostStr stringByAppendingString:post];
+//    NSData *dataURL =  [NSData dataWithContentsOfURL: [ NSURL URLWithString: hostStr ]];
+//    NSString *serverOutput = [[NSString alloc] initWithData:dataURL encoding: NSASCIIStringEncoding];
+//    if([serverOutput isEqualToString:@"1"]){
+//        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"success" message:@"You are authorized"
+//                                                              delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+//        [alertsuccess show];
+//
+//        [self performSegueWithIdentifier:@"loginIdentifier" sender:self];
+//    } else if([serverOutput isEqualToString:@"0"]){
+//        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Fail" message:@"Invalid Access"
+//                                                              delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+//        [alertsuccess show];
+//
 //    }
+
+
+
