@@ -462,8 +462,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMB-Lf-sLo">
-                                <rect key="frame" x="277" y="333" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="269" y="333" width="62" height="30"/>
+                                <state key="normal" title="Calendar"/>
                                 <connections>
                                     <segue destination="NiC-uC-W4U" kind="show" id="umN-Hw-JRH"/>
                                 </connections>

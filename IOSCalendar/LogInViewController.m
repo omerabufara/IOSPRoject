@@ -84,11 +84,9 @@ bool passwordcorrect;
         }
     
     else{
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error1" message:@"Username or password is invalid" preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:ok];
-        [self presentViewController:alert animated:YES completion:nil];
+        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Fail" message:@"Invalid Access"
+                                                              delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alertsuccess show];
     }
     
     
