@@ -12,6 +12,7 @@
 #import "UIViewController+MJPopupViewController.h"
 #import "EditEventViewController.h"
 #import "ThankYouViewController.h"
+#import "deleteFinishViewController.h"
 
 @interface MJDetailViewController ()
 
@@ -54,8 +55,8 @@ NSString *storeEventDescribe;
 
 - (IBAction)deletePressed:(id)sender{
     [self deleteEvent:storedRecordId];
-    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
-    [self dismissPopupViewControllerWithanimation:sender];
+    //[self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+    //[self dismissPopupViewControllerWithanimation:sender];
 }
 
 -(IBAction)editPressed:(id)sender{
@@ -82,6 +83,13 @@ NSString *storeEventDescribe;
     HomeModel *delete = [[HomeModel alloc]init];
     
     [delete deleteItems:&recordId];
+    
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    deleteFinishViewController *myViewController = (deleteFinishViewController *) [story instantiateViewControllerWithIdentifier:@"deleteFinish"];
+    [self presentViewController:myViewController animated:YES completion:Nil];
+    
+    
 }
 
 - (IBAction)registerPressed:(id)sender {
