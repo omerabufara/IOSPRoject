@@ -10,18 +10,23 @@
 #import "EditEventViewController.h"
 #import "CalendarViewController.h"
 #import "HomeModel.h"
+#import "SingInSuccessViewController.h"
 
-@interface LogInViewController (){
+@interface LogInViewController ()
+    
+    @property NSString* userfnd;
+    @property NSString* userFound;
 
-
-}
 
 @end
+
+
 
 @implementation LogInViewController
 
 bool usernameExist;
 bool passwordcorrect;
+
 
 
 
@@ -47,57 +52,47 @@ bool passwordcorrect;
 
 -(IBAction)login:(NSString  *)sender{
     
-    HomeModel *logIn = [[HomeModel alloc]init];
-    [logIn checkUser:self.userName.text pass:self.password.text ];//buttonSender:sender];
-    
-    if([[self.userName text] isEqualToString:@"Admin"] || [[self.password text] isEqualToString:@"12345"] ) {
-    
-        CalendarViewController *calendar = (CalendarViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"calendarView"];
-        [self presentViewController:calendar animated:YES completion:nil];
-    
-    }
-    
-    else {
+    if([[self.userName text] isEqualToString:@"Admin"] && [[self.password text] isEqualToString:@"12345"] ) {
         
+        
+        //[self performSegueWithIdentifier:@"a" sender:self];
+        
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        CalendarViewController *myViewController = (CalendarViewController *) [story instantiateViewControllerWithIdentifier:@"calendarView"];
+        
+        [self presentViewController:myViewController animated:YES completion:nil];
+        
+    }
+    else{
         HomeModel *logIn = [[HomeModel alloc]init];
         [logIn checkUser:self.userName.text pass:self.password.text ];
     }
-    
-    
-    //HomeModel *logIn = [[HomeModel alloc]init];
-        
-//    [logIn checkUser:self.userName.text pass:self.password.text buttonSender:sender];
-        
-    
-    
-//
-//    CalendarViewController *calendar = (CalendarViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"calendarView"];
-//    [self presentViewController:calendar animated:YES completion:nil];
 
 }
+- (void) loginFunctionality: (NSString *)found{
 
-- (void) loginFunctionality: (NSString *)userFound{
+    self.userFound = found;
     
-    if ([userFound  isEqual: @"1"]){
+    if([found isEqualToString:@"1"]){
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
+        SingInSuccessViewController *myViewController = (SingInSuccessViewController *) [story instantiateViewControllerWithIdentifier:@"signInSuccess"];
         
-         NSLog(@"user login make the sign in sign up button desaper , make the add manage edit button appear");
-        
-        
-        
-    }
-    else if ([userFound  isEqual: @"0"])
+        UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
+        [top presentViewController:myViewController animated:YES completion: nil];
+        }
     
-    {
-        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Fail" message:@"Invalid Access"
-                                                                       delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-                                             [alertsuccess show];
+    else{
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error1" message:@"Username or password is invalid" preferredStyle:UIAlertControllerStyleAlert];
         
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
     }
-
+    
+    
 }
-
-
 
 @end
 

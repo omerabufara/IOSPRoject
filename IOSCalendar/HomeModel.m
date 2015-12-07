@@ -11,6 +11,7 @@
 //added this
 #import "CalendarViewController.h"
 #import "LogInViewController.h"
+#import "SingInSuccessViewController.h"
 
 @interface HomeModel()
 {
@@ -74,6 +75,7 @@
 //[[session dataTaskWithURL:jsonFileUrl completionHandler:^ (NSData *data, NSURLResponse *response, NSError
 //    }]resume];                                                         *error){
 }
+@synthesize userFound;
 
 - (void)downloadItemsToEdit: (NSInteger*) recordID
 {
@@ -238,11 +240,8 @@
     ////
     // Create the NSURLConnection
     [NSURLConnection connectionWithRequest:urlRequest delegate:self];
-
     
 }
-
-
 
 #pragma mark NSURLConnectionDataProtocol Methods
 
@@ -268,56 +267,50 @@
     //if the downloadedData contains more than one object treat as array
     //if only one, treat as variable
     NSError *error;
-//    if(_downloadedData.length > 1){
-//        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:_downloadedData options:NSJSONReadingAllowFragments error:&error];
-//    
-//    
-//        //added this
-//        currentDate = monthly;
-//        currentDate = [[currentDate stringByAppendingString:@"-"] stringByAppendingString:daily];
-//        currentDate = [[currentDate stringByAppendingString:@"-"] stringByAppendingString:yearly];
-//        //
-//    
-//        
-//            // Loop through Json objects, create question objects and add them to our questions array
-//            for (int i = 0; i < jsonArray.count; i++)
-//            {
-//                NSDictionary *jsonElement = jsonArray[i];
-//                if([jsonElement[@"event_date"] isEqualToString:currentDate]){
-//            
-//                    // Create a new location object and set its props to JsonElement properties
-//                    Location *newLocation = [[Location alloc] init];
-//                    newLocation.eventId = jsonElement[@"ID"];
-//                    newLocation.event_name = jsonElement[@"event_name"];
-//                    newLocation.event_date = jsonElement[@"event_date"];
-//                    newLocation.event_time = jsonElement[@"event_time"];
-//                    newLocation.event_location = jsonElement[@"event_location"];
-//                    newLocation.event_description = jsonElement[@"event_description"];
-//                    newLocation.posted = jsonElement[@"posted"];
-//        
-//                    // Add this question to the locations array
-//                    [_locations addObject:newLocation];
-//                }
-//            }
-//        // Ready to notify delegate that data is ready and pass back items
-//        if (self.delegate)
-//        {
-//            [self.delegate itemsDownloaded:_locations];
-//        }
-//    }
-//    else{
+    if(_downloadedData.length > 1){
+        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:_downloadedData options:NSJSONReadingAllowFragments error:&error];
     
-        self.userFound = [[NSString alloc]initWithData:_downloadedData encoding:NSUTF8StringEncoding];
-    LogInViewController *loginVC = [[LogInViewController alloc]init];
-    [loginVC loginFunctionality:self.userFound];
-    //[loginVC login:self.userFound];
     
-    //self.resultBack = self.userFound;
+        //added this
+        currentDate = monthly;
+        currentDate = [[currentDate stringByAppendingString:@"-"] stringByAppendingString:daily];
+        currentDate = [[currentDate stringByAppendingString:@"-"] stringByAppendingString:yearly];
+        //
     
         
-   // }
+            // Loop through Json objects, create question objects and add them to our questions array
+            for (int i = 0; i < jsonArray.count; i++)
+            {
+                NSDictionary *jsonElement = jsonArray[i];
+                if([jsonElement[@"event_date"] isEqualToString:currentDate]){
+            
+                    // Create a new location object and set its props to JsonElement properties
+                    Location *newLocation = [[Location alloc] init];
+                    newLocation.eventId = jsonElement[@"ID"];
+                    newLocation.event_name = jsonElement[@"event_name"];
+                    newLocation.event_date = jsonElement[@"event_date"];
+                    newLocation.event_time = jsonElement[@"event_time"];
+                    newLocation.event_location = jsonElement[@"event_location"];
+                    newLocation.event_description = jsonElement[@"event_description"];
+                    newLocation.posted = jsonElement[@"posted"];
+        
+                    // Add this question to the locations array
+                    [_locations addObject:newLocation];
+                }
+            }
+        // Ready to notify delegate that data is ready and pass back items
+        if (self.delegate)
+        {
+            [self.delegate itemsDownloaded:_locations];
+        }
+    }
+    else{
+        userFound = [[NSString alloc]initWithData:_downloadedData encoding:NSUTF8StringEncoding];
+        LogInViewController *logIn = [[LogInViewController alloc]init];
+        [logIn loginFunctionality:userFound];
+
+    }
 
 }
-
 
 @end

@@ -33,6 +33,7 @@
 		1AF8ED421C01413400DD777B /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */; };
 		47B14BE61C0FAE150006B0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B14BE51C0FAE150006B0A5 /* Main.storyboard */; };
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; };
+		6FE7D37C1C15012200CA42CD /* SingInSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7D37B1C15012200CA42CD /* SingInSuccessViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		47B14BE51C0FAE150006B0A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		6FE7D37A1C15012200CA42CD /* SingInSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingInSuccessViewController.h; sourceTree = "<group>"; };
+		6FE7D37B1C15012200CA42CD /* SingInSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingInSuccessViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 				5B98BC091BE901DB004055C0 /* CalendarViewController.m */,
 				1A0BEA5D1BED12080091A91A /* LogInViewController.h */,
 				1A0BEA5E1BED12080091A91A /* LogInViewController.m */,
+				6FE7D37A1C15012200CA42CD /* SingInSuccessViewController.h */,
+				6FE7D37B1C15012200CA42CD /* SingInSuccessViewController.m */,
 				1A0BEA601BED12560091A91A /* signUpViewController.h */,
 				1A0BEA611BED12560091A91A /* signUpViewController.m */,
 				1A0BEA661BED537A0091A91A /* EditEventViewController.h */,
@@ -363,6 +368,7 @@
 				5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */,
 				1A0BEA681BED537A0091A91A /* EditEventViewController.m in Sources */,
 				1AE902461BF3DD960054596E /* DBManager.m in Sources */,
+				6FE7D37C1C15012200CA42CD /* SingInSuccessViewController.m in Sources */,
 				1ABE71611BFB76BA008FC8ED /* eventsTableViewController.m in Sources */,
 				1A086DBA1BE6D54F00980950 /* ViewController.m in Sources */,
 				1A0BEA5F1BED12080091A91A /* LogInViewController.m in Sources */,
