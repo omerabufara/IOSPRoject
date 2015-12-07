@@ -101,9 +101,15 @@
     eventLocationToEdit = editevLocation;
     eventDescriptionToEdit = editevDescription;
     
+    NSString *eventNameEdit =  [eventName stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *eventDateEdit =  [eventDate stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *eventTimeEdit = [eventTime stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *eventLocEdit  =  [eventLocation stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *eventDesctEdit = [eventDescription stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
     //NSString *inStr = [NSString stringWithFormat: @"%ld", (long)editID];
     
-    NSString *edit = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/edit.php?eventId=%ld&event_name=%@&event_time=%@&event_location=%@&event_description=%@",*editID,eventNameToEdit,eventTimeToEdit,eventLocationToEdit,eventDescriptionToEdit];
+    NSString *edit = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/edit.php?eventId=%ld&event_name=%@&event_time=%@&event_location=%@&event_description=%@",*editID,eventNameEdit,eventDateEdit,eventTimeEdit,eventDesctEdit];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:edit];
     
@@ -126,7 +132,14 @@
     eventLocation = evLocation;
     eventDescription = evDescription;
     
-    NSString *add = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/add.php?event_name=%@&event_date=%@&event_time=%@&event_location=%@&event_description=%@",eventName ,eventDate ,eventTime ,eventLocation ,eventDescription];
+    NSString *eventNamet =  [eventName stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *eventDatet =  [eventDate stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *eventTimet = [eventTime stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *eventLoct  =  [eventLocation stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *eventDesct = [eventDescription stringByReplacingOccurrencesOfString:@" " withString:@""];
+
+    
+    NSString *add = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/add.php?event_name=%@&event_date=%@&event_time=%@&event_location=%@&event_description=%@",eventNamet ,eventDatet ,eventTimet ,eventLoct ,eventDesct];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:add];
     
@@ -208,7 +221,14 @@
     userName = Uname;
     password = psw;
     
-    NSString *addUser = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/add-users.php?firstname=%@&lastname=%@&mail=%@&cell=%@&usernme=%@&paassword=%@",firstName ,lastName ,email ,phone ,userName ,password];
+    NSString *userfname =  [firstName stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *uderlname =  [lastName stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *useremail = [email stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *userphone  =  [phone stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *useruname = [userName stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *userpassword = [password stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    NSString *addUser = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/add-users.php?firstname=%@&lastname=%@&mail=%@&cell=%@&usernme=%@&paassword=%@",userfname ,uderlname ,useremail ,userphone ,useruname ,userpassword];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:addUser];
     
