@@ -101,15 +101,14 @@
     eventLocationToEdit = editevLocation;
     eventDescriptionToEdit = editevDescription;
     
-    NSString *eventNameEdit =  [eventName stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *eventDateEdit =  [eventDate stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *eventTimeEdit = [eventTime stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *eventLocEdit  =  [eventLocation stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *eventDesctEdit = [eventDescription stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *eventNameEdit =  [eventNameToEdit stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *eventTimeEdit = [eventTimeToEdit stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *eventLocEdit  =  [eventLocationToEdit stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *eventDesctEdit = [eventDescriptionToEdit stringByReplacingOccurrencesOfString:@" " withString:@""];
     
     //NSString *inStr = [NSString stringWithFormat: @"%ld", (long)editID];
     
-    NSString *edit = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/edit.php?eventId=%ld&event_name=%@&event_time=%@&event_location=%@&event_description=%@",*editID,eventNameEdit,eventDateEdit,eventTimeEdit,eventDesctEdit];
+    NSString *edit = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/edit.php?eventId=%ld&event_name=%@&event_time=%@&event_location=%@&event_description=%@",*editID,eventNameEdit,eventTimeEdit,eventLocEdit,eventDesctEdit];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:edit];
     
