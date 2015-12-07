@@ -49,7 +49,7 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="zyL-Ae-HmV" firstAttribute="centerX" secondItem="dLI-ee-BT8" secondAttribute="centerX" id="7HE-sl-KTo"/>
                             <constraint firstItem="4My-3j-ZTF" firstAttribute="top" secondItem="zyL-Ae-HmV" secondAttribute="bottom" constant="180" id="Bc7-C3-K3v"/>
@@ -862,7 +862,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sK3-sF-sAC"/>
-        <segue reference="jxS-34-9t5"/>
+        <segue reference="PGm-Sm-1Xc"/>
+        <segue reference="UPd-GT-Igu"/>
     </inferredMetricsTieBreakers>
 </document>
