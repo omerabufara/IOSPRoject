@@ -31,6 +31,8 @@
 		1AF8ED3C1C0140FE00DD777B /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED3B1C0140FE00DD777B /* UIViewController+MJPopupViewController.m */; };
 		1AF8ED3F1C01411A00DD777B /* MJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED3E1C01411A00DD777B /* MJDetailViewController.m */; };
 		1AF8ED421C01413400DD777B /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */; };
+		47111D361C160B4500CCD814 /* Mil-Vet-PSSH-centered-rgb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47111D351C160B4500CCD814 /* Mil-Vet-PSSH-centered-rgb.jpg */; };
+		47111D381C160D3600CCD814 /* Mil-Vet-PSSH-left-rgb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47111D371C160D3600CCD814 /* Mil-Vet-PSSH-left-rgb.jpg */; };
 		472F0B751C13BE3300A599DA /* icon 58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 472F0B721C13BE3300A599DA /* icon 58x58.png */; };
 		472F0B761C13BE3300A599DA /* icon 80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 472F0B731C13BE3300A599DA /* icon 80x80.png */; };
 		472F0B771C13BE3300A599DA /* icon 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 472F0B741C13BE3300A599DA /* icon 120x120.png */; };
@@ -101,6 +103,8 @@
 		1AF8ED3E1C01411A00DD777B /* MJDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJDetailViewController.m; path = ../MJDetailViewController.m; sourceTree = "<group>"; };
 		1AF8ED401C01413400DD777B /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJPopupBackgroundView.h; path = ../MJPopupBackgroundView.h; sourceTree = "<group>"; };
 		1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJPopupBackgroundView.m; path = ../MJPopupBackgroundView.m; sourceTree = "<group>"; };
+		47111D351C160B4500CCD814 /* Mil-Vet-PSSH-centered-rgb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Mil-Vet-PSSH-centered-rgb.jpg"; sourceTree = "<group>"; };
+		47111D371C160D3600CCD814 /* Mil-Vet-PSSH-left-rgb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Mil-Vet-PSSH-left-rgb.jpg"; sourceTree = "<group>"; };
 		472F0B721C13BE3300A599DA /* icon 58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon 58x58.png"; sourceTree = "<group>"; };
 		472F0B731C13BE3300A599DA /* icon 80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon 80x80.png"; sourceTree = "<group>"; };
 		472F0B741C13BE3300A599DA /* icon 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon 120x120.png"; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 				472F0B721C13BE3300A599DA /* icon 58x58.png */,
 				472F0B731C13BE3300A599DA /* icon 80x80.png */,
 				472F0B741C13BE3300A599DA /* icon 120x120.png */,
+				47111D351C160B4500CCD814 /* Mil-Vet-PSSH-centered-rgb.jpg */,
+				47111D371C160D3600CCD814 /* Mil-Vet-PSSH-left-rgb.jpg */,
 				1AF8ED381C0140C900DD777B /* MJDetailViewController.xib */,
 				1AF8ED3A1C0140FE00DD777B /* UIViewController+MJPopupViewController.h */,
 				1AF8ED3B1C0140FE00DD777B /* UIViewController+MJPopupViewController.m */,
@@ -342,9 +348,11 @@
 				1AF8ED391C0140C900DD777B /* MJDetailViewController.xib in Resources */,
 				472F0B771C13BE3300A599DA /* icon 120x120.png in Resources */,
 				1A086DC21BE6D54F00980950 /* LaunchScreen.storyboard in Resources */,
+				47111D361C160B4500CCD814 /* Mil-Vet-PSSH-centered-rgb.jpg in Resources */,
 				1A086DBF1BE6D54F00980950 /* Assets.xcassets in Resources */,
 				47B14BE61C0FAE150006B0A5 /* Main.storyboard in Resources */,
 				472F0B751C13BE3300A599DA /* icon 58x58.png in Resources */,
+				47111D381C160D3600CCD814 /* Mil-Vet-PSSH-left-rgb.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
