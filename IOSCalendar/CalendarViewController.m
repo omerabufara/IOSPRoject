@@ -253,6 +253,7 @@ NSArray * parseSpot3;
 
 -(IBAction)showEvents:(id)sender{
     [self loadData:sender];
+    self.dayPressed = sender;
 }
 
 - (IBAction)addNewEvent:(id)sender{
@@ -375,36 +376,21 @@ NSArray * parseSpot3;
     Location *item = _feedItems[indexPath.row];
     
     // Get references to labels of cell
-    myCell.textLabel.text = item.event_name;
+    UILabel *title = [myCell.contentView viewWithTag:2];
+    title.text = item.event_name;
     
-    myCell.detailTextLabel.text = item.event_time;
+    UILabel *subtitle = [myCell.contentView viewWithTag:3];
+    subtitle.text = item.event_time;
     
-//    if(myCell.subviews){
-//        
-//    }
-//    else{
-//        
-//    }
+    //self.cellSubtitle.text = item.event_time;
+     UILabel *posted = [myCell.contentView viewWithTag:1];
     
-    
-    //only if the admin is signed in && its posted value is true
-        if([item.posted  isEqualToString: @"t"]){
-            UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 21)];
-            label.text = @"Posted";
-            label.textColor = [UIColor greenColor];
-            label.tag = 1;
-            [label setCenter:myCell.center];
-            //[label setHidden:YES];
-            //[myCell addSubview:label];
-            [myCell.contentView addSubview:label];
-        }
-        else{
-            UILabel *labelExist = [myCell.contentView viewWithTag:1];
-            [labelExist removeFromSuperview];
-            //[labelExist setHidden:YES];
-        }
-
-    
+    if([item.posted  isEqual: @"t"]){
+        posted.hidden = NO;
+    }
+    else{
+        posted.hidden = YES;
+    }
 
     return myCell;
 }
@@ -472,11 +458,14 @@ NSArray * parseSpot3;
 -(IBAction)postEventsDay:(id)sender{
     AddEventViewController *addVC = [[AddEventViewController alloc]init];
     [addVC postEventsDay:self.senderDate];
+    [self loadData:self.dayPressed];
 }
 
 -(IBAction)postEventsMonth:(id)sender{
     AddEventViewController *addVC = [[AddEventViewController alloc]init];
     [addVC postEventsMonth:self.senderDate];
+    //not working for by month
+    [self loadData:self.dayPressed];
 }
 
 @end

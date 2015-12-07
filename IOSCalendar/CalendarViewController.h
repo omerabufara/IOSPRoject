@@ -4,7 +4,7 @@
 //
 //  Created by Moran, Jennifer on 11/3/15.
 //  Copyright © 2015 Omer Abufara. All rights reserved.
-//
+// commit to merge
 
 #import <UIKit/UIKit.h>
 #import "DBManager.h"
@@ -29,6 +29,11 @@ extern NSArray * parseSpot3;
 @property (strong, nonatomic) NSDate *defaulComp;
 
 @property (nonatomic, strong) DBManager *dbManager;
+
+@property (weak, nonatomic) IBOutlet UILabel *cellTitle;
+@property (weak, nonatomic) IBOutlet UILabel *cellSubtitle;
+@property (weak, nonatomic) IBOutlet UILabel *postedOutlet;
+@property (weak, nonatomic) UIButton *dayPressed;
 
 
 -(void)loadData:(id)sender;
