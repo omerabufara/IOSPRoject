@@ -164,6 +164,9 @@
                                 <rect key="frame" x="483" y="79" width="47" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <segue destination="44n-fg-QtB" kind="show" id="m5U-BL-3RO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="52" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcD-1F-lEu">
                                 <rect key="frame" x="72" y="123" width="61" height="30"/>
@@ -906,6 +909,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="XcD-FW-AqN"/>
+        <segue reference="m5U-BL-3RO"/>
         <segue reference="sK3-sF-sAC"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,11 +10,8 @@
 #import "DBManager.h"
 
 @protocol addInfoViewControllerDelegate;
-//@protocol EditInfoViewControllerDelegate;
-//
 @interface EditEventViewController : UIViewController <UITextFieldDelegate>
 
-//@property (nonatomic) int recordIDToEdit;
 
 @property (nonatomic, strong) id <addInfoViewControllerDelegate> delegating;
 
@@ -37,10 +34,3 @@
 
 @end
 
-//
-//
-//@protocol EditInfoViewControllerDelegate
-//
-//-(void)editingInfoWasFinished;
-//
-//@end

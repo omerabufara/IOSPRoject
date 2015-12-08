@@ -29,13 +29,10 @@
 
 }
 
-//@property (nonatomic, strong) DBManager *dbManager;
-
 @end
 
 @implementation EditEventViewController
-//
-////
+
 - (void)viewDidLoad
 {
    
@@ -51,7 +48,6 @@
     self.txtEventDescription.delegate = self;
 
 }
-////
 
 -(void)loadInfoToEdit: (NSInteger*)recordid  name: (NSString*)eventName time:(NSString*)eventtime location:(NSString*)eventLoc description:(NSString*)eventDes {
     
@@ -82,20 +78,12 @@
     [editRecord edit:&idEdit name:saveName time:saveTime location:saveLocation description:saveDescribtion];
     
   [self.delegating addingInfoWasFinished];
-    
-//    editFinishViewController *edf = [[editFinishViewController alloc]init];
-//    [self presentViewController:edf animated:YES completion:nil];
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     editFinishViewController *yourViewController = (editFinishViewController *)[storyboard instantiateViewControllerWithIdentifier:@"editFinish"];
     
     [self presentViewController:yourViewController animated:YES completion:nil];
-   // CalendarViewController *editF = [[CalendarViewController alloc]init];
-    
-    //[self.navigationController pushViewController:editF animated:YES];
-//    [self.navigationController presentViewController:editF animated:YES completion:nil];
-    //[self dismissViewControllerAnimated:YES completion:nil];
 
     
 }

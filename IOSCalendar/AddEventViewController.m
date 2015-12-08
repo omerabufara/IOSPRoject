@@ -42,19 +42,6 @@
     self.txtEventLocation.delegate = self;
     self.txtEventDescription.delegate = self;
     
-    //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
-
-//    _feedItems = [[NSArray alloc]init];
-//    _homeModel = [[HomeModel alloc]init];
-    //HomeModel.delegate = self;
-    
-   // [_homeModel downloadItems:day monthly:self.monthly.text year:self.year.text];
-    
-//    // Check if should load specific record for editing.
-//    if (self.recordIDToEdit != -1) {
-//        // Load the record with the specific ID from the database.
-//        [self loadInfoToEdit];
-//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,10 +74,7 @@
 
 
 - (IBAction)saveInfo:(id)sender{
-//        NSMutableString *query = [NSMutableString stringWithFormat:@"insert into events values (null ,'%@' , '%@' , '%@' , '%@' , '%@'  )", self.txtEventName.text, self.txtEventDate.text, self.txtEventTime.text, self.txtEventLocation.text, self.txtEventDescription.text];
-//    
-//    // Execute the query.
-//    [self.dbManager executeQuery:query];
+
     
     HomeModel *add = [[HomeModel alloc]init];
     
