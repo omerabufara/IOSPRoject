@@ -7,6 +7,7 @@
 //
 
 #import "SignInSuccessViewController.h"
+#import "CalendarViewController.h"
 
 @interface SignInSuccessViewController ()
 
@@ -17,12 +18,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.foundUsername = @"Admin";
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([[segue identifier] isEqualToString:@"signInCalendar"]) {
+//        
+//         CalendarViewController *controller = (CalendarViewController *)segue.destinationViewController;
+//        controller.userIDSignedIn = self.foundUsername;
+//    }
+//}
 
 /*
 #pragma mark - Navigation

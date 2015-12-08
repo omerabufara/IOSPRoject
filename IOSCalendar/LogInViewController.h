@@ -13,6 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *password;
 
+
+@property (nonatomic, retain) NSString* usernameFound;
 - (IBAction)login:(id)sender;
 
 

@@ -14,6 +14,8 @@
 #import "Location.h"
 #import "UIViewController+MJPopupViewController.h"
 #import "MJDetailViewController.h"
+#import "LogInViewController.h"
+
 
 @interface CalendarViewController () <EditInfoViewControllerDelegate>
 
@@ -79,6 +81,7 @@ NSArray * parseSpot3;
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
     NSInteger day = [components day];
     UIButton *button = (UIButton *)[self.view viewWithTag:day];
+    
     [self loadData:button];
     
 //    _feedItems = [[NSArray alloc]init];
@@ -263,6 +266,10 @@ NSArray * parseSpot3;
 }
 
 -(void)loadData:(id)sender{
+    
+    NSString *logInUser = nil;
+    //LogInViewController *logInViewController = [[LogInViewController alloc]init];
+    
     //will not happen for current date and need a click off function to turn back to grey
     if([sender isKindOfClass:[UIButton class]]){
         UIButton *senderButton = sender;
@@ -291,7 +298,36 @@ NSArray * parseSpot3;
         _feedItems = [[NSArray alloc]init];
         _homeModel = [[HomeModel alloc]init];
         _homeModel.delegate = self;
-        [_homeModel downloadItems:day monthly:self.monthly.text year:self.year.text];
+        if(logInUser != nil){
+        
+            UIButton *signIn = (UIButton *)[self.view viewWithTag:50];
+            UIButton *signUp = (UIButton *)[self.view viewWithTag:51];
+            signIn.hidden = YES;
+            signUp.hidden = YES;
+        
+            if([logInUser isEqualToString:@"Admin"]){
+                UIButton *postedDay = (UIButton *)[self.view viewWithTag:52];
+                postedDay.hidden = NO;
+                UIButton *postedMonth = (UIButton *)[self.view viewWithTag:53];
+                postedMonth.hidden = NO;
+                [_homeModel downloadItems:day monthly:self.monthly.text year:self.year.text];
+            }
+            else {
+                UIButton *postedDay = (UIButton *)[self.view viewWithTag:52];
+                postedDay.hidden = YES;
+                UIButton *postedMonth = (UIButton *)[self.view viewWithTag:53];
+                postedMonth.hidden = YES;
+               [_homeModel downloadItemsUser:day monthly:self.monthly.text year:self.year.text];
+            }
+        }
+        else{
+            UIButton *postedDay = (UIButton *)[self.view viewWithTag:52];
+            postedDay.hidden = YES;
+            UIButton *postedMonth = (UIButton *)[self.view viewWithTag:53];
+            postedMonth.hidden = YES;
+           [_homeModel downloadItemsUser:day monthly:self.monthly.text year:self.year.text];
+        }
+        
     }
 
     

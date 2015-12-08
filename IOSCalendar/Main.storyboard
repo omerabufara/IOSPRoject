@@ -152,7 +152,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUz-vd-u1Y">
+                            <button opaque="NO" tag="51" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUz-vd-u1Y">
                                 <rect key="frame" x="70" y="79" width="55" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Sign Up"/>
@@ -160,12 +160,12 @@
                                     <segue destination="dRb-TR-IKf" kind="show" id="sK3-sF-sAC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVR-uV-fhH">
+                            <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVR-uV-fhH">
                                 <rect key="frame" x="483" y="79" width="47" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Sign In"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcD-1F-lEu">
+                            <button opaque="NO" tag="52" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcD-1F-lEu">
                                 <rect key="frame" x="72" y="123" width="61" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Post Day"/>
@@ -173,7 +173,7 @@
                                     <action selector="postEventsDay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SkW-Iq-WzU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbz-TT-moC">
+                            <button opaque="NO" tag="53" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbz-TT-moC">
                                 <rect key="frame" x="63" y="161" width="79" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Post Month"/>
@@ -254,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1151" y="227"/>
+            <point key="canvasLocation" x="319" y="267"/>
         </scene>
         <!--Events Table View Controller-->
         <scene sceneID="Ouv-R9-8lB">
@@ -335,7 +335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1lo-Xd-GeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-961" y="933"/>
+            <point key="canvasLocation" x="-1029" y="1121"/>
         </scene>
         <!--Edit Event-->
         <scene sceneID="rRb-l9-ueW">
@@ -620,7 +620,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEj-5C-eGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-297" y="933"/>
+            <point key="canvasLocation" x="-2077" y="1033"/>
         </scene>
         <!--Thank You View Controller-->
         <scene sceneID="odP-55-HnP">
@@ -743,7 +743,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5T-6L-E7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="1054"/>
+            <point key="canvasLocation" x="-231" y="1290"/>
         </scene>
         <!--Log In-->
         <scene sceneID="JIu-C8-ElR">
@@ -794,7 +794,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCy-mI-29N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-933" y="-541"/>
+            <point key="canvasLocation" x="-1649" y="-593"/>
         </scene>
         <!--Delete Finish View Controller-->
         <scene sceneID="CDz-XR-pxW">
@@ -891,7 +891,7 @@
                                 <animations/>
                                 <state key="normal" title="Calendar"/>
                                 <connections>
-                                    <segue destination="NiC-uC-W4U" kind="show" id="cf1-JF-eLN"/>
+                                    <segue destination="NiC-uC-W4U" kind="show" identifier="signInCalendar" id="XcD-FW-AqN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -901,11 +901,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTX-KE-utb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1787" y="-589"/>
+            <point key="canvasLocation" x="-961" y="-557"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cf1-JF-eLN"/>
+        <segue reference="XcD-FW-AqN"/>
         <segue reference="sK3-sF-sAC"/>
     </inferredMetricsTieBreakers>
 </document>

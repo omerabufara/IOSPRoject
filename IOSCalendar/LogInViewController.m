@@ -46,17 +46,20 @@ bool passwordcorrect;
 */
 
 -(IBAction)login:(id)sender{
+    CalendarViewController *cal = [[CalendarViewController alloc]init];
 
     if([[self.userName text] isEqualToString:@"Admin"] && [[self.password text] isEqualToString:@"12345"] ) {
-        
+        cal.userIDSignedIn = self.userName.text;
+        self.usernameFound = self.userName.text;
         
         //[self performSegueWithIdentifier:@"a" sender:self];
         
         UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
-        SignInSuccessViewController *myViewController = (SignInSuccessViewController *) [story instantiateViewControllerWithIdentifier:@"signInSuccess"];
+       SignInSuccessViewController *myViewController = (SignInSuccessViewController *) [story instantiateViewControllerWithIdentifier:@"signInSuccess"];
         
         [self presentViewController:myViewController animated:YES completion:nil];
+        
         
     }
     else{
@@ -68,9 +71,15 @@ bool passwordcorrect;
 
 - (void) loginFunctionality: (NSString *)found{
     
+    CalendarViewController *cal = [[CalendarViewController alloc]init];
+    
     self.userFound = found;
     
     if([found isEqualToString:@"1"]){
+        
+        //cal.userIDSignedIn = self.userName.text;
+        self.usernameFound = self.userName.text;
+        
         UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
         SignInSuccessViewController *myViewController = (SignInSuccessViewController *) [story instantiateViewControllerWithIdentifier:@"signInSuccess"];

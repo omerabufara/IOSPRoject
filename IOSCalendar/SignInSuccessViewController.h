@@ -10,4 +10,5 @@
 
 @interface SignInSuccessViewController : UIViewController
 
+@property (nonatomic, retain) NSString* foundUsername;
 @end

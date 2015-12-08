@@ -17,6 +17,7 @@ extern NSArray * parseSpot3;
 
 @interface CalendarViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, EditInfoViewControllerDelegate, HomeModelProtocol,UIGestureRecognizerDelegate>
 
+@property (nonatomic, retain) NSString* userIDSignedIn;
 
 @property (strong, nonatomic) AddEventViewController *addEventViewController;
 - (IBAction)nextAct:(id)sender;

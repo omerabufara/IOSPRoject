@@ -69,13 +69,20 @@
     // Create the NSURLConnection
    [NSURLConnection connectionWithRequest:urlRequest delegate:self];
   
+}
 
+- (void)downloadItemsUser:(NSString*) day monthly:(NSString*)month year:(NSString*)currYear{
+    daily = day;
+    monthly = month;
+    yearly = currYear;
+    // Download the json file
+    NSURL *jsonFileUrl = [NSURL URLWithString:@"http://pendragon.gannon.edu/IOSPSSH/data/IOS-database-User.php"];
     
-
-//
-//NSURLSession *session = [NSURLSession sharedSession];
-//[[session dataTaskWithURL:jsonFileUrl completionHandler:^ (NSData *data, NSURLResponse *response, NSError
-//    }]resume];                                                         *error){
+    //    // Create the request
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
+    ////
+    // Create the NSURLConnection
+    [NSURLConnection connectionWithRequest:urlRequest delegate:self];
 }
 
 - (void)downloadItemsToEdit: (NSInteger*) recordID
