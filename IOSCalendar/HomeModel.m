@@ -36,7 +36,6 @@
     NSString* lastName;
     NSString* email;
     NSString* phone;
-    NSString* userName;
     NSString* password;
     NSInteger* editID;
     
@@ -53,6 +52,7 @@
 @implementation HomeModel
 
 @synthesize userFound;
+//@synthesize userName;
 
 - (void)downloadItems: (NSString*) day monthly:(NSString*)month year:(NSString*)currYear
 {
@@ -228,14 +228,14 @@
     lastName = lName;
     email = mail;
     phone = phoneNo;
-    userName = Uname;
+    self.userName = Uname;
     password = psw;
     
     NSString *userfname =  [firstName stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSString *uderlname =  [lastName stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSString *useremail = [email stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSString *userphone  =  [phone stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *useruname = [userName stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *useruname = [self.userName stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSString *userpassword = [password stringByReplacingOccurrencesOfString:@" " withString:@""];
     
     NSString *addUser = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/add-users.php?firstname=%@&lastname=%@&mail=%@&cell=%@&usernme=%@&paassword=%@",userfname ,uderlname ,useremail ,userphone ,useruname ,userpassword];
@@ -253,12 +253,12 @@
 - (void)checkUser:(NSString*) user_name pass:(NSString*)pass{
     
     
-    userName = user_name;
+    self.userName = user_name;
     password = pass;
     //self.senderbutton = sender;
     
     
-    NSString *check = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/signInCheck.php?userName=%@&password=%@",userName,password];
+    NSString *check = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/signInCheck.php?userName=%@&password=%@",self.userName,password];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:check];
     
@@ -335,7 +335,7 @@
     else{
         userFound = [[NSString alloc]initWithData:_downloadedData encoding:NSUTF8StringEncoding];
         LogInViewController *logIn = [[LogInViewController alloc]init];
-        [logIn loginFunctionality:userFound];
+        [logIn loginFunctionality:userFound username:self.userName];
         
     }
 

@@ -23,6 +23,7 @@
 @property (nonatomic, weak) id<HomeModelProtocol> delegate;
 
 @property NSString *userFound;
+@property NSString *userName;
 
 - (void)downloadItems: (NSString*) day monthly:(NSString*)month year:(NSString*)currYear;
 - (void)downloadItemsUser:(NSString*) day monthly:(NSString*)month year:(NSString*)currYear;

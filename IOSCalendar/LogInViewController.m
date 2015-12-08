@@ -72,23 +72,26 @@ bool passwordcorrect;
     }
     else{
         HomeModel *logIn = [[HomeModel alloc]init];
-        [logIn checkUser:self.userName.text pass:self.password.text ];
+        [logIn checkUser:self.userName.text pass:self.password.text];
     }
     
 }
 
-- (void) loginFunctionality: (NSString *)found{
+- (void) loginFunctionality: (NSString *)found username: (NSString*)usernameFound{
     
-    self.usernameFound = self.userName.text;
+    self.usernameFound = usernameFound;
     self.userFound = found;
     
     if([found isEqualToString:@"1"]){
         
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+        SignInSuccessViewController *myViewController = (SignInSuccessViewController *) [story instantiateViewControllerWithIdentifier:@"signInSuccess"];
         
-        SignInSuccessViewController *myViewController = [[SignInSuccessViewController alloc]initWithUserName:self.usernameFound];
-                
         UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
-        [top presentViewController:myViewController animated:YES completion:nil];
+        [top presentViewController:myViewController animated:YES completion:^{
+            SignInSuccessViewController *newVC = [[SignInSuccessViewController alloc]initWithUserName:self.usernameFound];
+        }];
     }
     
     else{

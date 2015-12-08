@@ -19,6 +19,6 @@
 - (IBAction)login:(id)sender;
 
 
-- (void)loginFunctionality: (NSString *)found;
+- (void)loginFunctionality: (NSString *)found username: (NSString*)usernameFound;
 
 @end
