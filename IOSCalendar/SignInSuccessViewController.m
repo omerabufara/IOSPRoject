@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.foundUsername = @"Admin";
+    //self.foundUsername = @"Admin";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,14 +26,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([[segue identifier] isEqualToString:@"signInCalendar"]) {
-//        
-//         CalendarViewController *controller = (CalendarViewController *)segue.destinationViewController;
-//        controller.userIDSignedIn = self.foundUsername;
-//    }
-//}
+- (id)initWithUserName:(NSString *)aUserName {
+    self = [super init];
+    if (self) {
+        self.foundUsername = aUserName;
+    }
+    return self;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"signInCalendar"]) {
+        
+         CalendarViewController *controller = (CalendarViewController *)segue.destinationViewController;
+        controller.userIDSignedIn = self.foundUsername;
+    }
+}
 
 /*
 #pragma mark - Navigation

@@ -11,4 +11,7 @@
 @interface SignInSuccessViewController : UIViewController
 
 @property (nonatomic, retain) NSString* foundUsername;
+
+- (id)initWithUserName:(NSString *)aUserName;
+
 @end

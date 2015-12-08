@@ -788,8 +788,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log In" id="ZTx-Zq-Fta"/>
                     <connections>
-                        <outlet property="password" destination="mKR-j9-iJS" id="iGL-zW-5wr"/>
-                        <outlet property="userName" destination="iRu-7q-Dyv" id="nk7-gi-bTT"/>
+                        <outlet property="password" destination="mKR-j9-iJS" id="cGh-qO-WdC"/>
+                        <outlet property="userName" destination="iRu-7q-Dyv" id="MQb-hI-4NR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCy-mI-29N" userLabel="First Responder" sceneMemberID="firstResponder"/>

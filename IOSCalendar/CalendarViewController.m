@@ -267,7 +267,7 @@ NSArray * parseSpot3;
 
 -(void)loadData:(id)sender{
     
-    NSString *logInUser = nil;
+    NSString *logInUser = @"Admin";
     //LogInViewController *logInViewController = [[LogInViewController alloc]init];
     
     //will not happen for current date and need a click off function to turn back to grey
@@ -298,14 +298,14 @@ NSArray * parseSpot3;
         _feedItems = [[NSArray alloc]init];
         _homeModel = [[HomeModel alloc]init];
         _homeModel.delegate = self;
-        if(logInUser != nil){
+        if(self.userIDSignedIn != nil){
         
             UIButton *signIn = (UIButton *)[self.view viewWithTag:50];
             UIButton *signUp = (UIButton *)[self.view viewWithTag:51];
             signIn.hidden = YES;
             signUp.hidden = YES;
         
-            if([logInUser isEqualToString:@"Admin"]){
+            if([self.userIDSignedIn isEqualToString:@"Admin"]){
                 UIButton *postedDay = (UIButton *)[self.view viewWithTag:52];
                 postedDay.hidden = NO;
                 UIButton *postedMonth = (UIButton *)[self.view viewWithTag:53];

@@ -28,6 +28,8 @@ bool passwordcorrect;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.userName.delegate = self;
+    self.password.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,19 +48,25 @@ bool passwordcorrect;
 */
 
 -(IBAction)login:(id)sender{
-    CalendarViewController *cal = [[CalendarViewController alloc]init];
+    self.usernameFound = self.userName.text;
 
     if([[self.userName text] isEqualToString:@"Admin"] && [[self.password text] isEqualToString:@"12345"] ) {
-        cal.userIDSignedIn = self.userName.text;
-        self.usernameFound = self.userName.text;
         
         //[self performSegueWithIdentifier:@"a" sender:self];
         
-        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        
+//       SignInSuccessViewController *myViewController = (SignInSuccessViewController *) [story instantiateViewControllerWithIdentifier:@"signInSuccess"];
+//        
+//        [self presentViewController:myViewController animated:YES completion:nil];
         
-       SignInSuccessViewController *myViewController = (SignInSuccessViewController *) [story instantiateViewControllerWithIdentifier:@"signInSuccess"];
+        SignInSuccessViewController *myViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"signInSuccess"];
         
-        [self presentViewController:myViewController animated:YES completion:nil];
+        
+        UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
+        [top presentViewController:myViewController animated:YES completion:^{
+            SignInSuccessViewController *newVC = [[SignInSuccessViewController alloc]initWithUserName:self.usernameFound];
+        }];
         
         
     }
@@ -71,21 +79,16 @@ bool passwordcorrect;
 
 - (void) loginFunctionality: (NSString *)found{
     
-    CalendarViewController *cal = [[CalendarViewController alloc]init];
-    
+    self.usernameFound = self.userName.text;
     self.userFound = found;
     
     if([found isEqualToString:@"1"]){
         
-        //cal.userIDSignedIn = self.userName.text;
-        self.usernameFound = self.userName.text;
         
-        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        
-        SignInSuccessViewController *myViewController = (SignInSuccessViewController *) [story instantiateViewControllerWithIdentifier:@"signInSuccess"];
-        
+        SignInSuccessViewController *myViewController = [[SignInSuccessViewController alloc]initWithUserName:self.usernameFound];
+                
         UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
-        [top presentViewController:myViewController animated:YES completion: nil];
+        [top presentViewController:myViewController animated:YES completion:nil];
     }
     
     else{
