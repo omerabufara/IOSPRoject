@@ -15,10 +15,11 @@
 
 @implementation SignInSuccessViewController
 
+@synthesize foundUsername = _foundUsername;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //self.foundUsername = @"Admin";
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,7 +30,7 @@
 - (id)initWithUserName:(NSString *)aUserName {
     self = [super init];
     if (self) {
-        self.foundUsername = aUserName;
+        [self setFoundUsername:aUserName];
     }
     return self;
 }
@@ -38,19 +39,10 @@
 {
     if ([[segue identifier] isEqualToString:@"signInCalendar"]) {
         
-         CalendarViewController *controller = (CalendarViewController *)segue.destinationViewController;
-        controller.userIDSignedIn = self.foundUsername;
+        UINavigationController *navController = [segue destinationViewController];
+        CalendarViewController *controller = (CalendarViewController *)([navController viewControllers][0]);        [controller setUserIDSignedIn:self.foundUsername];
     }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

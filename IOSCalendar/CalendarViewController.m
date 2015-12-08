@@ -267,7 +267,6 @@ NSArray * parseSpot3;
 
 -(void)loadData:(id)sender{
     
-    NSString *logInUser = @"Admin";
     //LogInViewController *logInViewController = [[LogInViewController alloc]init];
     
     //will not happen for current date and need a click off function to turn back to grey

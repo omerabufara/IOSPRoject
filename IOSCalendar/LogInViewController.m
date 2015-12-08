@@ -65,7 +65,7 @@ bool passwordcorrect;
         
         UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
         [top presentViewController:myViewController animated:YES completion:^{
-            SignInSuccessViewController *newVC = [[SignInSuccessViewController alloc]initWithUserName:self.usernameFound];
+            [myViewController initWithUserName:self.usernameFound];
         }];
         
         
@@ -90,7 +90,7 @@ bool passwordcorrect;
         
         UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
         [top presentViewController:myViewController animated:YES completion:^{
-            SignInSuccessViewController *newVC = [[SignInSuccessViewController alloc]initWithUserName:self.usernameFound];
+            [myViewController initWithUserName:self.usernameFound];
         }];
     }
     
