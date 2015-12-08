@@ -31,9 +31,6 @@ extern NSArray * parseSpot3;
 
 @property (nonatomic, strong) DBManager *dbManager;
 
-@property (weak, nonatomic) IBOutlet UILabel *cellTitle;
-@property (weak, nonatomic) IBOutlet UILabel *cellSubtitle;
-@property (weak, nonatomic) IBOutlet UILabel *postedOutlet;
 @property (weak, nonatomic) UIButton *dayPressed;
 
 -(void)loadData:(id)sender;

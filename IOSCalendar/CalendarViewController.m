@@ -23,14 +23,10 @@
 
 @property NSString *senderDate;
 
-//-(void)loadInfoToEdit;
-
 @property (nonatomic, strong) NSArray *eventsArray;
 
 @property (nonatomic) int recordIDToEdit;
 
-
-//-(void)loadData;
 
 @end
 
@@ -39,7 +35,6 @@
     HomeModel *_homeModel;
     NSArray *_feedItems;
     
-    //NSInteger *recordIDToDelete;
 }
 @end
 
@@ -60,11 +55,11 @@ NSArray * parseSpot3;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
+
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:
         
     UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    addButton.tag = 200;
     
     self.navigationItem.rightBarButtonItem = addButton;
     self.addEventViewController = (AddEventViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
@@ -74,20 +69,11 @@ NSArray * parseSpot3;
     self.calendarTableView.delegate = self;
     self.calendarTableView.dataSource = self;
     
-    //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"PSSH.sql"];
-    
-    //manually set, but works as long as you change the tag number
-    
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
     NSInteger day = [components day];
     UIButton *button = (UIButton *)[self.view viewWithTag:day];
     
     [self loadData:button];
-    
-//    _feedItems = [[NSArray alloc]init];
-//    _homeModel = [[HomeModel alloc]init];
-//    _homeModel.delegate = self;
-    //[_homeModel downloadItems];
 
 }
 
@@ -147,7 +133,7 @@ NSArray * parseSpot3;
     
 }
 
--(void)updateCalNow{// try to condense this so only one method is used instead of two
+-(void)updateCalNow{
     if(thisMonth>12){
         thisMonth=1;
         thisYear++;
@@ -266,10 +252,6 @@ NSArray * parseSpot3;
 }
 
 -(void)loadData:(id)sender{
-    
-    //LogInViewController *logInViewController = [[LogInViewController alloc]init];
-    
-    //will not happen for current date and need a click off function to turn back to grey
     if([sender isKindOfClass:[UIButton class]]){
         UIButton *senderButton = sender;
         // Unselect all the buttons in the parent view
@@ -316,6 +298,8 @@ NSArray * parseSpot3;
                 postedDay.hidden = YES;
                 UIButton *postedMonth = (UIButton *)[self.view viewWithTag:53];
                 postedMonth.hidden = YES;
+                self.navigationItem.rightBarButtonItem = nil;
+                //need to hide add & edit on details
                [_homeModel downloadItemsUser:day monthly:self.monthly.text year:self.year.text];
             }
         }
@@ -324,6 +308,9 @@ NSArray * parseSpot3;
             postedDay.hidden = YES;
             UIButton *postedMonth = (UIButton *)[self.view viewWithTag:53];
             postedMonth.hidden = YES;
+            self.navigationItem.rightBarButtonItem = nil;
+            //need to hide add, edit & register on details
+            
            [_homeModel downloadItemsUser:day monthly:self.monthly.text year:self.year.text];
         }
         
@@ -334,7 +321,6 @@ NSArray * parseSpot3;
     if (self.eventsArray != nil) {
         self.eventsArray = nil;
     }
-    //self.eventsArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     
     // Reload the table view.
     [self.calendarTableView reloadData];
@@ -355,10 +341,9 @@ NSArray * parseSpot3;
 }
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
-    // Get the record ID of the selected name and set it to the recordIDToEdit property.
+
     self.recordIDToEdit = [[[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
-    
-    // Perform the segue.
+
     [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
 }
 
@@ -366,18 +351,6 @@ NSArray * parseSpot3;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//- (IBAction)addNewEvent:(id)sender {
-//    
-//    // Before performing the segue, set the -1 value to the recordIDToEdit. That way we'll indicate that we want to add a new record and not to edit an existing one.
-//    self.recordIDToEdit = -1;
-//    
-//    // Perform the segue.
-//    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
-//    
-////    [self performSegueWithIdentifier:@"addEventSegue" sender:self];
-//    
-//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -388,17 +361,9 @@ NSArray * parseSpot3;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _feedItems.count;
-    
-    //return self.arrEventsInfo.count;
+
 }
 
-//-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
-//    // Get the record ID of the selected name and set it to the recordIDToEdit property.
-//    self.recordIDToEdit = [[[self.eventsArray objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
-//    
-//    // Perform the segue.
-//    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
-//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -434,8 +399,6 @@ NSArray * parseSpot3;
     MJDetailViewController *detailVC =[[MJDetailViewController alloc]init];
     Location *item = _feedItems[indexPath.row];
     NSLog(@"here");
-    
-//    [[detailVC storeRecordId:[[item.eventId stringByReplacingOccurrencesOfString:@" " withString:@""] intValue] name:item.event_name time:item.event_time location:item.event_location description:item.event_description];
     
      [detailVC storeRecordId:[[item.eventId stringByReplacingOccurrencesOfString:@" " withString:@""]intValue] name:item.event_name time:item.event_time location:item.event_location description:item
       .event_description];
@@ -484,6 +447,25 @@ NSArray * parseSpot3;
     
     
     MJDetailViewController *detailViewController = [[MJDetailViewController alloc] initWithNibName:@"MJDetailViewController" bundle:nil];
+    if(self.userIDSignedIn != nil){
+        if([self.userIDSignedIn isEqualToString:@"Admin"]){
+            
+        }
+        else{
+            UIButton *delete = [detailViewController.view viewWithTag:201];
+            delete.hidden = YES;
+            UIButton *edit = [detailViewController.view viewWithTag:202];
+            edit.hidden = YES;
+        }
+    }
+    else{
+        UIButton *delete = [detailViewController.view viewWithTag:201];
+        delete.hidden = YES;
+        UIButton *edit = [detailViewController.view viewWithTag:202];
+        edit.hidden = YES;
+        UIButton *registerbutton = [detailViewController.view viewWithTag:203];
+        registerbutton.hidden = YES;
+    }
     
     [self presentPopupViewController:detailViewController animationType:MJPopupViewAnimationFade];
     
