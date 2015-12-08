@@ -38,6 +38,7 @@
 		1AF8ED421C01413400DD777B /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */; };
 		47B14BE61C0FAE150006B0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B14BE51C0FAE150006B0A5 /* Main.storyboard */; };
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; };
+		BDFEE4861C168567009E41DE /* SignInSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFEE4851C168567009E41DE /* SignInSuccessViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,8 @@
 		47B14BE51C0FAE150006B0A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		BDFEE4841C168567009E41DE /* SignInSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInSuccessViewController.h; sourceTree = "<group>"; };
+		BDFEE4851C168567009E41DE /* SignInSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInSuccessViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +225,8 @@
 				1A086DB31BE6D54F00980950 /* main.m */,
 				1A659AB31C0CBA6700B509D6 /* editFinishViewController.h */,
 				1A659AB41C0CBA6700B509D6 /* editFinishViewController.m */,
+				BDFEE4841C168567009E41DE /* SignInSuccessViewController.h */,
+				BDFEE4851C168567009E41DE /* SignInSuccessViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				1A0BEA5F1BED12080091A91A /* LogInViewController.m in Sources */,
 				1A9A50311C0FC891008305F0 /* ThankYouViewController.m in Sources */,
 				1A086DB71BE6D54F00980950 /* AppDelegate.m in Sources */,
+				BDFEE4861C168567009E41DE /* SignInSuccessViewController.m in Sources */,
 				1ABE71641BFB78E0008FC8ED /* HomeModel.m in Sources */,
 				1A659AB51C0CBA6700B509D6 /* editFinishViewController.m in Sources */,
 				1AC072F11C10CDCC00B58CAB /* AddFinishViewController.m in Sources */,

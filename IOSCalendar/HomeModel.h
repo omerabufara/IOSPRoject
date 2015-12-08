@@ -22,7 +22,7 @@
 
 @property (nonatomic, weak) id<HomeModelProtocol> delegate;
 
-@property NSInteger eventFoundInt;
+@property NSString *userFound;
 
 - (void)downloadItems: (NSString*) day monthly:(NSString*)month year:(NSString*)currYear;
 - (void)deleteItems: (NSInteger*) recordid;
@@ -37,7 +37,7 @@
 
 - (void)postEventsByDay:(NSString *)date;
 - (void)postEventsByMonth:(NSString *)evMonth year:(NSString*)evYear;
--(BOOL)checkUser:(NSString*) user_name pass:(NSString*)pass;
+- (void)checkUser:(NSString*) user_name pass:(NSString*)pass;
 @end
 
 

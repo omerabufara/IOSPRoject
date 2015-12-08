@@ -15,4 +15,7 @@
 
 - (IBAction)login:(id)sender;
 
+
+- (void)loginFunctionality: (NSString *)found;
+
 @end

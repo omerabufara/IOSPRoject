@@ -379,7 +379,7 @@ NSArray * parseSpot3;
     UILabel *title = [myCell.contentView viewWithTag:2];
     title.text = item.event_name;
     
-    UILabel *subtitle = [myCell.contentView viewWithTag:3];
+    UILabel *subtitle = [myCell.contentView viewWithTag:100];
     subtitle.text = item.event_time;
     
     //self.cellSubtitle.text = item.event_time;
