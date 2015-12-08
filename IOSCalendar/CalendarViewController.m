@@ -73,6 +73,8 @@ NSArray * parseSpot3;
     NSInteger day = [components day];
     UIButton *button = (UIButton *)[self.view viewWithTag:day];
     
+    
+    
     [self loadData:button];
 
 }
@@ -252,6 +254,9 @@ NSArray * parseSpot3;
 }
 
 -(void)loadData:(id)sender{
+    NSString *usernameStored = [[NSUserDefaults standardUserDefaults]
+                                                       stringForKey:@"usernameSaved"];
+    
     if([sender isKindOfClass:[UIButton class]]){
         UIButton *senderButton = sender;
         // Unselect all the buttons in the parent view
@@ -279,14 +284,14 @@ NSArray * parseSpot3;
         _feedItems = [[NSArray alloc]init];
         _homeModel = [[HomeModel alloc]init];
         _homeModel.delegate = self;
-        if(self.userIDSignedIn != nil){
+        if(usernameStored != nil){
         
             UIButton *signIn = (UIButton *)[self.view viewWithTag:50];
             UIButton *signUp = (UIButton *)[self.view viewWithTag:51];
             signIn.hidden = YES;
             signUp.hidden = YES;
         
-            if([self.userIDSignedIn isEqualToString:@"Admin"]){
+            if([usernameStored isEqualToString:@"Admin"]){
                 UIButton *postedDay = (UIButton *)[self.view viewWithTag:52];
                 postedDay.hidden = NO;
                 UIButton *postedMonth = (UIButton *)[self.view viewWithTag:53];
@@ -439,6 +444,9 @@ NSArray * parseSpot3;
 -(void) popupInfo: (NSString*) evName date:(NSString*)evDate time:(NSString*)evTime location:(NSString*)evLocation description:(NSString*)evDescription {
     NSLog(@"POPUPINFO");
     
+    NSString *usernameStored = [[NSUserDefaults standardUserDefaults]
+                                stringForKey:@"usernameSaved"];
+    
     parseSpot3=@[evName,evDate,evTime,evLocation,evDescription];
     //compare above date to parse database. See if current user has an entry
     
@@ -447,9 +455,14 @@ NSArray * parseSpot3;
     
     
     MJDetailViewController *detailViewController = [[MJDetailViewController alloc] initWithNibName:@"MJDetailViewController" bundle:nil];
-    if(self.userIDSignedIn != nil){
-        if([self.userIDSignedIn isEqualToString:@"Admin"]){
-            
+    if(usernameStored != nil){
+        if([usernameStored isEqualToString:@"Admin"]){
+            UIButton *delete = [detailViewController.view viewWithTag:201];
+            delete.hidden = NO;
+            UIButton *edit = [detailViewController.view viewWithTag:202];
+            edit.hidden = NO;
+            UIButton *registerbutton = [detailViewController.view viewWithTag:203];
+            registerbutton.hidden = NO;
         }
         else{
             UIButton *delete = [detailViewController.view viewWithTag:201];

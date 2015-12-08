@@ -42,7 +42,8 @@ bool passwordcorrect;
     self.usernameFound = self.userName.text;
 
     if([[self.userName text] isEqualToString:@"Admin"] && [[self.password text] isEqualToString:@"12345"] ) {
-        
+        [[NSUserDefaults standardUserDefaults] setObject:self.usernameFound forKey:@"usernameSaved"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         SignInSuccessViewController *myViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"signInSuccess"];
         
         

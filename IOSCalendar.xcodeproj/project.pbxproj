@@ -38,6 +38,7 @@
 		1AF8ED421C01413400DD777B /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */; };
 		47B14BE61C0FAE150006B0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B14BE51C0FAE150006B0A5 /* Main.storyboard */; };
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; };
+		BDDB0CC51C179FA100A293C5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDB0CC41C179FA100A293C5 /* CoreData.framework */; };
 		BDFEE4861C168567009E41DE /* SignInSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFEE4851C168567009E41DE /* SignInSuccessViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +115,7 @@
 		47B14BE51C0FAE150006B0A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		BDDB0CC41C179FA100A293C5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BDFEE4841C168567009E41DE /* SignInSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInSuccessViewController.h; sourceTree = "<group>"; };
 		BDFEE4851C168567009E41DE /* SignInSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInSuccessViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDDB0CC51C179FA100A293C5 /* CoreData.framework in Frameworks */,
 				1AF8ED351C013C4F00DD777B /* QuartzCore.framework in Frameworks */,
 				1A8983DE1BF5E7CE0040E791 /* libsqlite3.tbd in Frameworks */,
 				1A8983DC1BF5E7C20040E791 /* libsqlite3.0.tbd in Frameworks */,
@@ -149,6 +152,7 @@
 		1A086DA61BE6D54F00980950 = {
 			isa = PBXGroup;
 			children = (
+				BDDB0CC41C179FA100A293C5 /* CoreData.framework */,
 				1AF8ED341C013C4F00DD777B /* QuartzCore.framework */,
 				1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */,
 				1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */,
