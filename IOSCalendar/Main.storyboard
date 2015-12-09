@@ -165,7 +165,7 @@
                                 <animations/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
-                                    <segue destination="44n-fg-QtB" kind="show" id="m5U-BL-3RO"/>
+                                    <action selector="showSignInPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="96R-4B-8y6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="52" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcD-1F-lEu">
@@ -235,7 +235,7 @@
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="logoutUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pzm-Dd-uh0"/>
-                                    <segue destination="yal-wa-6pd" kind="show" id="2Gn-xf-bDn"/>
+                                    <segue destination="NiC-uC-W4U" kind="show" id="gCF-vh-0HC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -761,7 +761,7 @@
         <!--Log In-->
         <scene sceneID="JIu-C8-ElR">
             <objects>
-                <viewController id="44n-fg-QtB" customClass="LogInViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signIn" id="44n-fg-QtB" customClass="LogInViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K9g-Ko-iXZ"/>
                         <viewControllerLayoutGuide type="bottom" id="htU-lP-lIm"/>
@@ -918,8 +918,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="m5U-BL-3RO"/>
-        <segue reference="XcD-FW-AqN"/>
         <segue reference="sK3-sF-sAC"/>
+        <segue reference="gCF-vh-0HC"/>
     </inferredMetricsTieBreakers>
 </document>
