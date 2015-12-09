@@ -290,6 +290,8 @@ NSArray * parseSpot3;
             UIButton *signUp = (UIButton *)[self.view viewWithTag:51];
             signIn.hidden = YES;
             signUp.hidden = YES;
+            UIButton *logout = (UIButton *)[self.view viewWithTag:205];
+            logout.hidden = NO;
         
             if([usernameStored isEqualToString:@"Admin"]){
                 UIButton *postedDay = (UIButton *)[self.view viewWithTag:52];
@@ -496,6 +498,11 @@ NSArray * parseSpot3;
     [addVC postEventsMonth:self.senderDate];
     //not working for by month
     [self loadData:self.dayPressed];
+}
+
+-(IBAction)logoutUser:(id)sender{
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"usernameSaved"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

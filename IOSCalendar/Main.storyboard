@@ -229,6 +229,15 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="qLm-79-faO"/>
                                 </connections>
                             </tableView>
+                            <button hidden="YES" opaque="NO" tag="205" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPZ-hN-rav">
+                                <rect key="frame" x="483" y="128" width="48" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pzm-Dd-uh0"/>
+                                    <segue destination="yal-wa-6pd" kind="show" id="2Gn-xf-bDn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -243,6 +252,7 @@
                             <constraint firstItem="gVR-uV-fhH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="Rcw-FV-pjU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gVR-uV-fhH" secondAttribute="trailing" constant="50" id="aNc-xj-lix"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dbd-X3-13i" secondAttribute="trailing" id="h3U-hs-GJQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YPZ-hN-rav" secondAttribute="trailing" constant="49" id="kq6-wy-cI6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dbd-X3-13i" secondAttribute="bottom" constant="15" id="org-Ma-Zq9"/>
                             <constraint firstItem="bUz-vd-u1Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="wxI-LS-Kem"/>
                             <constraint firstItem="dbd-X3-13i" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="329" id="xz2-kc-hF5"/>
@@ -908,8 +918,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XcD-FW-AqN"/>
         <segue reference="m5U-BL-3RO"/>
+        <segue reference="XcD-FW-AqN"/>
         <segue reference="sK3-sF-sAC"/>
     </inferredMetricsTieBreakers>
 </document>

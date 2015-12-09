@@ -68,6 +68,9 @@ bool passwordcorrect;
     
     if([found isEqualToString:@"1"]){
         
+        [[NSUserDefaults standardUserDefaults] setObject:self.usernameFound forKey:@"usernameSaved"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
         UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
         SignInSuccessViewController *myViewController = (SignInSuccessViewController *) [story instantiateViewControllerWithIdentifier:@"signInSuccess"];
