@@ -166,6 +166,7 @@
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="showSignInPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="96R-4B-8y6"/>
+                                    <segue destination="44n-fg-QtB" kind="show" id="8dU-MZ-z9B"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="52" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcD-1F-lEu">
@@ -918,7 +919,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sK3-sF-sAC"/>
         <segue reference="gCF-vh-0HC"/>
+        <segue reference="8dU-MZ-z9B"/>
+        <segue reference="sK3-sF-sAC"/>
     </inferredMetricsTieBreakers>
 </document>
