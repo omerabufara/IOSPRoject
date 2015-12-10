@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DBManager.h"
 
 @protocol addInfoViewControllerDelegate;
 @interface EditEventViewController : UIViewController <UITextFieldDelegate>

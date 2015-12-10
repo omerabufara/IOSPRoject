@@ -7,7 +7,6 @@
 // commit to merge
 
 #import <UIKit/UIKit.h>
-#import "DBManager.h"
 #import "AddEventViewController.h"
 #import "HomeModel.h"
 
@@ -28,8 +27,6 @@ extern NSArray * parseSpot3;
 @property (weak, nonatomic) IBOutlet UILabel *year;
 @property (weak, nonatomic) NSString *currentButtonTitle;
 @property (strong, nonatomic) NSDate *defaulComp;
-
-@property (nonatomic, strong) DBManager *dbManager;
 
 @property (weak, nonatomic) UIButton *dayPressed;
 

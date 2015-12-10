@@ -7,8 +7,8 @@
 //
 
 #import "signUpViewController.h"
-#import "DBManager.h"
 #import "HomeModel.h"
+#import "LogInViewController.h"
 @interface signUpViewController ()
 
 @end
@@ -42,12 +42,14 @@
     NSString *password = self.password.text;
     
     
-    
-    
-    
     [addUser addUsers:firstName lName:lastName mail:email cell:phoneNo Uname:userName psw:password ];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    LogInViewController *yourViewController = (LogInViewController *)[storyboard instantiateViewControllerWithIdentifier:@"signIn"];
+    
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self presentViewController:yourViewController animated:YES completion:nil];
     
     NSLog(@"users successfully signed up");
     

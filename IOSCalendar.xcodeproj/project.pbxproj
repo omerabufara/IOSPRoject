@@ -22,7 +22,6 @@
 		1A8983DC1BF5E7C20040E791 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8983DB1BF5E7C20040E791 /* libsqlite3.0.tbd */; };
 		1A8983DE1BF5E7CE0040E791 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */; };
 		1A9A50311C0FC891008305F0 /* ThankYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A50301C0FC891008305F0 /* ThankYouViewController.m */; };
-		1ABE71611BFB76BA008FC8ED /* eventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71601BFB76BA008FC8ED /* eventsTableViewController.m */; };
 		1ABE71641BFB78E0008FC8ED /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71631BFB78E0008FC8ED /* HomeModel.m */; };
 		1ABE71671BFB78F0008FC8ED /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE71661BFB78F0008FC8ED /* Location.m */; };
 		1AC072F11C10CDCC00B58CAB /* AddFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC072F01C10CDCC00B58CAB /* AddFinishViewController.m */; };
@@ -30,7 +29,6 @@
 		1AC072FA1C13A02F00B58CAB /* icon 58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AC072F71C13A02F00B58CAB /* icon 58x58.png */; };
 		1AC072FB1C13A02F00B58CAB /* icon 80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AC072F81C13A02F00B58CAB /* icon 80x80.png */; };
 		1AC072FC1C13A02F00B58CAB /* icon 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AC072F91C13A02F00B58CAB /* icon 120x120.png */; };
-		1AE902461BF3DD960054596E /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE902451BF3DD960054596E /* DBManager.m */; };
 		1AF8ED351C013C4F00DD777B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8ED341C013C4F00DD777B /* QuartzCore.framework */; };
 		1AF8ED391C0140C900DD777B /* MJDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF8ED381C0140C900DD777B /* MJDetailViewController.xib */; };
 		1AF8ED3C1C0140FE00DD777B /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED3B1C0140FE00DD777B /* UIViewController+MJPopupViewController.m */; };
@@ -38,6 +36,7 @@
 		1AF8ED421C01413400DD777B /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */; };
 		47B14BE61C0FAE150006B0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B14BE51C0FAE150006B0A5 /* Main.storyboard */; };
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; };
+		BD7FFE8F1C19E9EC00D177F5 /* Mil-Vet-PSSH-centered-cmyk.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD7FFE8E1C19E9EC00D177F5 /* Mil-Vet-PSSH-centered-cmyk.jpg */; };
 		BDDB0CC51C179FA100A293C5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDB0CC41C179FA100A293C5 /* CoreData.framework */; };
 		BDFEE4861C168567009E41DE /* SignInSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFEE4851C168567009E41DE /* SignInSuccessViewController.m */; };
 /* End PBXBuildFile section */
@@ -89,8 +88,6 @@
 		1A8983DD1BF5E7CE0040E791 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		1A9A502F1C0FC891008305F0 /* ThankYouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThankYouViewController.h; sourceTree = "<group>"; };
 		1A9A50301C0FC891008305F0 /* ThankYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThankYouViewController.m; sourceTree = "<group>"; };
-		1ABE715F1BFB76BA008FC8ED /* eventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsTableViewController.h; sourceTree = "<group>"; };
-		1ABE71601BFB76BA008FC8ED /* eventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsTableViewController.m; sourceTree = "<group>"; };
 		1ABE71621BFB78E0008FC8ED /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
 		1ABE71631BFB78E0008FC8ED /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		1ABE71651BFB78F0008FC8ED /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
@@ -102,8 +99,6 @@
 		1AC072F71C13A02F00B58CAB /* icon 58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon 58x58.png"; sourceTree = "<group>"; };
 		1AC072F81C13A02F00B58CAB /* icon 80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon 80x80.png"; sourceTree = "<group>"; };
 		1AC072F91C13A02F00B58CAB /* icon 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon 120x120.png"; sourceTree = "<group>"; };
-		1AE902441BF3DD960054596E /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
-		1AE902451BF3DD960054596E /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		1AF8ED341C013C4F00DD777B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1AF8ED381C0140C900DD777B /* MJDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MJDetailViewController.xib; path = ../MJDetailViewController.xib; sourceTree = "<group>"; };
 		1AF8ED3A1C0140FE00DD777B /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MJPopupViewController.h"; path = "../UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
@@ -115,6 +110,7 @@
 		47B14BE51C0FAE150006B0A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		BD7FFE8E1C19E9EC00D177F5 /* Mil-Vet-PSSH-centered-cmyk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Mil-Vet-PSSH-centered-cmyk.jpg"; path = "../../../Downloads/Mil-Vet-PSSH-centered-cmyk.jpg"; sourceTree = "<group>"; };
 		BDDB0CC41C179FA100A293C5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BDFEE4841C168567009E41DE /* SignInSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInSuccessViewController.h; sourceTree = "<group>"; };
 		BDFEE4851C168567009E41DE /* SignInSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInSuccessViewController.m; sourceTree = "<group>"; };
@@ -195,10 +191,6 @@
 				1A0BEA671BED537A0091A91A /* EditEventViewController.m */,
 				1A0BEA691BED53E60091A91A /* AddEventViewController.h */,
 				1A0BEA6A1BED53E60091A91A /* AddEventViewController.m */,
-				1AE902441BF3DD960054596E /* DBManager.h */,
-				1AE902451BF3DD960054596E /* DBManager.m */,
-				1ABE715F1BFB76BA008FC8ED /* eventsTableViewController.h */,
-				1ABE71601BFB76BA008FC8ED /* eventsTableViewController.m */,
 				1ABE71621BFB78E0008FC8ED /* HomeModel.h */,
 				1ABE71631BFB78E0008FC8ED /* HomeModel.m */,
 				1ABE71651BFB78F0008FC8ED /* Location.h */,
@@ -216,6 +208,7 @@
 		1A086DB21BE6D54F00980950 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BD7FFE8E1C19E9EC00D177F5 /* Mil-Vet-PSSH-centered-cmyk.jpg */,
 				1AC072F71C13A02F00B58CAB /* icon 58x58.png */,
 				1AC072F81C13A02F00B58CAB /* icon 80x80.png */,
 				1AC072F91C13A02F00B58CAB /* icon 120x120.png */,
@@ -363,6 +356,7 @@
 				1A086DC21BE6D54F00980950 /* LaunchScreen.storyboard in Resources */,
 				1A086DBF1BE6D54F00980950 /* Assets.xcassets in Resources */,
 				47B14BE61C0FAE150006B0A5 /* Main.storyboard in Resources */,
+				BD7FFE8F1C19E9EC00D177F5 /* Mil-Vet-PSSH-centered-cmyk.jpg in Resources */,
 				1AC072FA1C13A02F00B58CAB /* icon 58x58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,8 +387,6 @@
 				1A0BEA621BED12560091A91A /* signUpViewController.m in Sources */,
 				5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */,
 				1A0BEA681BED537A0091A91A /* EditEventViewController.m in Sources */,
-				1AE902461BF3DD960054596E /* DBManager.m in Sources */,
-				1ABE71611BFB76BA008FC8ED /* eventsTableViewController.m in Sources */,
 				1A086DBA1BE6D54F00980950 /* ViewController.m in Sources */,
 				1AC072F41C10CF3100B58CAB /* deleteFinishViewController.m in Sources */,
 				1A0BEA5F1BED12080091A91A /* LogInViewController.m in Sources */,

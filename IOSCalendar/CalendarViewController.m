@@ -9,7 +9,6 @@
 #import "CalendarViewController.h"
 #import "AddEventViewController.h"
 #import "EditEventViewController.h"
-#import "DBManager.h"
 #import "AppDelegate.h"
 #import "Location.h"
 #import "UIViewController+MJPopupViewController.h"
@@ -316,6 +315,7 @@ NSArray * parseSpot3;
             UIButton *postedMonth = (UIButton *)[self.view viewWithTag:53];
             postedMonth.hidden = YES;
             self.navigationItem.rightBarButtonItem = nil;
+            self.navigationItem.leftBarButtonItem = nil;
             //need to hide add, edit & register on details
             
            [_homeModel downloadItemsUser:day monthly:self.monthly.text year:self.year.text];

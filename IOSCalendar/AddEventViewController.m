@@ -9,13 +9,10 @@
 #import "AddEventViewController.h"
 #import "CalendarViewController.h"
 #import "AddFinishViewController.h"
-#import "DBManager.h"
 #import "HomeModel.h"
 #import "Location.h"
 
 @interface AddEventViewController ()
-
-@property (nonatomic, strong) DBManager *dbManager;
 
 @end
 
@@ -48,30 +45,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-//
-//-(void)loadInfoToEdit{
-//    // Create the query.
-//    NSString *query = [NSString stringWithFormat:@"select * from eventsTable where ID=%d", self.recordIDToEdit];
-//
-//    // Load the relevant data.
-//    NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-//
-//    // Set the loaded data to the textfields.
-//    self.txtEventName.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"event_name"]];
-//
-//    self.txtEventDate.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"event_date"]];
-//
-//    self.txtEventTime.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"event_time"]];
-//
-//    self.txtEventLocation.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"event_location"]];
-//
-//    self.txtEventDescription.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"event_description"]];
-//
-//    self.txtEventVisible.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"event_visible"]];
-//}
-
-
-
 
 - (IBAction)saveInfo:(id)sender{
 
@@ -91,25 +64,13 @@
     [add addItems:eventName date:eventDate time:eventTime location:eventLocation description:eventDescription ];
     
     [self.delegate editingInfoWasFinished];
-//    [self.navigationController popViewControllerAnimated:YES];
-//    [self dismissViewControllerAnimated:YES completion:nil];
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     AddFinishViewController *yourViewController = (AddFinishViewController *)[storyboard instantiateViewControllerWithIdentifier:@"addFinish"];
     
     [self presentViewController:yourViewController animated:YES completion:nil];
-//    // If the query was successfully executed then pop the view controller.
-//    if (self.dbManager.affectedRows != 0) {
-//        NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
-//        
-//       
-//
-//      
-//    }
-//    else{
-//        NSLog(@"Could not execute the query.");
-//    }
+
 }
 
 - (void)postEventsDay:(NSString *)date{
