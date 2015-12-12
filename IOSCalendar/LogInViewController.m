@@ -47,8 +47,8 @@ bool passwordcorrect;
         SignInSuccessViewController *myViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"signInSuccess"];
         
         
-        //UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
-        [self presentViewController:myViewController animated:YES completion: nil];
+        UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
+        [top presentViewController:myViewController animated:YES completion: nil];
         
         
     }
@@ -73,7 +73,8 @@ bool passwordcorrect;
     
         SignInSuccessViewController *myViewController = (SignInSuccessViewController *) [story instantiateViewControllerWithIdentifier:@"signInSuccess"];
         
-        [self presentViewController:myViewController animated:YES completion: nil];
+        UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
+        [top presentViewController:myViewController animated:YES completion: nil];
     }
     
     else{

@@ -660,7 +660,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Thank you for registering for this event!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXJ-Bl-iYG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Thank you for registering!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXJ-Bl-iYG">
                                 <rect key="frame" x="20" y="147" width="560" height="111"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -1030,8 +1030,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sK3-sF-sAC"/>
-        <segue reference="gCF-vh-0HC"/>
+        <segue reference="jQ6-Aq-F8h"/>
         <segue reference="8dU-MZ-z9B"/>
+        <segue reference="sK3-sF-sAC"/>
     </inferredMetricsTieBreakers>
 </document>

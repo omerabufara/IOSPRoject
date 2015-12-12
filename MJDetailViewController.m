@@ -93,11 +93,11 @@ NSString *storeEventDescribe;
 }
 
 - (IBAction)registerPressed:(id)sender {
-    
+    NSString *usernameStored = [[NSUserDefaults standardUserDefaults]stringForKey:@"usernameSaved"];
     
     HomeModel * registration = [[HomeModel alloc]init];
     
-    [registration registration:&storedRecordId];
+    [registration registration:storeEventName username:usernameStored];
     
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     

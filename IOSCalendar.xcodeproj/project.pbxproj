@@ -36,7 +36,7 @@
 		1AF8ED421C01413400DD777B /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8ED411C01413400DD777B /* MJPopupBackgroundView.m */; };
 		47B14BE61C0FAE150006B0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B14BE51C0FAE150006B0A5 /* Main.storyboard */; };
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; };
-		BD7FFE8F1C19E9EC00D177F5 /* Mil-Vet-PSSH-centered-cmyk.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD7FFE8E1C19E9EC00D177F5 /* Mil-Vet-PSSH-centered-cmyk.jpg */; };
+		BD24E1351C1BC91500E96D87 /* Mil-Vet-PSSH-centered-rgb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD24E1341C1BC91500E96D87 /* Mil-Vet-PSSH-centered-rgb.jpg */; };
 		BDDB0CC51C179FA100A293C5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDB0CC41C179FA100A293C5 /* CoreData.framework */; };
 		BDFEE4861C168567009E41DE /* SignInSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFEE4851C168567009E41DE /* SignInSuccessViewController.m */; };
 /* End PBXBuildFile section */
@@ -110,7 +110,7 @@
 		47B14BE51C0FAE150006B0A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
-		BD7FFE8E1C19E9EC00D177F5 /* Mil-Vet-PSSH-centered-cmyk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Mil-Vet-PSSH-centered-cmyk.jpg"; path = "../../../Downloads/Mil-Vet-PSSH-centered-cmyk.jpg"; sourceTree = "<group>"; };
+		BD24E1341C1BC91500E96D87 /* Mil-Vet-PSSH-centered-rgb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Mil-Vet-PSSH-centered-rgb.jpg"; sourceTree = "<group>"; };
 		BDDB0CC41C179FA100A293C5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BDFEE4841C168567009E41DE /* SignInSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInSuccessViewController.h; sourceTree = "<group>"; };
 		BDFEE4851C168567009E41DE /* SignInSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInSuccessViewController.m; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 		1A086DB21BE6D54F00980950 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BD7FFE8E1C19E9EC00D177F5 /* Mil-Vet-PSSH-centered-cmyk.jpg */,
+				BD24E1341C1BC91500E96D87 /* Mil-Vet-PSSH-centered-rgb.jpg */,
 				1AC072F71C13A02F00B58CAB /* icon 58x58.png */,
 				1AC072F81C13A02F00B58CAB /* icon 80x80.png */,
 				1AC072F91C13A02F00B58CAB /* icon 120x120.png */,
@@ -354,9 +354,9 @@
 				1AF8ED391C0140C900DD777B /* MJDetailViewController.xib in Resources */,
 				1AC072FC1C13A02F00B58CAB /* icon 120x120.png in Resources */,
 				1A086DC21BE6D54F00980950 /* LaunchScreen.storyboard in Resources */,
+				BD24E1351C1BC91500E96D87 /* Mil-Vet-PSSH-centered-rgb.jpg in Resources */,
 				1A086DBF1BE6D54F00980950 /* Assets.xcassets in Resources */,
 				47B14BE61C0FAE150006B0A5 /* Main.storyboard in Resources */,
-				BD7FFE8F1C19E9EC00D177F5 /* Mil-Vet-PSSH-centered-cmyk.jpg in Resources */,
 				1AC072FA1C13A02F00B58CAB /* icon 58x58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

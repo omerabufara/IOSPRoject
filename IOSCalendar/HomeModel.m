@@ -30,7 +30,7 @@
     
     NSInteger* rid;
     
-    NSInteger *regId;
+    NSString *regId;
     
     NSString* firstName;
     NSString* lastName;
@@ -61,7 +61,7 @@
     monthly = month;
     yearly = currYear;
     // Download the json file
-    NSURL *jsonFileUrl = [NSURL URLWithString:@"http://pendragon.gannon.edu/IOSPSSH/data/IOS-database.php"];
+    NSURL *jsonFileUrl = [NSURL URLWithString:@"http://localhost:8888/data/IOS-database.php"];
     
 //    // Create the request
    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
@@ -76,7 +76,7 @@
     monthly = month;
     yearly = currYear;
     // Download the json file
-    NSURL *jsonFileUrl = [NSURL URLWithString:@"http://pendragon.gannon.edu/IOSPSSH/data/IOS-database-User.php"];
+    NSURL *jsonFileUrl = [NSURL URLWithString:@"http://localhost:8888/data/IOS-database-User.php"];
     
     //    // Create the request
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
@@ -92,7 +92,7 @@
     
     // Download the json file
     
-    NSString *editData = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/IOS-database-edit.php?eventId=%ld",*editID];
+    NSString *editData = [NSString stringWithFormat:@"http://localhost:8888/data/IOS-database-edit.php?eventId=%ld",*editID];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:editData];
     
@@ -119,7 +119,7 @@
     
     //NSString *inStr = [NSString stringWithFormat: @"%ld", (long)editID];
     
-    NSString *edit = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/edit.php?eventId=%ld&event_name=%@&event_time=%@&event_location=%@&event_description=%@",*editID,eventNameEdit,eventTimeEdit,eventLocEdit,eventDesctEdit];
+    NSString *edit = [NSString stringWithFormat:@"http://localhost:8888/data/edit.php?eventId=%ld&event_name=%@&event_time=%@&event_location=%@&event_description=%@",*editID,eventNameEdit,eventTimeEdit,eventLocEdit,eventDesctEdit];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:edit];
     
@@ -149,7 +149,7 @@
     NSString *eventDesct = [eventDescription stringByReplacingOccurrencesOfString:@" " withString:@""];
 
     
-    NSString *add = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/add.php?event_name=%@&event_date=%@&event_time=%@&event_location=%@&event_description=%@",eventNamet ,eventDatet ,eventTimet ,eventLoct ,eventDesct];
+    NSString *add = [NSString stringWithFormat:@"http://localhost:8888/data/add.php?event_name=%@&event_date=%@&event_time=%@&event_location=%@&event_description=%@",eventNamet ,eventDatet ,eventTimet ,eventLoct ,eventDesct];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:add];
     
@@ -163,7 +163,7 @@
 
 //still have to account for duplicates in posting events 
 - (void)postEventsByDay:(NSString *)date{
-    NSString *post = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/postEvents.php?event_date=%@", date];
+    NSString *post = [NSString stringWithFormat:@"http://localhost:8888/data/postEvents.php?event_date=%@", date];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:post];
     
@@ -175,7 +175,7 @@
 }
 
 - (void)postEventsByMonth:(NSString *)evMonth year:(NSString*)evYear{
-    NSString *post = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/postEventsMonth.php?event_month=%@&event_year=%@", evMonth, evYear];
+    NSString *post = [NSString stringWithFormat:@"http://localhost:8888/data/postEventsMonth.php?event_month=%@&event_year=%@", evMonth, evYear];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:post];
     
@@ -190,7 +190,7 @@
     
     rid = recordid;
     
-    NSString *delete = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/delete.php?eventId=%ld",*rid];
+    NSString *delete = [NSString stringWithFormat:@"http://localhost:8888/data/delete.php?eventId=%ld",*rid];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:delete];
     
@@ -202,11 +202,11 @@
     
 }
 
--(void) registration: (NSInteger*)recdid {
+-(void) registration: (NSString*)recdid username: (NSString *)user{
     
     regId = recdid;
     
-    NSString *reg = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/registration.php?eventId=%ld",*regId];
+    NSString *reg = [NSString stringWithFormat:@"http://localhost:8888/data/registration.php?eventId=%@&userName=%@",regId, user];
     
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:reg];
@@ -238,7 +238,7 @@
     NSString *useruname = [self.userName stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSString *userpassword = [password stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    NSString *addUser = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/add-users.php?firstname=%@&lastname=%@&mail=%@&cell=%@&usernme=%@&paassword=%@",userfname ,uderlname ,useremail ,userphone ,useruname ,userpassword];
+    NSString *addUser = [NSString stringWithFormat:@"http://localhost:8888/data/add-users.php?firstname=%@&lastname=%@&mail=%@&cell=%@&usernme=%@&paassword=%@",userfname ,uderlname ,useremail ,userphone ,useruname ,userpassword];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:addUser];
     
@@ -258,7 +258,7 @@
     //self.senderbutton = sender;
     
     
-    NSString *check = [NSString stringWithFormat:@"http://pendragon.gannon.edu/IOSPSSH/data/signInCheck.php?userName=%@&password=%@",self.userName,password];
+    NSString *check = [NSString stringWithFormat:@"http://localhost:8888/data/signInCheck.php?userName=%@&password=%@",self.userName,password];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:check];
     

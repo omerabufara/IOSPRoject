@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Mil-Vet-PSSH-centered-cmyk.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4Qh-Y5-s5S">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Mil-Vet-PSSH-centered-rgb.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4Qh-Y5-s5S">
                                 <rect key="frame" x="60" y="180" width="300" height="240"/>
                                 <animations/>
                             </imageView>
@@ -31,6 +31,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Mil-Vet-PSSH-centered-cmyk.jpg" width="664" height="607"/>
+        <image name="Mil-Vet-PSSH-centered-rgb.jpg" width="664" height="607"/>
     </resources>
 </document>
