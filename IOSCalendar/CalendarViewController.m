@@ -501,7 +501,7 @@ NSArray * parseSpot3;
 }
 
 -(IBAction)logoutUser:(id)sender{
-    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"usernameSaved"];
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"usernameSaved"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

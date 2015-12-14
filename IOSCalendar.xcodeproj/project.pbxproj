@@ -37,6 +37,7 @@
 		47B14BE61C0FAE150006B0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B14BE51C0FAE150006B0A5 /* Main.storyboard */; };
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; };
 		BD24E1351C1BC91500E96D87 /* Mil-Vet-PSSH-centered-rgb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD24E1341C1BC91500E96D87 /* Mil-Vet-PSSH-centered-rgb.jpg */; };
+		BD993F3A1C1F782300EDC85B /* JenUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD993F391C1F782300EDC85B /* JenUnitTests.m */; };
 		BDDB0CC51C179FA100A293C5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDB0CC41C179FA100A293C5 /* CoreData.framework */; };
 		BDFEE4861C168567009E41DE /* SignInSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFEE4851C168567009E41DE /* SignInSuccessViewController.m */; };
 /* End PBXBuildFile section */
@@ -111,6 +112,7 @@
 		5B98BC081BE901DB004055C0 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		BD24E1341C1BC91500E96D87 /* Mil-Vet-PSSH-centered-rgb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Mil-Vet-PSSH-centered-rgb.jpg"; sourceTree = "<group>"; };
+		BD993F391C1F782300EDC85B /* JenUnitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JenUnitTests.m; path = ../IOSCalendarUITests/JenUnitTests.m; sourceTree = "<group>"; };
 		BDDB0CC41C179FA100A293C5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BDFEE4841C168567009E41DE /* SignInSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInSuccessViewController.h; sourceTree = "<group>"; };
 		BDFEE4851C168567009E41DE /* SignInSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInSuccessViewController.m; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			children = (
 				1A086DCC1BE6D54F00980950 /* IOSCalendarTests.m */,
 				1A086DCE1BE6D54F00980950 /* Info.plist */,
+				BD993F391C1F782300EDC85B /* JenUnitTests.m */,
 			);
 			path = IOSCalendarTests;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A086DCD1BE6D54F00980950 /* IOSCalendarTests.m in Sources */,
+				BD993F3A1C1F782300EDC85B /* JenUnitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,7 +31,7 @@ extern NSArray * parseSpot3;
 @property (weak, nonatomic) UIButton *dayPressed;
 
 -(void)loadData:(id)sender;
-
+-(IBAction)logoutUser:(id)sender;
 
 
 - (IBAction)addNewEvent:(id)sender;
