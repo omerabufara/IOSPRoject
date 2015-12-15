@@ -25,6 +25,28 @@
 @property NSString *userFound;
 @property NSString *userName;
 
+
+@property NSString *userfname;
+@property NSString *uderlname;
+@property NSString *useremail;
+@property NSString *userphone;
+@property NSString *useruname;
+@property NSString *userpassword;
+
+@property    NSString* eventName;
+@property    NSString* eventDate;
+@property    NSString* eventTime;
+@property    NSString* eventLocation;
+@property    NSString* eventDescription;
+
+
+
+@property NSString *eventNamet;
+@property NSString *eventDatet;
+@property NSString *eventTimet;
+@property NSString *eventLoct;
+@property NSString *eventDesct;
+
 - (void)downloadItems: (NSString*) day monthly:(NSString*)month year:(NSString*)currYear;
 - (void)downloadItemsUser:(NSString*) day monthly:(NSString*)month year:(NSString*)currYear;
 - (void)deleteItems: (NSInteger*) recordid;

@@ -21,11 +21,11 @@
     NSString* monthly;
     NSString* yearly;
     
-    NSString* eventName;
-    NSString* eventDate;
-    NSString* eventTime;
-    NSString* eventLocation;
-    NSString* eventDescription;
+//    NSString* eventName;
+//    NSString* eventDate;
+//    NSString* eventTime;
+//    NSString* eventLocation;
+//    NSString* eventDescription;
     NSString* posted;
     
     NSInteger* rid;
@@ -136,20 +136,20 @@
 - (void)addItems: (NSString*) evName date:(NSString*)evDate time:(NSString*)evTime location:(NSString*)evLocation description:(NSString*)evDescription
 {
     
-    eventName = evName;
-    eventDate = evDate;
-    eventTime = evTime;
-    eventLocation = evLocation;
-    eventDescription = evDescription;
+    _eventName = evName;
+    _eventDate = evDate;
+    _eventTime = evTime;
+    _eventLocation = evLocation;
+    _eventDescription = evDescription;
     
-    NSString *eventNamet =  [eventName stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *eventDatet =  [eventDate stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *eventTimet = [eventTime stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *eventLoct  =  [eventLocation stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *eventDesct = [eventDescription stringByReplacingOccurrencesOfString:@" " withString:@""];
+    _eventNamet =  [_eventName stringByReplacingOccurrencesOfString:@" " withString:@""];
+    _eventDatet =  [_eventDate stringByReplacingOccurrencesOfString:@" " withString:@""];
+    _eventTimet = [_eventTime stringByReplacingOccurrencesOfString:@" " withString:@""];
+    _eventLoct  =  [_eventLocation stringByReplacingOccurrencesOfString:@" " withString:@""];
+    _eventDesct = [_eventDescription stringByReplacingOccurrencesOfString:@" " withString:@""];
 
     
-    NSString *add = [NSString stringWithFormat:@"http://localhost:8888/data/add.php?event_name=%@&event_date=%@&event_time=%@&event_location=%@&event_description=%@",eventNamet ,eventDatet ,eventTimet ,eventLoct ,eventDesct];
+    NSString *add = [NSString stringWithFormat:@"http://localhost:8888/data/add.php?event_name=%@&event_date=%@&event_time=%@&event_location=%@&event_description=%@",_eventNamet ,_eventDatet ,_eventTimet ,_eventLoct ,_eventDesct];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:add];
     
@@ -231,14 +231,14 @@
     self.userName = Uname;
     password = psw;
     
-    NSString *userfname =  [firstName stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *uderlname =  [lastName stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *useremail = [email stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *userphone  =  [phone stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *useruname = [self.userName stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *userpassword = [password stringByReplacingOccurrencesOfString:@" " withString:@""];
+    _userfname =  [firstName stringByReplacingOccurrencesOfString:@" " withString:@""];
+    _uderlname =  [lastName stringByReplacingOccurrencesOfString:@" " withString:@""];
+    _useremail = [email stringByReplacingOccurrencesOfString:@" " withString:@""];
+    _userphone  =  [phone stringByReplacingOccurrencesOfString:@" " withString:@""];
+    _useruname = [self.userName stringByReplacingOccurrencesOfString:@" " withString:@""];
+    _userpassword = [password stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    NSString *addUser = [NSString stringWithFormat:@"http://localhost:8888/data/add-users.php?firstname=%@&lastname=%@&mail=%@&cell=%@&usernme=%@&paassword=%@",userfname ,uderlname ,useremail ,userphone ,useruname ,userpassword];
+    NSString *addUser = [NSString stringWithFormat:@"http://localhost:8888/data/add-users.php?firstname=%@&lastname=%@&mail=%@&cell=%@&usernme=%@&paassword=%@",_userfname ,_uderlname ,_useremail ,_userphone ,_useruname ,_userpassword];
     
     NSURL *jsonFileUrl = [ NSURL URLWithString:addUser];
     

@@ -60,18 +60,19 @@
     
     add.txtEventName = (UITextField * )@"EventName";
     XCTAssertTrue([add.txtEventName isEqual:add.txtEventName]);
+    XCTAssertFalse([add.txtEventLocation isEqual:@"Event name"]);
     
     add.txtEventDate = (UITextField * )@"December-20-2015";
-    XCTAssertTrue([add.txtEventDate isEqual:add.txtEventDate]);
+    XCTAssertTrue([add.txtEventDate isEqual:@"December-20-2015"]);
     
     add.txtEventTime = (UITextField * )@"3:00";
-    XCTAssertTrue([add.txtEventTime isEqual:add.txtEventTime]);
+    XCTAssertTrue([add.txtEventTime isEqual:@"3:00"]);
     
     add.txtEventLocation = (UITextField * )@"Here";
-    XCTAssertTrue([add.txtEventLocation isEqual:add.txtEventLocation]);
+    XCTAssertTrue([add.txtEventLocation isEqual:@"Here"]);
     
     add.txtEventDescription = (UITextField * )@"Consultant";
-    XCTAssertTrue([add.txtEventDescription isEqual:add.txtEventDescription]);
+    XCTAssertTrue([add.txtEventDescription isEqual:@"Consultant"]);
     
     
 }
@@ -91,21 +92,18 @@
     XCTAssertTrue([edit.txtEventDescription isEqual:@"Consultant"]);
     
     
-    
-    
-    
 }
 
 -(void)testLocation
 {
     
     loc.eventId = @"18";
-    XCTAssertTrue([loc.eventId isEqual:loc.eventId]);
+    XCTAssertTrue([loc.eventId isEqual:@"18"]);
     
     loc.event_name = @"EventName";
-    XCTAssertTrue([loc.event_name isEqual:loc.event_name]);
+    XCTAssertFalse([loc.event_name isEqual:@"Eventname"]);
     
-    if ([loc.event_date  isEqual: @"December-20-2015"]) {
+    if ([loc.event_date  isEqual: @"December/20/2015"]) {
         XCTAssertTrue([loc.event_date isEqual:@"December-20-2015"]);
         
     }
@@ -113,26 +111,43 @@
     else
         
         
-        XCTAssertFalse([loc.event_date isEqual:@"December-20-2015"]);
+        XCTAssertFalse([loc.event_date isEqual:@"December/20/2015"]);
     
     
-    
-    
-    
-    //    loc.event_date = @"December-20-2015";
-    //
-    //    XCTAssertFalse([loc.event_date  isEqual :@"December-20-2015"]);
-    //
-    //    XCTAssertFalse([loc.event_date isEqual:@"December-20-2015"]);
     
     loc.event_time = @"EventName";
-    XCTAssertTrue([loc.event_time isEqual:loc.event_time]);
+    XCTAssertTrue([loc.event_time isEqual:@"EventName"]);
     
-    loc.event_location = @"EventName";
-    XCTAssertTrue([loc.event_location isEqual:loc.event_location]);
+    loc.event_location = @"Z336";
+    XCTAssertFalse([loc.event_location isEqual:@"z336"]);
     
-    loc.event_description = @"EventName";
-    XCTAssertTrue([loc.event_description isEqual:loc.event_description]);
+    loc.event_description = @"Describe";
+    XCTAssertTrue([loc.event_description isEqual:@"Describe"]);
+}
+
+-(void)testHomeModelSpaces {
+    
+    hmodel.eventName = @"e v v v v";
+    hmodel.eventDate = @"December -14-2015";
+    hmodel.eventTime = @"3 :00";
+    hmodel.eventLocation = @"Z 366";
+    hmodel.eventDescription = @"IOS programming";
+    
+    [hmodel addItems:hmodel.eventName date:hmodel.eventDate time:hmodel.eventTime location:hmodel.eventLocation description:hmodel.eventDescription];
+   
+    XCTAssertFalse([hmodel.eventNamet isEqual:@"e v v v v"]);
+    XCTAssertFalse([hmodel.eventDatet isEqual:@"December -14-2015"]);
+    XCTAssertFalse([hmodel.eventTimet isEqual:@"3 :00"]);
+    XCTAssertFalse([hmodel.eventLoct isEqual:@"Z 366"]);
+    XCTAssertFalse([hmodel.eventDesct isEqual:@"IOS programming"]);
+    
+    XCTAssertTrue([hmodel.eventNamet isEqual:@"evvvv"]);
+    XCTAssertTrue([hmodel.eventDatet isEqual:@"December-14-2015"]);
+    XCTAssertTrue([hmodel.eventTimet isEqual:@"3:00"]);
+    XCTAssertTrue([hmodel.eventLoct isEqual:@"Z366"]);
+    XCTAssertTrue([hmodel.eventDesct isEqual:@"IOSprogramming"]);
+    
+
 }
 
 - (void)testPerformanceExample {
