@@ -18,6 +18,11 @@ extern NSArray * parseSpot3;
 
 @property (nonatomic, retain) NSString* userIDSignedIn;
 
+@property NSString *senderDate;
+@property NSArray *itemsDownloaded;
+
+@property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
+
 @property (strong, nonatomic) AddEventViewController *addEventViewController;
 - (IBAction)nextAct:(id)sender;
 
@@ -32,6 +37,8 @@ extern NSArray * parseSpot3;
 
 -(void)loadData:(id)sender;
 -(IBAction)logoutUser:(id)sender;
+-(IBAction)postEventsDay:(id)sender;
+-(IBAction)postEventsMonth:(id)sender;
 
 
 - (IBAction)addNewEvent:(id)sender;

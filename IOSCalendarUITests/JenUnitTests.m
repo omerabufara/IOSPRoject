@@ -20,8 +20,8 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    calendar = [[CalendarViewController alloc] init];
-    XCTAssertNotNil(calendar, @"Cannot create Calculator instance");
+//    calendar = [[CalendarViewController alloc] init];
+//    XCTAssertNotNil(calendar, @"Cannot create Calendar instance");
 }
 
 - (void)tearDown {
@@ -29,25 +29,12 @@
     [super tearDown];
 }
 
-- (void)testPostDay {
-    // click on a day on the calendar
-    // click post day
-    // assert that posted is not hidden
-    //XCTAssertTrue([[calculator displayValue] isEqualToString:@"8"], @"");
-}
-- (void)testPostMonth{
-    // click on a day on the calendar
-    // click post month
-    // assert that posted is not hidden
-    //XCTAssertTrue([[calculator displayValue] isEqualToString:@"8"], @"");
-}
-
-- (void)testLogout{
-    [calendar logoutUser:nil];
-    NSString *usernameStored = [[NSUserDefaults standardUserDefaults]
-                                stringForKey:@"usernameSaved"];
-    XCTAssertTrue([usernameStored isEqualToString:@""]);
-}
+//- (void)testLogout{
+//    [calendar logoutUser:nil];
+//    NSString *usernameStored = [[NSUserDefaults standardUserDefaults]
+//                                stringForKey:@"usernameSaved"];
+//    XCTAssertTrue([usernameStored isEqualToString:@""]);
+//}
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.

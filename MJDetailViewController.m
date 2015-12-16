@@ -51,6 +51,11 @@ NSString *storeEventDescribe;
     storeEventTime = eventtime;
     storeEventLocation = eventLoc;
     storeEventDescribe = eventDes;
+    
+    self.eName = eventName;
+    self.eTime = eventtime;
+    self.eLocation = eventLoc;
+    self.eDesc = eventDes;
 }
 
 - (IBAction)deletePressed:(id)sender{

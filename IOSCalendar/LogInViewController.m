@@ -29,6 +29,7 @@ bool passwordcorrect;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.userName.delegate = self;
+    self.userName.autocorrectionType = UITextAutocorrectionTypeNo;
     self.password.delegate = self;
 }
 
@@ -47,8 +48,9 @@ bool passwordcorrect;
         SignInSuccessViewController *myViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"signInSuccess"];
         
         
-        UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
-        [top presentViewController:myViewController animated:YES completion: nil];
+        //UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
+        //[top presentViewController:myViewController animated:YES completion: nil];
+        [self presentViewController:myViewController animated:YES completion: nil];
         
         
     }
@@ -72,9 +74,10 @@ bool passwordcorrect;
         UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
         SignInSuccessViewController *myViewController = (SignInSuccessViewController *) [story instantiateViewControllerWithIdentifier:@"signInSuccess"];
-        
+        //doesn't present on the calendar sign in link
         UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
         [top presentViewController:myViewController animated:YES completion: nil];
+        //[self presentViewController:myViewController animated:YES completion: nil];
     }
     
     else{

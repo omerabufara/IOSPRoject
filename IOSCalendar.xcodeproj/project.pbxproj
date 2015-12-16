@@ -12,8 +12,6 @@
 		1A086DBA1BE6D54F00980950 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A086DB91BE6D54F00980950 /* ViewController.m */; };
 		1A086DBF1BE6D54F00980950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A086DBE1BE6D54F00980950 /* Assets.xcassets */; };
 		1A086DC21BE6D54F00980950 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A086DC01BE6D54F00980950 /* LaunchScreen.storyboard */; };
-		1A086DCD1BE6D54F00980950 /* IOSCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A086DCC1BE6D54F00980950 /* IOSCalendarTests.m */; };
-		1A086DD81BE6D54F00980950 /* IOSCalendarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A086DD71BE6D54F00980950 /* IOSCalendarUITests.m */; };
 		1A0BEA5F1BED12080091A91A /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA5E1BED12080091A91A /* LogInViewController.m */; };
 		1A0BEA621BED12560091A91A /* signUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA611BED12560091A91A /* signUpViewController.m */; };
 		1A0BEA681BED537A0091A91A /* EditEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BEA671BED537A0091A91A /* EditEventViewController.m */; };
@@ -38,6 +36,8 @@
 		5B98BC0A1BE901DB004055C0 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B98BC091BE901DB004055C0 /* CalendarViewController.m */; };
 		BD24E1351C1BC91500E96D87 /* Mil-Vet-PSSH-centered-rgb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD24E1341C1BC91500E96D87 /* Mil-Vet-PSSH-centered-rgb.jpg */; };
 		BD993F3A1C1F782300EDC85B /* JenUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD993F391C1F782300EDC85B /* JenUnitTests.m */; };
+		BD9C26731C20A40500D8AF15 /* IOSCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9C26721C20A40500D8AF15 /* IOSCalendarTests.m */; };
+		BD9C26751C20A41600D8AF15 /* IOSCalendarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9C26741C20A41600D8AF15 /* IOSCalendarUITests.m */; };
 		BDDB0CC51C179FA100A293C5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDB0CC41C179FA100A293C5 /* CoreData.framework */; };
 		BDFEE4861C168567009E41DE /* SignInSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFEE4851C168567009E41DE /* SignInSuccessViewController.m */; };
 /* End PBXBuildFile section */
@@ -57,6 +57,13 @@
 			remoteGlobalIDString = 1A086DAE1BE6D54F00980950;
 			remoteInfo = IOSCalendar;
 		};
+		BD9C267B1C20A7FB00D8AF15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A086DA71BE6D54F00980950 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A086DD21BE6D54F00980950;
+			remoteInfo = IOSCalendarUITests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -70,10 +77,8 @@
 		1A086DC11BE6D54F00980950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A086DC31BE6D54F00980950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A086DC81BE6D54F00980950 /* IOSCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A086DCC1BE6D54F00980950 /* IOSCalendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOSCalendarTests.m; sourceTree = "<group>"; };
 		1A086DCE1BE6D54F00980950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A086DD31BE6D54F00980950 /* IOSCalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSCalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A086DD71BE6D54F00980950 /* IOSCalendarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOSCalendarUITests.m; sourceTree = "<group>"; };
 		1A086DD91BE6D54F00980950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A0BEA5D1BED12080091A91A /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		1A0BEA5E1BED12080091A91A /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
@@ -113,6 +118,8 @@
 		5B98BC091BE901DB004055C0 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		BD24E1341C1BC91500E96D87 /* Mil-Vet-PSSH-centered-rgb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Mil-Vet-PSSH-centered-rgb.jpg"; sourceTree = "<group>"; };
 		BD993F391C1F782300EDC85B /* JenUnitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JenUnitTests.m; path = ../IOSCalendarUITests/JenUnitTests.m; sourceTree = "<group>"; };
+		BD9C26721C20A40500D8AF15 /* IOSCalendarTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOSCalendarTests.m; sourceTree = "<group>"; };
+		BD9C26741C20A41600D8AF15 /* IOSCalendarUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOSCalendarUITests.m; sourceTree = "<group>"; };
 		BDDB0CC41C179FA100A293C5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BDFEE4841C168567009E41DE /* SignInSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInSuccessViewController.h; sourceTree = "<group>"; };
 		BDFEE4851C168567009E41DE /* SignInSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInSuccessViewController.m; sourceTree = "<group>"; };
@@ -233,7 +240,7 @@
 		1A086DCB1BE6D54F00980950 /* IOSCalendarTests */ = {
 			isa = PBXGroup;
 			children = (
-				1A086DCC1BE6D54F00980950 /* IOSCalendarTests.m */,
+				BD9C26721C20A40500D8AF15 /* IOSCalendarTests.m */,
 				1A086DCE1BE6D54F00980950 /* Info.plist */,
 				BD993F391C1F782300EDC85B /* JenUnitTests.m */,
 			);
@@ -243,7 +250,7 @@
 		1A086DD61BE6D54F00980950 /* IOSCalendarUITests */ = {
 			isa = PBXGroup;
 			children = (
-				1A086DD71BE6D54F00980950 /* IOSCalendarUITests.m */,
+				BD9C26741C20A41600D8AF15 /* IOSCalendarUITests.m */,
 				1A086DD91BE6D54F00980950 /* Info.plist */,
 			);
 			path = IOSCalendarUITests;
@@ -263,6 +270,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BD9C267C1C20A7FB00D8AF15 /* PBXTargetDependency */,
 			);
 			name = IOSCalendar;
 			productName = IOSCalendar;
@@ -410,8 +418,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A086DCD1BE6D54F00980950 /* IOSCalendarTests.m in Sources */,
 				BD993F3A1C1F782300EDC85B /* JenUnitTests.m in Sources */,
+				BD9C26731C20A40500D8AF15 /* IOSCalendarTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A086DD81BE6D54F00980950 /* IOSCalendarUITests.m in Sources */,
+				BD9C26751C20A41600D8AF15 /* IOSCalendarUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +443,11 @@
 			isa = PBXTargetDependency;
 			target = 1A086DAE1BE6D54F00980950 /* IOSCalendar */;
 			targetProxy = 1A086DD41BE6D54F00980950 /* PBXContainerItemProxy */;
+		};
+		BD9C267C1C20A7FB00D8AF15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A086DD21BE6D54F00980950 /* IOSCalendarUITests */;
+			targetProxy = BD9C267B1C20A7FB00D8AF15 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
