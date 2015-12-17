@@ -10,6 +10,8 @@
 
 @interface LogInViewController : UIViewController <UITextFieldDelegate>
 
+@property (nonatomic,retain) id delegate;
+
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 
 @property (weak, nonatomic) IBOutlet UITextField *password;

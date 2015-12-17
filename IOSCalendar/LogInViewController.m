@@ -56,6 +56,7 @@ bool passwordcorrect;
     }
     else{
         HomeModel *logIn = [[HomeModel alloc]init];
+        logIn.delegateVC = self;
         [logIn checkUser:self.userName.text pass:self.password.text];
     }
     
@@ -76,13 +77,13 @@ bool passwordcorrect;
         SignInSuccessViewController *myViewController = (SignInSuccessViewController *) [story instantiateViewControllerWithIdentifier:@"signInSuccess"];
         
   //      UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
-        [self presentViewController:myViewController animated:YES completion: nil];
+        [self.delegate presentViewController:myViewController animated:YES completion: nil];
     }
     
     else{
-        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Fail" message:@"Invalid Access"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fail" message:@"Invalid Access"
                                                               delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-        [alertsuccess show];
+        [alert show];
     }
     
     
