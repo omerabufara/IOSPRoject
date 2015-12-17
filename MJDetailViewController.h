@@ -15,4 +15,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *eventDescription;
 
 - (void)storeRecordId:(NSInteger)recordId name: (NSString*)eventName time:(NSString*)eventtime location:(NSString*)eventLoc description:(NSString*)eventDes;
+
+@property NSString *eName;
+@property NSString *eTime;
+@property NSString *eLocation;
+@property NSString *eDesc;
+
 @end

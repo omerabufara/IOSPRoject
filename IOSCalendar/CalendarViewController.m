@@ -18,9 +18,7 @@
 
 @interface CalendarViewController () <EditInfoViewControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
 
-@property NSString *senderDate;
 
 @property (nonatomic, strong) NSArray *eventsArray;
 
@@ -84,6 +82,7 @@ NSArray * parseSpot3;
     
     // Set the downloaded items to the array
     _feedItems = items;
+    self.itemsDownloaded = items;
     
     // Reload the table view
     [self.calendarTableView reloadData];
@@ -283,7 +282,7 @@ NSArray * parseSpot3;
         _feedItems = [[NSArray alloc]init];
         _homeModel = [[HomeModel alloc]init];
         _homeModel.delegate = self;
-        if(usernameStored != nil){
+        if(![usernameStored isEqualToString: @""]){
         
             UIButton *signIn = (UIButton *)[self.view viewWithTag:50];
             UIButton *signUp = (UIButton *)[self.view viewWithTag:51];
@@ -457,7 +456,7 @@ NSArray * parseSpot3;
     
     
     MJDetailViewController *detailViewController = [[MJDetailViewController alloc] initWithNibName:@"MJDetailViewController" bundle:nil];
-    if(usernameStored != nil){
+    if(![usernameStored isEqualToString: @""]){
         if([usernameStored isEqualToString:@"Admin"]){
             UIButton *delete = [detailViewController.view viewWithTag:201];
             delete.hidden = NO;
@@ -501,7 +500,7 @@ NSArray * parseSpot3;
 }
 
 -(IBAction)logoutUser:(id)sender{
-    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"usernameSaved"];
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"usernameSaved"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
