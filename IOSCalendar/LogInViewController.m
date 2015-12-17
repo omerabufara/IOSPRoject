@@ -31,6 +31,7 @@ bool passwordcorrect;
     self.userName.delegate = self;
     self.userName.autocorrectionType = UITextAutocorrectionTypeNo;
     self.password.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,6 +46,7 @@ bool passwordcorrect;
     if([[self.userName text] isEqualToString:@"Admin"] && [[self.password text] isEqualToString:@"12345"] ) {
         [[NSUserDefaults standardUserDefaults] setObject:self.usernameFound forKey:@"usernameSaved"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+       
         SignInSuccessViewController *myViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"signInSuccess"];
         
         
@@ -56,6 +58,7 @@ bool passwordcorrect;
     }
     else{
         HomeModel *logIn = [[HomeModel alloc]init];
+        logIn.delegateVC = self;
         [logIn checkUser:self.userName.text pass:self.password.text];
     }
     
@@ -81,9 +84,9 @@ bool passwordcorrect;
     }
     
     else{
-        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Fail" message:@"Invalid Access"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fail" message:@"Invalid Access"
                                                               delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-        [alertsuccess show];
+        [alert show];
     }
     
     

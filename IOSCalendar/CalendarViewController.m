@@ -505,11 +505,11 @@ NSArray * parseSpot3;
 }
 
 -(IBAction)showSignInPage:(id)sender{
-//    LogInViewController *myViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"signIn"];
-//    
-//    
-//    UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
-//    [top presentViewController:myViewController animated:YES completion:nil];
+    LogInViewController *myViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"signIn"];
+    
+    
+  //  UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
+    [self presentViewController:myViewController animated:YES completion:nil];
 }
 
 @end

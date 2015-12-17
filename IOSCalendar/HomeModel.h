@@ -21,7 +21,7 @@
 @interface HomeModel : NSObject  <NSURLConnectionDataDelegate>
 
 @property (nonatomic, weak) id<HomeModelProtocol> delegate;
-
+@property (nonatomic,retain) id delegateVC;
 @property NSString *userFound;
 @property NSString *userName;
 

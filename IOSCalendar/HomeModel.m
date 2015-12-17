@@ -335,6 +335,7 @@
     else{
         userFound = [[NSString alloc]initWithData:_downloadedData encoding:NSUTF8StringEncoding];
         LogInViewController *logIn = [[LogInViewController alloc]init];
+        logIn.delegate = self.delegateVC;
         [logIn loginFunctionality:userFound username:self.userName];
         
     }
