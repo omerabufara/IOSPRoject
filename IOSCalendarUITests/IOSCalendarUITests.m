@@ -8,10 +8,12 @@
 
 #import <XCTest/XCTest.h>
 #import "CalendarViewController.h"
+#import "LogInViewController.h"
 
 @interface IOSCalendarUITests : XCTestCase{
     @private
     CalendarViewController *calendarVC;
+    LogInViewController *signIn;
 }
 
 @end
@@ -265,5 +267,47 @@
     
     XCTAssertTrue(app.tables.cells.staticTexts[@"Posted"].exists);
 }
+
+-(void) testSignIn{
+    
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    XCUIElement *logInButton = app.buttons[@"Log In"];
+    [logInButton tap];
+    
+    XCUIElement *usernameTextField = app.textFields[@"UserName"];
+    [usernameTextField tap];
+    [usernameTextField typeText:@"abc"];
+    
+    XCUIElement *passwordTextField = app.textFields[@"Password"];
+    [passwordTextField tap];
+    [passwordTextField typeText:@"1234"];
+    [logInButton tap];
+    
+    XCTAssertTrue(app.staticTexts[@"You are now signed in"].exists);
+}
+
+-(void)testRegister{
+    
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    XCUIElement *logInButton = app.buttons[@"Log In"];
+    [logInButton tap];
+    
+    XCUIElement *usernameTextField = app.textFields[@"UserName"];
+    [usernameTextField tap];
+    [usernameTextField typeText:@"Abc"];
+    
+    XCUIElement *passwordTextField = app.textFields[@"Password"];
+    [passwordTextField tap];
+    [passwordTextField typeText:@"1234"];
+    [logInButton tap];
+    [app.buttons[@"Calendar"] tap];
+    [app.buttons[@"20"] tap];
+    [app.tables.staticTexts[@"2pm"] tap];
+    [app.buttons[@"Register"] tap];
+    
+    XCTAssertTrue(app.staticTexts[@"Thank you for registering!"].exists);
+    
+}
+
 
 @end
