@@ -30,6 +30,7 @@ bool passwordcorrect;
     // Do any additional setup after loading the view.
     self.userName.delegate = self;
     self.password.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,11 +45,12 @@ bool passwordcorrect;
     if([[self.userName text] isEqualToString:@"Admin"] && [[self.password text] isEqualToString:@"12345"] ) {
         [[NSUserDefaults standardUserDefaults] setObject:self.usernameFound forKey:@"usernameSaved"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+       
         SignInSuccessViewController *myViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"signInSuccess"];
         
         
-        UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
-        [top presentViewController:myViewController animated:YES completion: nil];
+        //UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
+        [self presentViewController:myViewController animated:YES completion: nil];
         
         
     }
@@ -73,8 +75,8 @@ bool passwordcorrect;
     
         SignInSuccessViewController *myViewController = (SignInSuccessViewController *) [story instantiateViewControllerWithIdentifier:@"signInSuccess"];
         
-        UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
-        [top presentViewController:myViewController animated:YES completion: nil];
+  //      UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
+        [self presentViewController:myViewController animated:YES completion: nil];
     }
     
     else{
