@@ -22,13 +22,7 @@
         Location *loc;
         AddEventViewController *add;
         EditEventViewController *edit;
-        
-        NSInteger thismonth;
-        NSInteger thisyear;
-        
     
-
-
 }
 
 @end
@@ -58,21 +52,35 @@
 -( void)testAddEvent
 {
     
-    add.txtEventName = (UITextField * )@"EventName";
-    XCTAssertTrue([add.txtEventName isEqual:add.txtEventName]);
+    add.txtEventName = (UITextField * ) @"EventName";
+    XCTAssertTrue([add.txtEventName isEqual:@"EventName"]);
     XCTAssertFalse([add.txtEventLocation isEqual:@"Event name"]);
     
-    add.txtEventDate = (UITextField * )@"December-20-2015";
+    add.txtEventDate = (UITextField * ) @"December-20-2015";
     XCTAssertTrue([add.txtEventDate isEqual:@"December-20-2015"]);
+    XCTAssertFalse([add.txtEventDate isEqual:@"December/20/2015"]);
     
-    add.txtEventTime = (UITextField * )@"3:00";
+    add.txtEventTime = (UITextField * ) @"3:00";
     XCTAssertTrue([add.txtEventTime isEqual:@"3:00"]);
     
-    add.txtEventLocation = (UITextField * )@"Here";
+    add.txtEventLocation = (UITextField * ) @"Here";
     XCTAssertTrue([add.txtEventLocation isEqual:@"Here"]);
     
-    add.txtEventDescription = (UITextField * )@"Consultant";
+    add.txtEventDescription = (UITextField * ) @"Consultant";
     XCTAssertTrue([add.txtEventDescription isEqual:@"Consultant"]);
+    
+//    [hmodel addItems:add.txtEventName.text date:add.txtEventDate.text time:add.txtEventTime.text location:add.txtEventLocation.text description:add.txtEventDescription.text];
+//    
+//    XCTAssertTrue([hmodel.eventName isEqual:add.txtEventName.text]);
+////   hmodel.eventName = @"e v v v v";
+//    XCTAssertTrue([hmodel.eventDate isEqual:add.txtEventDate.text]);
+//    XCTAssertTrue([hmodel.eventTime isEqual:add.txtEventTime.text]);
+//    XCTAssertTrue([hmodel.eventLocation isEqual:add.txtEventLocation.text]);
+//    XCTAssertTrue([hmodel.eventDescription isEqual:add.txtEventDescription.text]);
+//    hmodel.eventDate = @"December -14-2015";
+//    hmodel.eventTime = @"3 :00";
+//    hmodel.eventLocation = @"Z 366";
+//    hmodel.eventDescription = @"IOS programming";
     
     
 }
@@ -90,6 +98,8 @@
     
     edit.txtEventDescription = (UITextField * )@"Consultant";
     XCTAssertTrue([edit.txtEventDescription isEqual:@"Consultant"]);
+    
+    
     
     
 }
