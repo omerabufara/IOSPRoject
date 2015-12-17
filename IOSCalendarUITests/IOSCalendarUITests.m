@@ -266,5 +266,4 @@
     XCTAssertTrue(app.tables.cells.staticTexts[@"Posted"].exists);
 }
 
-
 @end

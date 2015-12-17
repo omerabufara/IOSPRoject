@@ -12,6 +12,8 @@
 #import "CalendarViewController.h"
 #import "AddEventViewController.h"
 #import "EditEventViewController.h"
+#import "LogInViewController.h"
+#import "signUpViewController.h"
 
 @interface IOSCalendarTests : XCTestCase
 {
@@ -175,8 +177,8 @@
     XCTAssertTrue([signup.cellPhone isEqual:@"111-222-3333"]);
     XCTAssertTrue([signup.user_name isEqual:@"username"]);
     XCTAssertTrue([signup.password isEqual:@"password"]);
-
-
+    
+    
 }
 
 -(void)testLogin{

@@ -77,10 +77,9 @@ bool passwordcorrect;
         UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
         SignInSuccessViewController *myViewController = (SignInSuccessViewController *) [story instantiateViewControllerWithIdentifier:@"signInSuccess"];
-        //doesn't present on the calendar sign in link
-        UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
-        [top presentViewController:myViewController animated:YES completion: nil];
-        //[self presentViewController:myViewController animated:YES completion: nil];
+        
+  //      UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
+        [self.delegate presentViewController:myViewController animated:YES completion: nil];
     }
     
     else{
